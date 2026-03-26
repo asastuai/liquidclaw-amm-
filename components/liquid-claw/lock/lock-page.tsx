@@ -12,7 +12,7 @@ import { LockInfoCallout } from "./lock-info-callout"
 
 export function LockPage() {
   // TODO: Replace with real lock data from VotingEscrow
-  const [locks, setLocks] = useState<{ id: number; amount: number; power: number; duration: number; expired: boolean; location: string }[]>([])
+  const [locks, setLocks] = useState<{ id: number; amount: number; power: number; duration: number; expired: boolean; location: "wallet" | "vault" }[]>([])
 
   const totalLocked = locks.reduce((sum, lock) => sum + lock.amount, 0)
   const totalPower = locks.reduce((sum, lock) => sum + (lock.expired ? 0 : lock.power), 0)

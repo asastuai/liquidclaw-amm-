@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Bot, Code2, Zap, Shield, Cpu, Webhook } from "lucide-react"
@@ -94,11 +95,11 @@ export function AgentsSection() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                Get API Key
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+                <Link href="/docs/for-builders#contract-addresses">Get Contract Addresses</Link>
               </Button>
-              <Button variant="outline" className="rounded-full px-6">
-                Read the Docs
+              <Button asChild variant="outline" className="rounded-full px-6">
+                <Link href="/docs/for-builders">Read the Docs</Link>
               </Button>
             </div>
           </div>

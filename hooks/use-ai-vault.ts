@@ -103,7 +103,7 @@ export function useVaultDeposits() {
     const lockData =
       lock?.status === "success"
         ? (lock.result as [bigint, bigint, boolean])
-        : [0n, 0n, false]
+        : [0n, 0n, false] as [bigint, bigint, boolean]
 
     return {
       tokenId,
