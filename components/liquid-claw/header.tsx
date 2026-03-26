@@ -15,6 +15,7 @@ const navItems = [
   { label: "Lock", href: "/lock" },
   { label: "Dashboard", href: "/dashboard" },
   { label: "Rewards", href: "/rewards" },
+  { label: "Roadmap", href: "/roadmap" },
   { label: "AI Vault", href: "/ai-vault" },
   { label: "Docs", href: "/docs" },
 ]

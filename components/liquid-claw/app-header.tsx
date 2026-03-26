@@ -12,6 +12,7 @@ const navItems = [
   { label: "Pools", href: "/pools" },
   { label: "veLCLAW", href: "/governance" },
   { label: "AI Vault", href: "/ai-vault" },
+  { label: "Roadmap", href: "/roadmap" },
 ]
 
 export function AppHeader() {
