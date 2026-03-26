@@ -1,0 +1,424 @@
+// ============================================================
+// src/config.ts — Configuration & Environment
+// ============================================================
+
+export interface Config {
+  // API
+  ASTER_API_KEY: string;
+  ASTER_API_SECRET: string;
+  REST_BASE_URL: string;
+  WS_BASE_URL: string;
+
+  // Trading
+  DEFAULT_LEVERAGE: number;
+  LOW_VOL_LEVERAGE: number;
+  HIGH_VOL_LEVERAGE: number;
+  TRADE_SYMBOL: string;
+  POSITION_SIZE_PCT: number;   // % of capital per trade
+  STARTING_CAPITAL: number;
+
+  // Indicators
+  EMA_FAST: number;
+  EMA_MID: number;
+  EMA_SLOW: number;
+  RSI_PERIOD: number;
+  MFI_PERIOD: number;
+  BB_PERIOD: number;
+  BB_STDDEV: number;
+  ATR_PERIOD: number;
+  VOLUME_MULT: number;         // Volume confirmation multiplier
+
+  // Risk Management
+  SL_ATR_MULT: number;         // SL = entry ± (ATR × this)
+  TP_ATR_MULT: number;         // TP = entry ± (ATR × this)
+  TRAILING_ACTIVATION_PCT: number;  // Activate trailing at this % profit
+  TRAILING_CALLBACK_PCT: number;    // Trail by this %
+  MAX_CONCURRENT_POSITIONS: number;
+  MAX_DAILY_LOSS_PCT: number;       // Circuit breaker: max daily loss %
+  MAX_WEEKLY_LOSS_PCT: number;      // Circuit breaker: max weekly loss %
+  MIN_SIGNALS_REQUIRED: number;     // Minimum conditions met (out of 5)
+
+  // Timing
+  KLINE_INTERVAL: string;
+  WARMUP_CANDLES: number;
+
+  // Logging
+  LOG_DIR: string;
+  REPORT_DIR: string;
+  VERBOSE: boolean;
+
+  // v2.0 — Market Brain
+  BRAIN_INTERVAL_MS: number;
+  MIN_CONFIDENCE_SCALP: number;
+  MIN_CONFIDENCE_MOMENTUM: number;
+  MIN_CONFIDENCE_SWING: number;
+
+  // v2.0 — Scalp Engine
+  SCALP_SL_ATR_MULT: number;
+  SCALP_TP_ATR_MULT: number;
+  SCALP_MARGIN_PCT: number;
+  SCALP_COOLDOWN_MS: number;
+  SCALP_MIN_BB_WIDTH: number;
+  SCALP_DEFAULT_LEVERAGE: number;
+  SCALP_MAX_PER_HOUR: number;
+
+  // v2.0 — Momentum Engine
+  MOMENTUM_SL_ATR_MULT_5M: number;
+  MOMENTUM_TP_ATR_MULT_5M: number;
+  MOMENTUM_MARGIN_PCT: number;
+  MOMENTUM_COOLDOWN_MS: number;
+  MOMENTUM_DEFAULT_LEVERAGE: number;
+  MOMENTUM_TRAILING_ACTIVATION: number;
+  MOMENTUM_TRAILING_CALLBACK: number;
+
+  // v2.0 — Swing Engine
+  SWING_MARGIN_FIXED: number;
+  SWING_LEVERAGE_MIN: number;
+  SWING_LEVERAGE_MAX: number;
+  SWING_COOLDOWN_MS: number;
+  SWING_TRAILING_ACTIVATION: number;
+  SWING_TRAILING_CALLBACK: number;
+  SWING_MAX_CONCURRENT: number;
+
+  // v2.0 — Capitulation/Euphoria Detection
+  CAPITULATION_RSI_THRESHOLD: number;
+  CAPITULATION_MFI_THRESHOLD: number;
+  CAPITULATION_CONSEC_RED: number;
+  EUPHORIA_RSI_THRESHOLD: number;
+  EUPHORIA_MFI_THRESHOLD: number;
+  EUPHORIA_CONSEC_GREEN: number;
+
+  // v2.0 — Position Manager
+  MAX_TOTAL_EXPOSURE_PCT: number;
+  MAX_TOTAL_POSITIONS: number;
+
+  // v3.0 — Brain v2
+  STRUCTURE_LOOKBACK_BARS: number;
+  DIVERGENCE_LOOKBACK_BARS: number;
+  EXHAUSTION_THRESHOLD: number;
+
+  // v3.0 — REVERSAL Engine
+  REVERSAL_ENABLED: boolean;
+  REVERSAL_MARGIN: number;
+  REVERSAL_DEFAULT_LEVERAGE: number;
+  REVERSAL_MAX_LEVERAGE: number;
+  REVERSAL_SL_ATR_MULT: number;
+  REVERSAL_TP_ATR_MULT: number;
+  REVERSAL_COOLDOWN_MS: number;
+  REVERSAL_MAX_PER_HOUR: number;
+  REVERSAL_MIN_EXHAUSTION: number;
+  REVERSAL_MIN_CONFIRMATIONS: number;
+  REVERSAL_TRAILING_ACTIVATION: number;
+  REVERSAL_TRAILING_CALLBACK: number;
+
+  // v3.0 — SNIPER Engine
+  SNIPER_ENABLED: boolean;
+  SNIPER_MARGIN: number;
+  SNIPER_DEFAULT_LEVERAGE: number;
+  SNIPER_MAX_LEVERAGE: number;
+  SNIPER_MIN_BRAIN_CONFIDENCE: number;
+  SNIPER_MIN_LEVEL_STRENGTH: number;
+  SNIPER_COOLDOWN_MS: number;
+  SNIPER_MAX_PER_HOUR: number;
+  SNIPER_MIN_RR_RATIO: number;
+  SNIPER_TRAILING_ACTIVATION: number;
+  SNIPER_TRAILING_CALLBACK: number;
+
+  // v3.0 — BREAKOUT RETEST Engine
+  BREAKOUT_RETEST_ENABLED: boolean;
+  BREAKOUT_RETEST_MARGIN: number;
+  BREAKOUT_RETEST_DEFAULT_LEVERAGE: number;
+  BREAKOUT_RETEST_MAX_LEVERAGE: number;
+  BREAKOUT_RETEST_SL_ATR_MULT: number;
+  BREAKOUT_RETEST_TP_ATR_MULT: number;
+  BREAKOUT_RETEST_COOLDOWN_MS: number;
+  BREAKOUT_RETEST_MAX_PER_HOUR: number;
+  BREAKOUT_RETEST_MIN_BARS_SINCE_BREAKOUT: number;
+  BREAKOUT_RETEST_MAX_BARS_SINCE_BREAKOUT: number;
+  BREAKOUT_RETEST_RETEST_ZONE_PCT: number;
+  BREAKOUT_RETEST_TRAILING_ACTIVATION: number;
+  BREAKOUT_RETEST_TRAILING_CALLBACK: number;
+
+  // v3.0 — GRID Engine
+  GRID_ENABLED: boolean;
+  GRID_MARGIN: number;
+  GRID_DEFAULT_LEVERAGE: number;
+  GRID_MAX_LEVERAGE: number;
+  GRID_COOLDOWN_MS: number;
+  GRID_MAX_CONCURRENT: number;
+  GRID_MIN_RANGE_PCT: number;
+  GRID_MAX_RANGE_PCT: number;
+  GRID_RANGE_LOOKBACK_1M: number;
+  GRID_MAX_BRAIN_CONFIDENCE: number;
+  GRID_MAX_BB_WIDTH: number;
+
+  // v3.1 — TREND_FOLLOW Engine (NEW)
+  TREND_FOLLOW_ENABLED: boolean;
+  TREND_FOLLOW_MARGIN: number;
+  TREND_FOLLOW_DEFAULT_LEVERAGE: number;
+  TREND_FOLLOW_MAX_LEVERAGE: number;
+  TREND_FOLLOW_MIN_CONFIDENCE: number;
+  TREND_FOLLOW_SL_ATR_MULT: number;
+  TREND_FOLLOW_COOLDOWN_MS: number;
+  TREND_FOLLOW_MAX_PER_HOUR: number;
+  TREND_FOLLOW_TRAILING_ACTIVATION: number;
+  TREND_FOLLOW_TRAILING_CALLBACK: number;
+
+  // v4.0 — Structure-First engines
+  LEVEL_BOUNCE_MARGIN_ALIGNED: number;
+  LEVEL_BOUNCE_MARGIN_COUNTER: number;
+  LEVEL_BOUNCE_LEVERAGE_ALIGNED: number;
+  LEVEL_BOUNCE_LEVERAGE_COUNTER: number;
+  LEVEL_BOUNCE_MIN_LEVEL_STRENGTH: number;
+  LEVEL_BOUNCE_MAX_DIST_PCT: number;
+  LEVEL_BOUNCE_COOLDOWN_MS: number;
+  LEVEL_BOUNCE_MAX_PER_HOUR: number;
+  LEVEL_BOUNCE_TRAILING_ACTIVATION: number;
+  LEVEL_BOUNCE_TRAILING_CALLBACK: number;
+
+  BREAKOUT_PLAY_RETEST_MARGIN_ALIGNED: number;
+  BREAKOUT_PLAY_RETEST_MARGIN_COUNTER: number;
+  BREAKOUT_PLAY_CONTINUATION_MARGIN: number;
+  BREAKOUT_PLAY_LEVERAGE: number;
+  BREAKOUT_PLAY_CONT_LEVERAGE: number;
+  BREAKOUT_PLAY_RETEST_ZONE_PCT: number;
+  BREAKOUT_PLAY_MIN_BARS: number;
+  BREAKOUT_PLAY_MAX_BARS: number;
+  BREAKOUT_PLAY_CONT_MIN_VOL: number;
+  BREAKOUT_PLAY_COOLDOWN_MS: number;
+  BREAKOUT_PLAY_MAX_PER_HOUR: number;
+  BREAKOUT_PLAY_TRAILING_ACTIVATION: number;
+  BREAKOUT_PLAY_TRAILING_CALLBACK: number;
+
+  EXHAUSTION_REVERSAL_MARGIN_3CONF: number;
+  EXHAUSTION_REVERSAL_MARGIN_2CONF: number;
+  EXHAUSTION_REVERSAL_MIN_EXHAUSTION: number;
+  EXHAUSTION_REVERSAL_MIN_CONFIRMATIONS: number;
+  EXHAUSTION_REVERSAL_SL_ATR_MULT: number;
+  EXHAUSTION_REVERSAL_TP_ATR_MULT: number;
+  EXHAUSTION_REVERSAL_COOLDOWN_MS: number;
+  EXHAUSTION_REVERSAL_MAX_PER_HOUR: number;
+  EXHAUSTION_REVERSAL_TRAILING_ACTIVATION: number;
+  EXHAUSTION_REVERSAL_TRAILING_CALLBACK: number;
+
+  TREND_RIDER_MARGIN: number;
+  TREND_RIDER_LEVERAGE: number;
+  TREND_RIDER_SL_ATR_MULT: number;
+  TREND_RIDER_MAX_EXHAUSTION: number;
+  TREND_RIDER_COOLDOWN_MS: number;
+  TREND_RIDER_MAX_PER_HOUR: number;
+  TREND_RIDER_TRAILING_ACTIVATION: number;
+  TREND_RIDER_TRAILING_CALLBACK: number;
+}
+
+export function loadConfig(): Config {
+  return {
+    // API credentials (from .env)
+    ASTER_API_KEY: process.env.ASTER_API_KEY || '',
+    ASTER_API_SECRET: process.env.ASTER_API_SECRET || '',
+    REST_BASE_URL: process.env.REST_BASE_URL || 'https://fapi.asterdex.com',
+    WS_BASE_URL: process.env.WS_BASE_URL || 'wss://fstream.asterdex.com',
+
+    // Trading parameters
+    DEFAULT_LEVERAGE: Number(process.env.DEFAULT_LEVERAGE) || 12,      // v1.1: era 15
+    LOW_VOL_LEVERAGE: Number(process.env.LOW_VOL_LEVERAGE) || 15,      // v1.1: era 20
+    HIGH_VOL_LEVERAGE: Number(process.env.HIGH_VOL_LEVERAGE) || 8,     // v1.1: era 10
+    TRADE_SYMBOL: process.env.TRADE_SYMBOL || 'BTCUSDT',
+    POSITION_SIZE_PCT: Number(process.env.POSITION_SIZE_PCT) || 3,     // v1.1: era 5
+    STARTING_CAPITAL: Number(process.env.STARTING_CAPITAL) || 1000,
+
+    // Indicator settings
+    EMA_FAST: 8,
+    EMA_MID: 21,
+    EMA_SLOW: 48,
+    RSI_PERIOD: 14,
+    MFI_PERIOD: 14,
+    BB_PERIOD: 20,
+    BB_STDDEV: 2,
+    ATR_PERIOD: 14,
+    VOLUME_MULT: 1.5,
+
+    // Risk management — v1.1 (Opus diagnosis)
+    SL_ATR_MULT: 2.0,                  // era 1.0 — más espacio para respirar
+    TP_ATR_MULT: 3.5,                  // era 2.0 — mantiene R:R 1:1.75
+    TRAILING_ACTIVATION_PCT: 1.5,
+    TRAILING_CALLBACK_PCT: 0.5,
+    MAX_CONCURRENT_POSITIONS: 2,
+    MAX_DAILY_LOSS_PCT: 10,
+    MAX_WEEKLY_LOSS_PCT: 20,
+    MIN_SIGNALS_REQUIRED: 5,           // era 4 — solo señales 5/5
+
+    // Timing
+    KLINE_INTERVAL: '1m',
+    WARMUP_CANDLES: 200,
+
+    // Logging
+    LOG_DIR: './logs',
+    REPORT_DIR: './reports',
+    VERBOSE: process.argv.includes('--verbose'),
+
+    // v2.0 — Market Brain
+    BRAIN_INTERVAL_MS: 180_000,   // v3.0: 3 min (was 5 min)
+    MIN_CONFIDENCE_SCALP: 60,    // v3.1: era 30 — SCALP solo en tendencia clara
+    MIN_CONFIDENCE_MOMENTUM: 65,    // v3.2: 50→65 — MOMENTUM era el peor engine
+    MIN_CONFIDENCE_SWING: 70,
+
+    // v2.0 — Scalp Engine
+    SCALP_SL_ATR_MULT: 2.3,            // v3.3: 2.0→2.3 — más room para ruido de mercado
+    SCALP_TP_ATR_MULT: 3.5,
+    SCALP_MARGIN_PCT: 5,
+    SCALP_COOLDOWN_MS: 300_000,
+    SCALP_MIN_BB_WIDTH: 0.25,
+    SCALP_DEFAULT_LEVERAGE: 10,    // v3.2: cap global x10 (data muestra x12/14 = peores resultados)
+    SCALP_MAX_PER_HOUR: 2,       // v3.1: era 4 — reducir overtrading
+
+    // v2.0 — Momentum Engine
+    MOMENTUM_SL_ATR_MULT_5M: 4.0,
+    MOMENTUM_TP_ATR_MULT_5M: 8.0,
+    MOMENTUM_MARGIN_PCT: 5,
+    MOMENTUM_COOLDOWN_MS: 900_000,
+    MOMENTUM_DEFAULT_LEVERAGE: 7,          // v3.2: 8→7 — reducir riesgo liquidación
+    MOMENTUM_TRAILING_ACTIVATION: 3.5,   // v3.2: 2.5→3.5 — trailing se activaba demasiado pronto
+    MOMENTUM_TRAILING_CALLBACK: 2.5,     // v3.2: 1.8→2.5 — más room antes de cerrar
+
+    // v2.0 — Swing Engine
+    SWING_MARGIN_FIXED: 100,     // v3.1: era 200 — 10% era demasiado agresivo
+    SWING_LEVERAGE_MIN: 5,
+    SWING_LEVERAGE_MAX: 7,
+    SWING_COOLDOWN_MS: 1_800_000,        // 30min — reactivo a eventos del momento
+    SWING_TRAILING_ACTIVATION: 1.5,      // Bloquea ganancia más rápido
+    SWING_TRAILING_CALLBACK: 1.2,
+    SWING_MAX_CONCURRENT: 1,
+
+    // v2.0 — Capitulation/Euphoria Detection
+    CAPITULATION_RSI_THRESHOLD: 22,
+    CAPITULATION_MFI_THRESHOLD: 20,
+    CAPITULATION_CONSEC_RED: 4,
+    EUPHORIA_RSI_THRESHOLD: 78,
+    EUPHORIA_MFI_THRESHOLD: 80,
+    EUPHORIA_CONSEC_GREEN: 4,
+
+    // v2.0 — Position Manager
+    MAX_TOTAL_EXPOSURE_PCT: 35,   // v3.0: 35% (was 25%)
+    MAX_TOTAL_POSITIONS: 4,       // Multi-engine: todos los engines compiten concurrentemente
+
+    // v3.0 — Brain v2
+    STRUCTURE_LOOKBACK_BARS: 200,
+    DIVERGENCE_LOOKBACK_BARS: 25,
+    EXHAUSTION_THRESHOLD: 60,
+
+    // v3.0 — REVERSAL Engine
+    REVERSAL_ENABLED: true,
+    REVERSAL_MARGIN: 100,
+    REVERSAL_DEFAULT_LEVERAGE: 8,
+    REVERSAL_MAX_LEVERAGE: 10,
+    REVERSAL_SL_ATR_MULT: 1.5,
+    REVERSAL_TP_ATR_MULT: 5.0,
+    REVERSAL_COOLDOWN_MS: 600_000,        // 10 min
+    REVERSAL_MAX_PER_HOUR: 3,
+    REVERSAL_MIN_EXHAUSTION: 60,
+    REVERSAL_MIN_CONFIRMATIONS: 2,
+    REVERSAL_TRAILING_ACTIVATION: 1.5,
+    REVERSAL_TRAILING_CALLBACK: 0.7,
+
+    // v3.0 — SNIPER Engine
+    SNIPER_ENABLED: true,
+    SNIPER_MARGIN: 140,
+    SNIPER_DEFAULT_LEVERAGE: 6,
+    SNIPER_MAX_LEVERAGE: 8,
+    SNIPER_MIN_BRAIN_CONFIDENCE: 70,  // v3.2: 75→70 — solo 2 trades en 3 días, muy restrictivo
+    SNIPER_MIN_LEVEL_STRENGTH: 35,    // v3.2: 45→35 — ampliar para disparar más
+    SNIPER_COOLDOWN_MS: 900_000,      // v3.2: 20min→15min
+    SNIPER_MAX_PER_HOUR: 1,
+    SNIPER_MIN_RR_RATIO: 2.5,
+    SNIPER_TRAILING_ACTIVATION: 3.0,  // v3.2: 2.0→3.0 — trailing cerraba en breakeven
+    SNIPER_TRAILING_CALLBACK: 1.0,
+
+    // v3.0 — BREAKOUT RETEST Engine
+    BREAKOUT_RETEST_ENABLED: true,
+    BREAKOUT_RETEST_MARGIN: 350,              // El más alto pero no destruye capital (~17% de $2k)
+    BREAKOUT_RETEST_DEFAULT_LEVERAGE: 10,
+    BREAKOUT_RETEST_MAX_LEVERAGE: 10,
+    BREAKOUT_RETEST_SL_ATR_MULT: 1.0,
+    BREAKOUT_RETEST_TP_ATR_MULT: 6.0,
+    BREAKOUT_RETEST_COOLDOWN_MS: 300_000,     // EXPERIMENT: 10min→5min
+    BREAKOUT_RETEST_MAX_PER_HOUR: 6,         // EXPERIMENT: more opportunities
+    BREAKOUT_RETEST_MIN_BARS_SINCE_BREAKOUT: 5,
+    BREAKOUT_RETEST_MAX_BARS_SINCE_BREAKOUT: 30,
+    BREAKOUT_RETEST_RETEST_ZONE_PCT: 0.004,
+    BREAKOUT_RETEST_TRAILING_ACTIVATION: 2.5, // v3.2: 1.5→2.5 — trailing profit lock
+    BREAKOUT_RETEST_TRAILING_CALLBACK: 0.8,
+
+    // v3.0 — GRID Engine
+    GRID_ENABLED: true,
+    GRID_MARGIN: 60,
+    GRID_DEFAULT_LEVERAGE: 5,
+    GRID_MAX_LEVERAGE: 8,
+    GRID_COOLDOWN_MS: 180_000,            // 3 min
+    GRID_MAX_CONCURRENT: 2,
+    GRID_MIN_RANGE_PCT: 0.1,
+    GRID_MAX_RANGE_PCT: 1.0,
+    GRID_RANGE_LOOKBACK_1M: 60,
+    GRID_MAX_BRAIN_CONFIDENCE: 35,
+    GRID_MAX_BB_WIDTH: 0.30,
+
+    // v3.1 — TREND_FOLLOW Engine (NEW)
+    TREND_FOLLOW_ENABLED: true,
+    TREND_FOLLOW_MARGIN: 100,              // $100 = 5% de $2,000
+    TREND_FOLLOW_DEFAULT_LEVERAGE: 6,
+    TREND_FOLLOW_MAX_LEVERAGE: 8,
+    TREND_FOLLOW_MIN_CONFIDENCE: 60,       // Más selectivo — evita entradas en chop
+    TREND_FOLLOW_SL_ATR_MULT: 2.0,        // Más ajustado — menos pérdida por golpe
+    TREND_FOLLOW_COOLDOWN_MS: 900_000,     // 15 min
+    TREND_FOLLOW_MAX_PER_HOUR: 2,
+    TREND_FOLLOW_TRAILING_ACTIVATION: 2.0, // Lock profit antes
+    TREND_FOLLOW_TRAILING_CALLBACK: 1.2,
+
+    // ── v4.0: Structure-First engines ──
+    LEVEL_BOUNCE_MARGIN_ALIGNED: 100,
+    LEVEL_BOUNCE_MARGIN_COUNTER: 75,
+    LEVEL_BOUNCE_LEVERAGE_ALIGNED: 8,
+    LEVEL_BOUNCE_LEVERAGE_COUNTER: 6,
+    LEVEL_BOUNCE_MIN_LEVEL_STRENGTH: 40,
+    LEVEL_BOUNCE_MAX_DIST_PCT: 0.3,
+    LEVEL_BOUNCE_COOLDOWN_MS: 600_000,
+    LEVEL_BOUNCE_MAX_PER_HOUR: 2,
+    LEVEL_BOUNCE_TRAILING_ACTIVATION: 2.0,
+    LEVEL_BOUNCE_TRAILING_CALLBACK: 1.2,
+
+    BREAKOUT_PLAY_RETEST_MARGIN_ALIGNED: 150,
+    BREAKOUT_PLAY_RETEST_MARGIN_COUNTER: 120,
+    BREAKOUT_PLAY_CONTINUATION_MARGIN: 120,
+    BREAKOUT_PLAY_LEVERAGE: 8,
+    BREAKOUT_PLAY_CONT_LEVERAGE: 7,
+    BREAKOUT_PLAY_RETEST_ZONE_PCT: 0.004,
+    BREAKOUT_PLAY_MIN_BARS: 5,
+    BREAKOUT_PLAY_MAX_BARS: 30,
+    BREAKOUT_PLAY_CONT_MIN_VOL: 2.0,
+    BREAKOUT_PLAY_COOLDOWN_MS: 600_000,
+    BREAKOUT_PLAY_MAX_PER_HOUR: 3,
+    BREAKOUT_PLAY_TRAILING_ACTIVATION: 2.5,
+    BREAKOUT_PLAY_TRAILING_CALLBACK: 1.5,
+
+    EXHAUSTION_REVERSAL_MARGIN_3CONF: 100,
+    EXHAUSTION_REVERSAL_MARGIN_2CONF: 75,
+    EXHAUSTION_REVERSAL_MIN_EXHAUSTION: 55,
+    EXHAUSTION_REVERSAL_MIN_CONFIRMATIONS: 2,
+    EXHAUSTION_REVERSAL_SL_ATR_MULT: 1.5,
+    EXHAUSTION_REVERSAL_TP_ATR_MULT: 5.0,
+    EXHAUSTION_REVERSAL_COOLDOWN_MS: 900_000,
+    EXHAUSTION_REVERSAL_MAX_PER_HOUR: 2,
+    EXHAUSTION_REVERSAL_TRAILING_ACTIVATION: 2.0,
+    EXHAUSTION_REVERSAL_TRAILING_CALLBACK: 1.0,
+
+    TREND_RIDER_MARGIN: 100,
+    TREND_RIDER_LEVERAGE: 7,
+    TREND_RIDER_SL_ATR_MULT: 3.0,
+    TREND_RIDER_MAX_EXHAUSTION: 50,
+    TREND_RIDER_COOLDOWN_MS: 1_200_000,
+    TREND_RIDER_MAX_PER_HOUR: 2,
+    TREND_RIDER_TRAILING_ACTIVATION: 3.0,
+    TREND_RIDER_TRAILING_CALLBACK: 2.0,
+  };
+}
+

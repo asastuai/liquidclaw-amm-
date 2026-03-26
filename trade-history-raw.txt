@@ -1,0 +1,333 @@
+﻿📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $68031.10 | Size: 0.003601 | Leverage: x10 | Margin: $24.50 | SL: $68738.31 | TP: $66616.69 | Fee: $0.0490 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SWING] | Entry: $68031.10 | Size: 0.005145 | Leverage: x7 | Margin: $50.00 | SL: $69445.51 | TP: $64629.55 | Fee: $0.0700 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $68031.30 | Size: 0.003601 | Leverage: x10 | Margin: $24.50 | SL: $68749.85 | TP: $66594.20 | Fee: $0.0490 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SWING] | Entry: $68031.30 | Size: 0.005145 | Leverage: x7 | Margin: $50.00 | SL: $69468.40 | TP: $64629.74 | Fee: $0.0700 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67942.40 | Size: 0.005048 | Leverage: x14 | Margin: $24.50 | SL: $68056.35 | TP: $67742.99 | Fee: $0.0686 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68079.00 | PnL: $-0.83 (-3.38%) | Reason: SL | Fees: $0.1373 | Capital: $489.17
+📗 PAPER OPEN LONG [SCALP] | Entry: $68532.50 | Size: 0.017510 | Leverage: x12 | Margin: $100.00 | SL: $68436.19 | TP: $68701.04 | Fee: $0.2400 tags:SCALP
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $68555.70 | Size: 0.011669 | Leverage: x8 | Margin: $100.00 | SL: $67996.07 | TP: $69674.97 | Fee: $0.1600 tags:MOMENTUM
+📉 PAPER CLOSE LONG | Exit: $68432.70 | PnL: $-2.23 (-2.23%) | Reason: SL | Fees: $0.4797 | Capital: $1997.77
+📗 PAPER OPEN LONG [SWING] | Entry: $68429.10 | Size: 0.020459 | Leverage: x7 | Margin: $200.00 | SL: $67297.32 | TP: $71850.56 | Fee: $0.2800 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN LONG [SCALP] | Entry: $68761.20 | Size: 0.020338 | Leverage: x14 | Margin: $99.89 | SL: $68631.77 | TP: $68987.70 | Fee: $0.2797 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $68629.60 | PnL: $-3.24 (-3.25%) | Reason: SL | Fees: $0.5588 | Capital: $1994.54
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68301.60 | Size: 0.017521 | Leverage: x12 | Margin: $99.73 | SL: $68411.15 | TP: $68109.89 | Fee: $0.2393 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $68119.70 | PnL: $-5.41 (-5.42%) | Reason: TRAILING | Fees: $0.3190 | Capital: $1989.13
+📈 PAPER CLOSE SHORT | Exit: $68107.40 | PnL: $2.92 (2.94%) | Reason: TP | Fees: $0.4780 | Capital: $1992.06
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68294.60 | Size: 0.017501 | Leverage: x12 | Margin: $99.60 | SL: $68384.38 | TP: $68137.48 | Fee: $0.2390 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $68129.90 | PnL: $2.40 (2.42%) | Reason: TP | Fees: $0.4775 | Capital: $1994.46
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68066.80 | Size: 0.017581 | Leverage: x12 | Margin: $99.72 | SL: $68156.95 | TP: $67909.03 | Fee: $0.2393 tags:SCALP
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $68058.20 | Size: 0.014653 | Leverage: x10 | Margin: $99.72 | SL: $68573.13 | TP: $67028.33 | Fee: $0.1994 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $68159.90 | PnL: $-2.12 (-2.13%) | Reason: SL | Fees: $0.4790 | Capital: $1992.34
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68007.50 | Size: 0.017578 | Leverage: x12 | Margin: $99.62 | SL: $68090.23 | TP: $67862.73 | Fee: $0.2391 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $67860.00 | PnL: $2.12 (2.13%) | Reason: TP | Fees: $0.4776 | Capital: $1994.46
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67805.40 | Size: 0.020590 | Leverage: x14 | Margin: $99.72 | SL: $67896.29 | TP: $67646.33 | Fee: $0.2792 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67899.90 | PnL: $-2.50 (-2.52%) | Reason: SL | Fees: $0.5588 | Capital: $1991.95
+📉 PAPER CLOSE LONG | Exit: $67761.90 | PnL: $-14.21 (-7.11%) | Reason: TRAILING | Fees: $0.5573 | Capital: $1977.75
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67831.80 | Size: 0.020410 | Leverage: x14 | Margin: $98.89 | SL: $67923.91 | TP: $67670.61 | Fee: $0.2769 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67930.90 | PnL: $-2.58 (-2.61%) | Reason: SL | Fees: $0.5542 | Capital: $1975.17
+📗 PAPER OPEN LONG [SCALP] | Entry: $68064.50 | Size: 0.017411 | Leverage: x12 | Margin: $98.76 | SL: $67961.22 | TP: $68245.24 | Fee: $0.2370 tags:SCALP
+📗 PAPER OPEN SHORT [SWING] | Entry: $68107.60 | Size: 0.017619 | Leverage: x6 | Margin: $200.00 | SL: $68781.73 | TP: $64702.22 | Fee: $0.2400 tags:SWING+SWING_BREAKOUT
+📉 PAPER CLOSE LONG | Exit: $67959.30 | PnL: $-2.31 (-2.34%) | Reason: SL | Fees: $0.4737 | Capital: $1972.87
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $67972.00 | Size: 0.011770 | Leverage: x8 | Margin: $100.00 | SL: $68139.34 | TP: $67235.98 | Fee: $0.1600 tags:BREAKOUT_RETEST+LEVEL_68041
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67923.60 | Size: 0.011618 | Leverage: x8 | Margin: $98.64 | SL: $68010.91 | TP: $67770.81 | Fee: $0.1578 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68016.90 | PnL: $-1.40 (-1.42%) | Reason: SL | Fees: $0.3159 | Capital: $1971.47
+📉 PAPER CLOSE SHORT | Exit: $68145.60 | PnL: $-2.36 (-2.37%) | Reason: SL | Fees: $0.3204 | Capital: $1969.10
+📗 PAPER OPEN LONG [SCALP] | Entry: $68324.30 | Size: 0.008646 | Leverage: x6 | Margin: $98.46 | SL: $68207.18 | TP: $68529.27 | Fee: $0.1181 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $68204.10 | PnL: $-1.28 (-1.30%) | Reason: SL | Fees: $0.2361 | Capital: $1967.83
+📉 PAPER CLOSE SHORT | Exit: $68444.90 | PnL: $-6.07 (-6.10%) | Reason: TRAILING | Fees: $0.4000 | Capital: $1961.76
+📗 PAPER OPEN LONG [SCALP] | Entry: $68453.70 | Size: 0.017195 | Leverage: x12 | Margin: $98.09 | SL: $68347.14 | TP: $68640.17 | Fee: $0.2354 tags:SCALP
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $68445.50 | Size: 0.014331 | Leverage: x10 | Margin: $98.09 | SL: $67919.19 | TP: $69498.12 | Fee: $0.1962 tags:MOMENTUM
+📈 PAPER CLOSE LONG | Exit: $68649.90 | PnL: $2.90 (2.97%) | Reason: TP | Fees: $0.4715 | Capital: $1964.66
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $68331.00 | Size: 0.014635 | Leverage: x10 | Margin: $100.00 | SL: $68155.90 | TP: $69067.49 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_68254
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68259.00 | Size: 0.017269 | Leverage: x12 | Margin: $98.23 | SL: $68347.60 | TP: $68103.96 | Fee: $0.2358 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68352.90 | PnL: $-2.09 (-2.14%) | Reason: SL | Fees: $0.4718 | Capital: $1962.57
+📉 PAPER CLOSE LONG | Exit: $68140.90 | PnL: $-3.18 (-3.19%) | Reason: SL | Fees: $0.3994 | Capital: $1959.39
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $68176.10 | Size: 0.011734 | Leverage: x8 | Margin: $100.00 | SL: $68345.93 | TP: $67487.37 | Fee: $0.1600 tags:BREAKOUT_RETEST+LEVEL_68254
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68122.50 | Size: 0.011505 | Leverage: x8 | Margin: $97.97 | SL: $68194.72 | TP: $67996.12 | Fee: $0.1568 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $67993.70 | PnL: $-6.87 (-7.01%) | Reason: TRAILING | Fees: $0.3911 | Capital: $1952.52
+📈 PAPER CLOSE SHORT | Exit: $67993.70 | PnL: $1.17 (1.19%) | Reason: TP | Fees: $0.3132 | Capital: $1953.69
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $67998.60 | Size: 0.014366 | Leverage: x10 | Margin: $97.68 | SL: $68447.34 | TP: $67101.12 | Fee: $0.1954 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67998.60 | Size: 0.020112 | Leverage: x14 | Margin: $97.68 | SL: $68069.17 | TP: $67875.10 | Fee: $0.2735 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68070.30 | PnL: $-1.99 (-2.04%) | Reason: SL | Fees: $0.5473 | Capital: $1951.70
+📗 PAPER OPEN LONG [SCALP] | Entry: $68227.90 | Size: 0.017163 | Leverage: x12 | Margin: $97.59 | SL: $68136.65 | TP: $68387.59 | Fee: $0.2342 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $68131.60 | PnL: $-2.12 (-2.18%) | Reason: SL | Fees: $0.4681 | Capital: $1949.58
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68030.90 | Size: 0.020060 | Leverage: x14 | Margin: $97.48 | SL: $68136.88 | TP: $67845.43 | Fee: $0.2729 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68139.90 | PnL: $-2.73 (-2.81%) | Reason: SL | Fees: $0.5463 | Capital: $1946.85
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67978.80 | Size: 0.017183 | Leverage: x12 | Margin: $97.34 | SL: $68061.60 | TP: $67833.90 | Fee: $0.2336 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68079.90 | PnL: $-2.20 (-2.27%) | Reason: SL | Fees: $0.4676 | Capital: $1944.64
+📗 PAPER OPEN SHORT [SCALP] | Entry: $68001.10 | Size: 0.020018 | Leverage: x14 | Margin: $97.23 | SL: $68093.01 | TP: $67840.26 | Fee: $0.2722 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68096.40 | PnL: $-2.45 (-2.53%) | Reason: SL | Fees: $0.5449 | Capital: $1942.19
+📗 PAPER OPEN LONG [SCALP] | Entry: $68131.30 | Size: 0.017104 | Leverage: x12 | Margin: $97.11 | SL: $68038.19 | TP: $68294.25 | Fee: $0.2331 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $68022.40 | PnL: $-2.33 (-2.40%) | Reason: SL | Fees: $0.4658 | Capital: $1939.86
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67893.20 | Size: 0.020001 | Leverage: x14 | Margin: $96.99 | SL: $67991.94 | TP: $67720.41 | Fee: $0.2716 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $67700.00 | PnL: $3.32 (3.43%) | Reason: TP | Fees: $0.5424 | Capital: $1943.18
+📗 PAPER OPEN LONG [SCALP] | Entry: $67978.00 | Size: 0.017151 | Leverage: x12 | Margin: $97.16 | SL: $67786.85 | TP: $68312.52 | Fee: $0.2332 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $68205.10 | PnL: $-0.66 (-0.66%) | Reason: TRAILING | Fees: $0.3201 | Capital: $1942.52
+📉 PAPER CLOSE LONG | Exit: $67888.30 | PnL: $-2.00 (-2.07%) | Reason: TRAILING | Fees: $0.4661 | Capital: $1940.52
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $67867.10 | Size: 0.014735 | Leverage: x10 | Margin: $100.00 | SL: $68097.33 | TP: $66817.59 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_67957
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67332.20 | Size: 0.020174 | Leverage: x14 | Margin: $97.03 | SL: $67647.70 | TP: $66780.08 | Fee: $0.2717 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67587.40 | PnL: $-5.69 (-5.88%) | Reason: TRAILING | Fees: $0.5444 | Capital: $1934.83
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67536.50 | Size: 0.020054 | Leverage: x14 | Margin: $96.74 | SL: $67810.34 | TP: $67057.28 | Fee: $0.2709 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $67100.10 | PnL: $12.52 (12.84%) | Reason: TP | Fees: $0.3882 | Capital: $1947.34
+📈 PAPER CLOSE SHORT | Exit: $67056.00 | PnL: $9.10 (9.43%) | Reason: TP | Fees: $0.5398 | Capital: $1956.44
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $67050.00 | Size: 0.014589 | Leverage: x10 | Margin: $97.82 | SL: $67982.76 | TP: $65184.47 | Fee: $0.1956 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67050.00 | Size: 0.020425 | Leverage: x14 | Margin: $97.82 | SL: $67347.46 | TP: $66529.44 | Fee: $0.2739 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67159.90 | PnL: $-2.79 (-2.86%) | Reason: TRAILING | Fees: $0.5483 | Capital: $1953.65
+📈 PAPER CLOSE SHORT | Exit: $66815.00 | PnL: $15.11 (15.14%) | Reason: TP | Fees: $0.3969 | Capital: $1968.75
+📉 PAPER CLOSE SHORT | Exit: $67425.60 | PnL: $-5.87 (-6.01%) | Reason: TRAILING | Fees: $0.3924 | Capital: $1962.88
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $67417.90 | Size: 0.014558 | Leverage: x10 | Margin: $98.14 | SL: $68551.14 | TP: $65151.42 | Fee: $0.1963 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67099.30 | Size: 0.020477 | Leverage: x14 | Margin: $98.14 | SL: $67320.12 | TP: $66712.86 | Fee: $0.2748 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67324.50 | PnL: $-5.16 (-5.27%) | Reason: SL | Fees: $0.5505 | Capital: $1957.72
+📗 PAPER OPEN LONG [SCALP] | Entry: $67438.50 | Size: 0.017418 | Leverage: x12 | Margin: $97.89 | SL: $67270.25 | TP: $67732.94 | Fee: $0.2349 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $67256.30 | PnL: $-3.64 (-3.73%) | Reason: SL | Fees: $0.4692 | Capital: $1954.08
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66926.20 | Size: 0.017518 | Leverage: x12 | Margin: $97.70 | SL: $67132.24 | TP: $66565.63 | Fee: $0.2345 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67134.90 | PnL: $-4.13 (-4.23%) | Reason: SL | Fees: $0.4697 | Capital: $1949.95
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66848.10 | Size: 0.020419 | Leverage: x14 | Margin: $97.50 | SL: $67050.00 | TP: $66494.77 | Fee: $0.2730 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $66999.50 | PnL: $-3.64 (-3.74%) | Reason: TRAILING | Fees: $0.5466 | Capital: $1946.31
+📗 PAPER OPEN SHORT [SWING] | Entry: $66870.00 | Size: 0.010468 | Leverage: x7 | Margin: $100.00 | SL: $68858.69 | TP: $63526.50 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66870.00 | Size: 0.014954 | Leverage: x10 | Margin: $100.00 | SL: $67864.34 | TP: $64881.31 | Fee: $0.2000 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66749.30 | Size: 0.020974 | Leverage: x14 | Margin: $100.00 | SL: $66916.37 | TP: $66456.93 | Fee: $0.2800 tags:SCALP
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $66821.10 | Size: 0.011972 | Leverage: x8 | Margin: $100.00 | SL: $67546.03 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_100
+📉 PAPER CLOSE SHORT | Exit: $66916.70 | PnL: $-4.07 (-4.08%) | Reason: SL | Fees: $0.5607 | Capital: $1995.93
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66613.60 | Size: 0.020974 | Leverage: x14 | Margin: $99.80 | SL: $66749.64 | TP: $66375.53 | Fee: $0.2794 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $66799.90 | PnL: $-4.47 (-4.49%) | Reason: SL | Fees: $0.5596 | Capital: $1991.46
+📉 PAPER CLOSE SHORT | Exit: $66820.00 | PnL: $-0.31 (-0.31%) | Reason: TRAILING | Fees: $0.3200 | Capital: $1991.15
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $66646.40 | Size: 0.012004 | Leverage: x8 | Margin: $100.00 | SL: $67270.62 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_100
+📉 PAPER CLOSE SHORT | Exit: $66873.30 | PnL: $-0.31 (-0.31%) | Reason: TRAILING | Fees: $0.2800 | Capital: $1990.84
+📉 PAPER CLOSE SHORT | Exit: $66873.30 | PnL: $-0.45 (-0.45%) | Reason: TRAILING | Fees: $0.4000 | Capital: $1990.39
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66978.50 | Size: 0.014858 | Leverage: x10 | Margin: $99.52 | SL: $67787.29 | TP: $65360.92 | Fee: $0.1990 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $66972.90 | PnL: $-0.31 (-0.32%) | Reason: TRAILING | Fees: $0.3981 | Capital: $1990.08
+📉 PAPER CLOSE SHORT | Exit: $67272.60 | PnL: $-7.84 (-7.85%) | Reason: SL | Fees: $0.3215 | Capital: $1982.24
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $67396.00 | Size: 0.011765 | Leverage: x8 | Margin: $99.11 | SL: $66604.79 | TP: $68978.43 | Fee: $0.1586 tags:MOMENTUM
+📉 PAPER CLOSE LONG | Exit: $67400.00 | PnL: $-0.27 (-0.27%) | Reason: TRAILING | Fees: $0.3172 | Capital: $1981.97
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $67600.80 | Size: 0.014659 | Leverage: x10 | Margin: $99.10 | SL: $66811.36 | TP: $69179.69 | Fee: $0.1982 tags:MOMENTUM
+📗 PAPER OPEN LONG [SCALP] | Entry: $67556.80 | Size: 0.020536 | Leverage: x14 | Margin: $99.10 | SL: $67415.67 | TP: $67803.77 | Fee: $0.2775 tags:SCALP
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $67768.80 | Size: 0.008854 | Leverage: x6 | Margin: $100.00 | SL: $67172.90 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_68
+📉 PAPER CLOSE LONG | Exit: $67600.00 | PnL: $-0.41 (-0.41%) | Reason: TRAILING | Fees: $0.3964 | Capital: $1981.56
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $67587.40 | Size: 0.014659 | Leverage: x10 | Margin: $99.08 | SL: $66868.10 | TP: $69026.00 | Fee: $0.1982 tags:MOMENTUM
+📉 PAPER CLOSE LONG | Exit: $67561.70 | PnL: $-0.45 (-0.46%) | Reason: TRAILING | Fees: $0.5550 | Capital: $1981.10
+📉 PAPER CLOSE LONG | Exit: $67170.90 | PnL: $-5.53 (-5.54%) | Reason: SL | Fees: $0.2389 | Capital: $1975.57
+📗 PAPER OPEN SHORT [SWING] | Entry: $67160.50 | Size: 0.008934 | Leverage: x6 | Margin: $100.00 | SL: $67812.18 | TP: $63802.47 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $67213.90 | Size: 0.011902 | Leverage: x8 | Margin: $100.00 | SL: $67542.67 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_87
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67123.40 | Size: 0.020602 | Leverage: x14 | Margin: $98.78 | SL: $67230.72 | TP: $66935.59 | Fee: $0.2766 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $67119.90 | PnL: $-0.48 (-0.49%) | Reason: TRAILING | Fees: $0.5531 | Capital: $1975.09
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67045.60 | Size: 0.020621 | Leverage: x14 | Margin: $98.75 | SL: $67162.35 | TP: $66841.28 | Fee: $0.2765 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $66963.70 | PnL: $-9.54 (-9.65%) | Reason: LIQUIDATION | Fees: $0.3945 | Capital: $1965.55
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $67010.10 | Size: 0.014666 | Leverage: x10 | Margin: $98.28 | SL: $67492.15 | TP: $66046.00 | Fee: $0.1966 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $67043.90 | PnL: $-0.52 (-0.53%) | Reason: TRAILING | Fees: $0.5530 | Capital: $1965.04
+📉 PAPER CLOSE SHORT | Exit: $67212.70 | PnL: $-0.31 (-0.31%) | Reason: TRAILING | Fees: $0.3200 | Capital: $1964.73
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $67125.50 | Size: 0.008938 | Leverage: x6 | Margin: $100.00 | SL: $67501.04 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_57
+📗 PAPER OPEN SHORT [SNIPER] | Entry: $67039.80 | Size: 0.016706 | Leverage: x8 | Margin: $140.00 | SL: $67157.45 | TP: $66745.68 | Fee: $0.2240 tags:SNIPER+CONFLUENCE_4+BRAIN_100
+📉 PAPER CLOSE SHORT | Exit: $67158.30 | PnL: $-2.43 (-1.74%) | Reason: SL | Fees: $0.4484 | Capital: $1962.30
+📉 PAPER CLOSE SHORT | Exit: $67120.00 | PnL: $-0.19 (-0.19%) | Reason: TRAILING | Fees: $0.2400 | Capital: $1962.11
+📉 PAPER CLOSE SHORT | Exit: $67495.20 | PnL: $-7.51 (-7.66%) | Reason: SL | Fees: $0.3945 | Capital: $1954.60
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $67425.10 | Size: 0.014495 | Leverage: x10 | Margin: $97.73 | SL: $66882.29 | TP: $68510.72 | Fee: $0.1955 tags:MOMENTUM
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $67384.60 | Size: 0.011872 | Leverage: x8 | Margin: $100.00 | SL: $66849.44 | TP: $68454.91 | Fee: $0.1600 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SWING] | Entry: $67091.50 | Size: 0.008943 | Leverage: x6 | Margin: $100.00 | SL: $67844.19 | TP: $63736.92 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $67400.00 | Size: 0.014837 | Leverage: x8 | Margin: $125.00 | SL: $67227.69 | TP: $68088.57 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_67342
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $67567.80 | Size: 0.008880 | Leverage: x6 | Margin: $100.00 | SL: $67204.62 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_57
+📉 PAPER CLOSE SHORT | Exit: $67850.00 | PnL: $-7.02 (-7.03%) | Reason: SL | Fees: $0.2414 | Capital: $1992.98
+📗 PAPER OPEN LONG [SCALP] | Entry: $67696.70 | Size: 0.020608 | Leverage: x14 | Margin: $99.65 | SL: $67558.90 | TP: $67937.85 | Fee: $0.2790 tags:SCALP
+📈 PAPER CLOSE LONG | Exit: $67943.50 | PnL: $4.53 (4.56%) | Reason: TP | Fees: $0.5591 | Capital: $1997.50
+📈 PAPER CLOSE LONG | Exit: $68100.60 | PnL: $9.99 (8.01%) | Reason: TP | Fees: $0.4021 | Capital: $2007.49
+📗 PAPER OPEN LONG [SCALP] | Entry: $67858.80 | Size: 0.020708 | Leverage: x14 | Margin: $100.37 | SL: $67750.90 | TP: $68047.62 | Fee: $0.2810 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $67746.00 | PnL: $-2.90 (-2.89%) | Reason: SL | Fees: $0.5616 | Capital: $2004.60
+📉 PAPER CLOSE LONG | Exit: $67570.80 | PnL: $-0.21 (-0.21%) | Reason: TRAILING | Fees: $0.2400 | Capital: $2004.38
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $67550.10 | Size: 0.014804 | Leverage: x8 | Margin: $125.00 | SL: $67656.27 | TP: $66948.06 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_67556
+📉 PAPER CLOSE SHORT | Exit: $67663.10 | PnL: $-2.07 (-1.66%) | Reason: SL | Fees: $0.4003 | Capital: $2002.31
+📗 PAPER OPEN SHORT [SWING] | Entry: $67583.40 | Size: 0.008878 | Leverage: x6 | Margin: $100.00 | SL: $68151.39 | TP: $64204.23 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $67950.00 | Size: 0.008830 | Leverage: x6 | Margin: $100.00 | SL: $67600.28 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_57
+📗 PAPER OPEN LONG [SCALP] | Entry: $68009.70 | Size: 0.020609 | Leverage: x14 | Margin: $100.12 | SL: $67903.99 | TP: $68194.69 | Fee: $0.2803 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $67885.60 | PnL: $-3.12 (-3.12%) | Reason: SL | Fees: $0.5601 | Capital: $1999.19
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $67949.90 | Size: 0.018396 | Leverage: x10 | Margin: $125.00 | SL: $67681.81 | TP: $68683.34 | Fee: $0.2500 tags:BREAKOUT_RETEST+LEVEL_67804
+📗 PAPER OPEN LONG [SCALP] | Entry: $68079.60 | Size: 0.020556 | Leverage: x14 | Margin: $99.96 | SL: $67985.09 | TP: $68245.00 | Fee: $0.2799 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $67984.80 | PnL: $-2.51 (-2.52%) | Reason: SL | Fees: $0.5594 | Capital: $1996.69
+📉 PAPER CLOSE LONG | Exit: $67938.30 | PnL: $-0.71 (-0.57%) | Reason: TRAILING | Fees: $0.5000 | Capital: $1995.97
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $67772.80 | Size: 0.014755 | Leverage: x8 | Margin: $125.00 | SL: $67931.22 | TP: $67009.77 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_67804
+📉 PAPER CLOSE LONG | Exit: $67600.00 | PnL: $-3.33 (-3.33%) | Reason: SL | Fees: $0.2394 | Capital: $1992.64
+📉 PAPER CLOSE LONG | Exit: $67349.80 | PnL: $-0.73 (-0.73%) | Reason: TRAILING | Fees: $0.3199 | Capital: $1991.91
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $67345.00 | Size: 0.014789 | Leverage: x10 | Margin: $99.60 | SL: $67944.71 | TP: $66145.58 | Fee: $0.1992 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $67220.00 | Size: 0.020743 | Leverage: x14 | Margin: $99.60 | SL: $67371.03 | TP: $66955.70 | Fee: $0.2789 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $67002.50 | PnL: $10.97 (8.79%) | Reason: TP | Fees: $0.3977 | Capital: $2002.88
+📈 PAPER CLOSE SHORT | Exit: $66900.00 | PnL: $6.08 (6.12%) | Reason: TP | Fees: $0.5564 | Capital: $2008.96
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66610.20 | Size: 0.021112 | Leverage: x14 | Margin: $100.45 | SL: $66767.40 | TP: $66335.10 | Fee: $0.2813 tags:SCALP
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $66365.50 | Size: 0.012054 | Leverage: x8 | Margin: $100.00 | SL: $66882.34 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_100
+📉 PAPER CLOSE SHORT | Exit: $66615.90 | PnL: $-0.68 (-0.68%) | Reason: TRAILING | Fees: $0.5625 | Capital: $2008.28
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66270.60 | Size: 0.021213 | Leverage: x14 | Margin: $100.41 | SL: $66429.79 | TP: $65992.01 | Fee: $0.2812 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $66142.70 | PnL: $17.39 (17.49%) | Reason: TP | Fees: $0.3948 | Capital: $2025.66
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66201.00 | Size: 0.015299 | Leverage: x10 | Margin: $101.28 | SL: $66879.18 | TP: $64844.64 | Fee: $0.2026 tags:MOMENTUM
+📈 PAPER CLOSE SHORT | Exit: $65983.00 | PnL: $5.54 (5.53%) | Reason: TP | Fees: $0.5611 | Capital: $2031.20
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65884.50 | Size: 0.021581 | Leverage: x14 | Margin: $101.56 | SL: $66027.33 | TP: $65634.54 | Fee: $0.2844 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $65881.60 | PnL: $-0.51 (-0.50%) | Reason: TRAILING | Fees: $0.5687 | Capital: $2030.69
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65865.20 | Size: 0.021582 | Leverage: x14 | Margin: $101.53 | SL: $66013.63 | TP: $65605.44 | Fee: $0.2843 tags:SCALP
+📗 PAPER OPEN SHORT [SNIPER] | Entry: $65871.60 | Size: 0.017003 | Leverage: x8 | Margin: $140.00 | SL: $66295.63 | TP: $64811.53 | Fee: $0.2240 tags:SNIPER+CONFLUENCE_4+BRAIN_98
+📉 PAPER CLOSE SHORT | Exit: $65858.70 | PnL: $-0.43 (-0.42%) | Reason: TRAILING | Fees: $0.5686 | Capital: $2030.27
+📉 PAPER CLOSE SHORT | Exit: $65865.60 | PnL: $-0.35 (-0.25%) | Reason: TRAILING | Fees: $0.4480 | Capital: $2029.92
+📉 PAPER CLOSE SHORT | Exit: $66198.80 | PnL: $-0.37 (-0.37%) | Reason: TRAILING | Fees: $0.4051 | Capital: $2029.55
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66044.10 | Size: 0.012292 | Leverage: x8 | Margin: $101.48 | SL: $66715.80 | TP: $64700.69 | Fee: $0.1624 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $66049.90 | PnL: $-0.40 (-0.39%) | Reason: TRAILING | Fees: $0.3247 | Capital: $2029.15
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66149.90 | Size: 0.015338 | Leverage: x10 | Margin: $101.46 | SL: $66938.40 | TP: $64572.89 | Fee: $0.2029 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $66149.90 | PnL: $-0.41 (-0.40%) | Reason: TRAILING | Fees: $0.4058 | Capital: $2028.75
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66067.60 | Size: 0.015354 | Leverage: x10 | Margin: $101.44 | SL: $66917.78 | TP: $64367.24 | Fee: $0.2029 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $66071.00 | PnL: $-0.46 (-0.45%) | Reason: TRAILING | Fees: $0.4058 | Capital: $2028.29
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $65880.00 | Size: 0.015394 | Leverage: x10 | Margin: $101.41 | SL: $66720.60 | TP: $64198.80 | Fee: $0.2028 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65732.30 | Size: 0.021600 | Leverage: x14 | Margin: $101.41 | SL: $65858.96 | TP: $65510.64 | Fee: $0.2840 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $65506.00 | PnL: $4.32 (4.27%) | Reason: TP | Fees: $0.5669 | Capital: $2032.61
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65344.20 | Size: 0.021774 | Leverage: x14 | Margin: $101.63 | SL: $65482.05 | TP: $65102.96 | Fee: $0.2846 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $65100.00 | PnL: $4.75 (4.69%) | Reason: TP | Fees: $0.5681 | Capital: $2037.36
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $65514.10 | Size: 0.015264 | Leverage: x8 | Margin: $125.00 | SL: $65887.03 | TP: $64386.30 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_65699
+📉 PAPER CLOSE SHORT | Exit: $65508.60 | PnL: $-0.32 (-0.25%) | Reason: TRAILING | Fees: $0.4000 | Capital: $2037.04
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65200.00 | Size: 0.021870 | Leverage: x14 | Margin: $101.85 | SL: $65311.23 | TP: $65005.34 | Fee: $0.2852 tags:SCALP
+📉 PAPER CLOSE SHORT | Exit: $65315.30 | PnL: $-3.09 (-3.04%) | Reason: SL | Fees: $0.5709 | Capital: $2033.95
+📗 PAPER OPEN LONG [SWING] | Entry: $65681.30 | Size: 0.010658 | Leverage: x7 | Margin: $100.00 | SL: $64847.57 | TP: $68965.37 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65681.30 | Size: 0.015225 | Leverage: x10 | Margin: $100.00 | SL: $65264.44 | TP: $66515.03 | Fee: $0.2000 tags:MOMENTUM
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65699.70 | Size: 0.012177 | Leverage: x8 | Margin: $100.00 | SL: $65383.07 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_71
+📗 PAPER OPEN LONG [SCALP] | Entry: $65699.70 | Size: 0.021309 | Leverage: x14 | Margin: $100.00 | SL: $65630.65 | TP: $65820.54 | Fee: $0.2800 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $65620.40 | PnL: $-2.25 (-2.26%) | Reason: SL | Fees: $0.5597 | Capital: $1997.75
+📉 PAPER CLOSE LONG | Exit: $65376.30 | PnL: $-4.26 (-4.26%) | Reason: SL | Fees: $0.3192 | Capital: $1993.49
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65397.10 | Size: 0.021338 | Leverage: x14 | Margin: $99.67 | SL: $65466.20 | TP: $65276.18 | Fee: $0.2791 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $65237.60 | PnL: $-7.15 (-7.17%) | Reason: SL | Fees: $0.3986 | Capital: $1986.34
+📈 PAPER CLOSE SHORT | Exit: $65237.60 | PnL: $2.85 (2.86%) | Reason: TP | Fees: $0.5575 | Capital: $1989.19
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $64965.00 | Size: 0.015310 | Leverage: x10 | Margin: $99.46 | SL: $65348.62 | TP: $64197.75 | Fee: $0.1989 tags:MOMENTUM
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $64965.00 | Size: 0.009236 | Leverage: x6 | Margin: $100.00 | SL: $65348.82 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_60
+📉 PAPER CLOSE SHORT | Exit: $65349.50 | PnL: $-6.29 (-6.33%) | Reason: SL | Fees: $0.3990 | Capital: $1982.90
+📉 PAPER CLOSE SHORT | Exit: $65349.50 | PnL: $-3.79 (-3.80%) | Reason: SL | Fees: $0.2407 | Capital: $1979.11
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $65805.00 | Size: 0.015196 | Leverage: x8 | Margin: $125.00 | SL: $65545.40 | TP: $66726.97 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_65699
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65805.00 | Size: 0.012157 | Leverage: x8 | Margin: $100.00 | SL: $65344.02 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_87
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65725.20 | Size: 0.015056 | Leverage: x10 | Margin: $98.96 | SL: $65110.55 | TP: $66954.49 | Fee: $0.1979 tags:MOMENTUM
+📗 PAPER OPEN LONG [SCALP] | Entry: $65828.70 | Size: 0.021045 | Leverage: x14 | Margin: $98.96 | SL: $65721.47 | TP: $66016.35 | Fee: $0.2771 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $65829.10 | PnL: $-0.55 (-0.55%) | Reason: TRAILING | Fees: $0.5542 | Capital: $1978.56
+📉 PAPER CLOSE LONG | Exit: $65810.50 | PnL: $-0.32 (-0.25%) | Reason: TRAILING | Fees: $0.4000 | Capital: $1978.25
+📉 PAPER CLOSE LONG | Exit: $65800.40 | PnL: $-0.38 (-0.38%) | Reason: TRAILING | Fees: $0.3200 | Capital: $1977.87
+📉 PAPER CLOSE LONG | Exit: $65706.60 | PnL: $-0.68 (-0.68%) | Reason: TRAILING | Fees: $0.3958 | Capital: $1977.19
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65941.10 | Size: 0.011994 | Leverage: x8 | Margin: $98.86 | SL: $65508.56 | TP: $66806.18 | Fee: $0.1582 tags:MOMENTUM
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $65914.80 | Size: 0.015171 | Leverage: x8 | Margin: $125.00 | SL: $65787.47 | TP: $66500.61 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_65885
+📉 PAPER CLOSE LONG | Exit: $65760.90 | PnL: $-2.73 (-2.19%) | Reason: SL | Fees: $0.3995 | Capital: $1974.46
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $65809.50 | Size: 0.015195 | Leverage: x8 | Margin: $125.00 | SL: $65985.47 | TP: $65207.27 | Fee: $0.2000 tags:BREAKOUT_RETEST+LEVEL_65885
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65927.30 | Size: 0.009101 | Leverage: x6 | Margin: $100.00 | SL: $65693.58 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_57
+📉 PAPER CLOSE SHORT | Exit: $65997.20 | PnL: $-3.25 (-2.61%) | Reason: SL | Fees: $0.4006 | Capital: $1971.21
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $65833.50 | Size: 0.018987 | Leverage: x10 | Margin: $125.00 | SL: $65957.44 | TP: $65399.43 | Fee: $0.2500 tags:BREAKOUT_RETEST+LEVEL_65885
+📉 PAPER CLOSE LONG | Exit: $65687.70 | PnL: $-0.21 (-0.21%) | Reason: TRAILING | Fees: $0.2800 | Capital: $1971.00
+📉 PAPER CLOSE LONG | Exit: $65687.70 | PnL: $-2.42 (-2.42%) | Reason: SL | Fees: $0.2396 | Capital: $1968.57
+📗 PAPER OPEN SHORT [SWING] | Entry: $65689.50 | Size: 0.010656 | Leverage: x7 | Margin: $100.00 | SL: $66192.59 | TP: $62405.02 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $65715.00 | Size: 0.009130 | Leverage: x6 | Margin: $100.00 | SL: $65903.70 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_66
+📉 PAPER CLOSE LONG | Exit: $65500.00 | PnL: $-5.61 (-5.68%) | Reason: SL | Fees: $0.3153 | Capital: $1962.97
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $65520.00 | Size: 0.014980 | Leverage: x10 | Margin: $98.15 | SL: $65792.18 | TP: $64975.64 | Fee: $0.1963 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65538.90 | Size: 0.020966 | Leverage: x14 | Margin: $98.15 | SL: $65597.63 | TP: $65436.13 | Fee: $0.2748 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $65431.00 | PnL: $1.71 (1.75%) | Reason: TP | Fees: $0.5492 | Capital: $1964.68
+📈 PAPER CLOSE SHORT | Exit: $65393.70 | PnL: $7.85 (6.29%) | Reason: TP | Fees: $0.4983 | Capital: $1972.53
+📗 PAPER OPEN SHORT [SCALP] | Entry: $65361.80 | Size: 0.021125 | Leverage: x14 | Margin: $98.63 | SL: $65431.27 | TP: $65240.23 | Fee: $0.2762 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $65233.30 | PnL: $2.16 (2.20%) | Reason: TP | Fees: $0.5518 | Capital: $1974.70
+📈 PAPER CLOSE SHORT | Exit: $64954.00 | PnL: $8.09 (8.26%) | Reason: TP | Fees: $0.3909 | Capital: $1982.79
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $64960.00 | Size: 0.015262 | Leverage: x10 | Margin: $99.14 | SL: $65241.49 | TP: $64397.03 | Fee: $0.1983 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $64961.10 | PnL: $-0.41 (-0.42%) | Reason: TRAILING | Fees: $0.3966 | Capital: $1982.37
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $64052.10 | Size: 0.015475 | Leverage: x10 | Margin: $99.12 | SL: $64996.92 | TP: $62162.46 | Fee: $0.1982 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $64061.90 | PnL: $-0.55 (-0.55%) | Reason: TRAILING | Fees: $0.3965 | Capital: $1981.82
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $63714.30 | Size: 0.015552 | Leverage: x10 | Margin: $99.09 | SL: $64872.35 | TP: $61398.19 | Fee: $0.1982 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $63710.60 | PnL: $-0.34 (-0.34%) | Reason: TRAILING | Fees: $0.3964 | Capital: $1981.48
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $63673.80 | Size: 0.015560 | Leverage: x10 | Margin: $99.07 | SL: $64967.81 | TP: $61085.78 | Fee: $0.1981 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $63675.50 | PnL: $-0.42 (-0.43%) | Reason: TRAILING | Fees: $0.3963 | Capital: $1981.06
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $63430.70 | Size: 0.015616 | Leverage: x10 | Margin: $99.05 | SL: $64661.70 | TP: $60968.69 | Fee: $0.1981 tags:MOMENTUM
+📈 PAPER CLOSE SHORT | Exit: $63946.20 | PnL: $18.30 (18.33%) | Reason: TRAILING | Fees: $0.2763 | Capital: $1999.36
+📈 PAPER CLOSE SHORT | Exit: $63946.20 | PnL: $15.91 (15.93%) | Reason: TRAILING | Fees: $0.2368 | Capital: $2015.28
+📉 PAPER CLOSE SHORT | Exit: $64011.20 | PnL: $-9.46 (-9.57%) | Reason: LIQUIDATION | Fees: $0.3980 | Capital: $2005.81
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $64123.80 | Size: 0.015640 | Leverage: x10 | Margin: $100.29 | SL: $65376.16 | TP: $61619.08 | Fee: $0.2006 tags:MOMENTUM
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $64033.40 | Size: 0.012493 | Leverage: x8 | Margin: $100.00 | SL: $65002.56 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_72
+📗 PAPER OPEN SHORT [SWING] | Entry: $63583.40 | Size: 0.011009 | Leverage: x7 | Margin: $100.00 | SL: $65636.97 | TP: $60404.23 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN SHORT [SWING] | Entry: $63628.00 | Size: 0.011001 | Leverage: x7 | Margin: $100.00 | SL: $65501.53 | TP: $60446.60 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📈 PAPER CLOSE SHORT | Exit: $63577.50 | PnL: $0.28 (0.28%) | Reason: TRAILING | Fees: $0.2799 | Capital: $2000.28
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $63444.60 | Size: 0.012609 | Leverage: x8 | Margin: $100.00 | SL: $63989.51 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_80
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $63529.50 | Size: 0.012594 | Leverage: x8 | Margin: $100.01 | SL: $64256.04 | TP: $62076.42 | Fee: $0.1600 tags:MOMENTUM
+📉 PAPER CLOSE SHORT | Exit: $63994.00 | PnL: $-7.25 (-7.26%) | Reason: SL | Fees: $0.3214 | Capital: $1993.03
+📉 PAPER CLOSE SHORT | Exit: $64256.50 | PnL: $-9.48 (-9.49%) | Reason: SL | Fees: $0.3219 | Capital: $1983.55
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $64209.00 | Size: 0.012357 | Leverage: x8 | Margin: $99.18 | SL: $63642.27 | TP: $65342.47 | Fee: $0.1587 tags:MOMENTUM
+📗 PAPER OPEN LONG [SCALP] | Entry: $64262.90 | Size: 0.018520 | Leverage: x12 | Margin: $99.18 | SL: $64151.33 | TP: $64458.15 | Fee: $0.2380 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $64151.10 | PnL: $-2.55 (-2.57%) | Reason: SL | Fees: $0.4756 | Capital: $1981.00
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $63918.90 | Size: 0.018774 | Leverage: x8 | Margin: $150.00 | SL: $64092.42 | TP: $63126.20 | Fee: $0.2400 tags:BREAKOUT_RETEST+LEVEL_63960
+📗 PAPER OPEN SHORT [SWING] | Entry: $63894.60 | Size: 0.009390 | Leverage: x6 | Margin: $100.00 | SL: $64537.79 | TP: $60699.87 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📉 PAPER CLOSE SHORT | Exit: $64105.50 | PnL: $-3.98 (-2.66%) | Reason: SL | Fees: $0.4807 | Capital: $1977.02
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $64033.40 | Size: 0.009370 | Leverage: x6 | Margin: $100.00 | SL: $63686.81 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_60
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $64033.40 | Size: 0.018740 | Leverage: x8 | Margin: $150.00 | SL: $63844.77 | TP: $64726.58 | Fee: $0.2400 tags:BREAKOUT_RETEST+LEVEL_63960
+📗 PAPER OPEN LONG [SCALP] | Entry: $64086.70 | Size: 0.018509 | Leverage: x12 | Margin: $98.85 | SL: $64003.29 | TP: $64232.67 | Fee: $0.2372 tags:SCALP
+📉 PAPER CLOSE LONG | Exit: $64000.00 | PnL: $-2.08 (-2.11%) | Reason: SL | Fees: $0.4742 | Capital: $1974.94
+📉 PAPER CLOSE SHORT | Exit: $64578.00 | PnL: $-6.66 (-6.67%) | Reason: SL | Fees: $0.2413 | Capital: $1968.28
+📈 PAPER CLOSE LONG | Exit: $64732.70 | PnL: $12.62 (8.43%) | Reason: TP | Fees: $0.4826 | Capital: $1980.90
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $64024.90 | Size: 0.018743 | Leverage: x8 | Margin: $150.00 | SL: $63891.28 | TP: $64700.00 | Fee: $0.2400 tags:BREAKOUT_RETEST+LEVEL_64004
+📈 PAPER CLOSE LONG | Exit: $64736.80 | PnL: $12.86 (8.59%) | Reason: TP | Fees: $0.4827 | Capital: $1993.76
+📈 PAPER CLOSE LONG | Exit: $64305.00 | PnL: $2.30 (2.31%) | Reason: TRAILING | Fees: $0.2405 | Capital: $1996.07
+📈 PAPER CLOSE LONG | Exit: $64250.00 | PnL: $0.19 (0.19%) | Reason: TRAILING | Fees: $0.3175 | Capital: $1996.26
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $64398.30 | Size: 0.018634 | Leverage: x8 | Margin: $150.00 | SL: $64019.42 | TP: $65934.21 | Fee: $0.2400 tags:BREAKOUT_RETEST+LEVEL_64275
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $64778.70 | Size: 0.012327 | Leverage: x8 | Margin: $99.81 | SL: $63910.62 | TP: $66514.86 | Fee: $0.1597 tags:MOMENTUM
+📗 PAPER OPEN LONG [SCALP] | Entry: $64813.80 | Size: 0.018480 | Leverage: x12 | Margin: $99.81 | SL: $64691.09 | TP: $65028.54 | Fee: $0.2396 tags:SCALP
+📈 PAPER CLOSE LONG | Exit: $64844.60 | PnL: $0.09 (0.09%) | Reason: TRAILING | Fees: $0.4792 | Capital: $1996.35
+📗 PAPER OPEN LONG [SCALP] | Entry: $65046.00 | Size: 0.018415 | Leverage: x12 | Margin: $99.82 | SL: $64940.59 | TP: $65230.47 | Fee: $0.2396 tags:SCALP
+📈 PAPER CLOSE LONG | Exit: $65075.30 | PnL: $0.06 (0.06%) | Reason: TRAILING | Fees: $0.4792 | Capital: $1996.41
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65123.20 | Size: 0.012284 | Leverage: x8 | Margin: $100.00 | SL: $64575.54 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_84
+📗 PAPER OPEN LONG [SWING] | Entry: $64981.10 | Size: 0.010772 | Leverage: x7 | Margin: $100.00 | SL: $63527.11 | TP: $68230.15 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📉 PAPER CLOSE LONG | Exit: $64803.00 | PnL: $-0.02 (-0.02%) | Reason: TRAILING | Fees: $0.3195 | Capital: $1996.39
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65085.70 | Size: 0.012269 | Leverage: x8 | Margin: $99.82 | SL: $64514.60 | TP: $66227.90 | Fee: $0.1597 tags:MOMENTUM
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65394.20 | Size: 0.009175 | Leverage: x6 | Margin: $100.00 | SL: $64886.55 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_69
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65394.30 | Size: 0.012233 | Leverage: x8 | Margin: $100.00 | SL: $64717.43 | TP: $66748.04 | Fee: $0.1600 tags:MOMENTUM
+📗 PAPER OPEN LONG [SWING] | Entry: $65335.90 | Size: 0.009183 | Leverage: x6 | Margin: $100.00 | SL: $64232.02 | TP: $68602.70 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN LONG [SWING] | Entry: $65176.00 | Size: 0.009206 | Leverage: x6 | Margin: $100.00 | SL: $64277.47 | TP: $68434.80 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $65176.00 | Size: 0.012274 | Leverage: x8 | Margin: $100.00 | SL: $64576.98 | TP: $66374.04 | Fee: $0.1600 tags:MOMENTUM
+📗 PAPER OPEN LONG [SCALP] | Entry: $65329.10 | Size: 0.015307 | Leverage: x10 | Margin: $100.00 | SL: $65209.13 | TP: $65539.04 | Fee: $0.2000 tags:SCALP
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $65409.60 | Size: 0.012231 | Leverage: x8 | Margin: $100.00 | SL: $64950.76 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_72
+📈 PAPER CLOSE LONG | Exit: $65542.40 | PnL: $2.86 (2.87%) | Reason: TP | Fees: $0.4007 | Capital: $2002.86
+📗 PAPER OPEN LONG [TREND_RIDER] | Entry: $65409.60 | Size: 0.010702 | Leverage: x7 | Margin: $100.00 | SL: $65409.60 | TP: $0.00 | Fee: $0.1400 tags:TREND_RIDER+EMA_BULLISH
+📈 PAPER CLOSE LONG | Exit: $66388.80 | PnL: $14.56 (14.59%) | Reason: TP | Fees: $0.3230 | Capital: $2017.43
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $66179.30 | Size: 0.012194 | Leverage: x8 | Margin: $100.87 | SL: $65353.55 | TP: $67830.80 | Fee: $0.1614 tags:MOMENTUM
+📈 PAPER CLOSE LONG | Exit: $66229.20 | PnL: $0.29 (0.28%) | Reason: TRAILING | Fees: $0.3229 | Capital: $2017.71
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $66263.70 | Size: 0.012180 | Leverage: x8 | Margin: $100.89 | SL: $65327.51 | TP: $68136.07 | Fee: $0.1614 tags:MOMENTUM
+📗 PAPER OPEN LONG [SWING] | Entry: $66898.80 | Size: 0.010464 | Leverage: x7 | Margin: $100.00 | SL: $65150.54 | TP: $70243.74 | Fee: $0.1400 tags:SWING+SWING_HIGH_CONVICTION
+📗 PAPER OPEN LONG [TREND_FOLLOW] | Entry: $66898.80 | Size: 0.011958 | Leverage: x8 | Margin: $100.00 | SL: $66243.20 | TP: $0.00 | Fee: $0.1600 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_80
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $66898.80 | Size: 0.011958 | Leverage: x8 | Margin: $100.00 | SL: $66024.67 | TP: $68647.06 | Fee: $0.1600 tags:MOMENTUM
+📗 PAPER OPEN LONG [TREND_RIDER] | Entry: $66898.80 | Size: 0.010464 | Leverage: x7 | Margin: $100.00 | SL: $66898.80 | TP: $0.00 | Fee: $0.1400 tags:TREND_RIDER+EMA_BULLISH
+📉 PAPER CLOSE LONG | Exit: $66898.80 | PnL: $-0.28 (-0.28%) | Reason: SL | Fees: $0.2800 | Capital: $1999.72
+📗 PAPER OPEN LONG [SCALP] | Entry: $67040.10 | Size: 0.014914 | Leverage: x10 | Margin: $99.99 | SL: $66904.95 | TP: $67276.61 | Fee: $0.2000 tags:SCALP
+📈 PAPER CLOSE LONG | Exit: $67288.90 | PnL: $3.31 (3.32%) | Reason: TP | Fees: $0.4007 | Capital: $2003.03
+📗 PAPER OPEN LONG [TREND_RIDER] | Entry: $67230.40 | Size: 0.010412 | Leverage: x7 | Margin: $100.00 | SL: $67230.40 | TP: $0.00 | Fee: $0.1400 tags:TREND_RIDER+EMA_BULLISH
+📈 PAPER CLOSE LONG | Exit: $67286.40 | PnL: $0.30 (0.30%) | Reason: TRAILING | Fees: $0.2801 | Capital: $2003.33
+📗 PAPER OPEN LONG [BREAKOUT_PLAY] | Entry: $67299.30 | Size: 0.012482 | Leverage: x7 | Margin: $120.00 | SL: $67040.15 | TP: $0.00 | Fee: $0.1680 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_67040+VOL_3.5x
+📈 PAPER CLOSE LONG | Exit: $67347.90 | PnL: $0.27 (0.23%) | Reason: TRAILING | Fees: $0.3361 | Capital: $2003.60
+📈 PAPER CLOSE LONG | Exit: $66952.20 | PnL: $0.28 (0.28%) | Reason: TRAILING | Fees: $0.2801 | Capital: $2003.88
+📈 PAPER CLOSE LONG | Exit: $66952.20 | PnL: $0.32 (0.32%) | Reason: TRAILING | Fees: $0.3201 | Capital: $2004.20
+📈 PAPER CLOSE LONG | Exit: $66952.20 | PnL: $0.32 (0.32%) | Reason: TRAILING | Fees: $0.3201 | Capital: $2004.52
+📗 PAPER OPEN LONG [TREND_RIDER] | Entry: $66998.90 | Size: 0.010448 | Leverage: x7 | Margin: $100.00 | SL: $66998.90 | TP: $0.00 | Fee: $0.1400 tags:TREND_RIDER+EMA_BULLISH
+📉 PAPER CLOSE LONG | Exit: $66950.00 | PnL: $-0.79 (-0.79%) | Reason: SL | Fees: $0.2799 | Capital: $2003.73
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $66790.50 | Size: 0.017967 | Leverage: x8 | Margin: $150.00 | SL: $67219.75 | TP: $65712.90 | Fee: $0.2400 tags:BREAKOUT_RETEST+LEVEL_67040
+📗 PAPER OPEN SHORT [MOMENTUM] | Entry: $66213.50 | Size: 0.012105 | Leverage: x8 | Margin: $100.19 | SL: $66865.53 | TP: $64909.43 | Fee: $0.1603 tags:MOMENTUM
+📗 PAPER OPEN SHORT [SCALP] | Entry: $66213.50 | Size: 0.015131 | Leverage: x10 | Margin: $100.19 | SL: $66383.36 | TP: $65916.25 | Fee: $0.2004 tags:SCALP
+📈 PAPER CLOSE SHORT | Exit: $66173.20 | PnL: $0.21 (0.21%) | Reason: TRAILING | Fees: $0.4006 | Capital: $2003.94
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $66163.00 | Size: 0.009069 | Leverage: x6 | Margin: $100.00 | SL: $66708.97 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_69
+📈 PAPER CLOSE SHORT | Exit: $66541.90 | PnL: $3.99 (2.66%) | Reason: TRAILING | Fees: $0.4791 | Capital: $2007.92
+📉 PAPER CLOSE SHORT | Exit: $66719.50 | PnL: $-5.29 (-5.29%) | Reason: SL | Fees: $0.2410 | Capital: $2002.64
+📗 PAPER OPEN SHORT [TREND_FOLLOW] | Entry: $66587.10 | Size: 0.009011 | Leverage: x6 | Margin: $100.00 | SL: $67154.07 | TP: $0.00 | Fee: $0.1200 tags:TREND_FOLLOW+EMA21_BOUNCE+BRAIN_68
+📉 PAPER CLOSE SHORT | Exit: $66868.80 | PnL: $-8.25 (-8.25%) | Reason: SL | Fees: $0.3222 | Capital: $1994.38
+📉 PAPER CLOSE SHORT | Exit: $67213.50 | PnL: $-5.89 (-5.89%) | Reason: SL | Fees: $0.2411 | Capital: $1988.50
+📗 PAPER OPEN LONG [MOMENTUM] | Entry: $68143.30 | Size: 0.011672 | Leverage: x8 | Margin: $99.42 | SL: $67202.83 | TP: $70024.24 | Fee: $0.1591 tags:MOMENTUM
+📗 PAPER OPEN LONG [BREAKOUT_PLAY] | Entry: $67983.20 | Size: 0.012356 | Leverage: x7 | Margin: $120.00 | SL: $67055.52 | TP: $0.00 | Fee: $0.1680 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_67056+VOL_4.2x
+📗 PAPER OPEN LONG [SWING] | Entry: $67844.60 | Size: 0.008844 | Leverage: x6 | Margin: $100.00 | SL: $66101.35 | TP: $71236.83 | Fee: $0.1200 tags:SWING+SWING_BREAKOUT
+📗 PAPER OPEN LONG [TREND_RIDER] | Entry: $67844.60 | Size: 0.010318 | Leverage: x7 | Margin: $100.00 | SL: $67844.60 | TP: $0.00 | Fee: $0.1400 tags:TREND_RIDER+EMA_BULLISH
+📉 PAPER CLOSE LONG | Exit: $67830.90 | PnL: $-0.42 (-0.42%) | Reason: SL | Fees: $0.2800 | Capital: $1988.08
+📗 PAPER OPEN LONG [SCALP] | Entry: $67979.60 | Size: 0.014623 | Leverage: x10 | Margin: $99.40 | SL: $67791.91 | TP: $68308.05 | Fee: $0.1988 tags:SCALP
+📈 PAPER CLOSE LONG | Exit: $68015.90 | PnL: $0.13 (0.13%) | Reason: TRAILING | Fees: $0.3977 | Capital: $1988.21
+📗 PAPER OPEN SHORT [BREAKOUT_PLAY] | Entry: $66788.10 | Size: 0.014464 | Leverage: x7 | Margin: $138.00 | SL: $67109.75 | TP: $0.00 | Fee: $0.1932 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_67110+VOL_2.3x+LIQ_CASCADE
+📉 PAPER CLOSE SHORT | Exit: $67135.50 | PnL: $-5.41 (-3.93%) | Reason: SL | Fees: $0.3874 | Capital: $1994.59
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $67145.80 | Size: 0.268073 | Leverage: x10 | Margin: $1800.00 | SL: $66987.67 | TP: $67878.27 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_67110
+📉 PAPER CLOSE LONG | Exit: $66976.50 | PnL: $-52.58 (-2.93%) | Reason: SL | Fees: $7.1909 | Capital: $1942.01
+📗 PAPER OPEN SHORT [BREAKOUT_PLAY] | Entry: $66478.80 | Size: 0.014531 | Leverage: x7 | Margin: $138.00 | SL: $67109.75 | TP: $0.00 | Fee: $0.1932 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_67110+VOL_4.4x+LIQ_CASCADE
+📈 PAPER CLOSE SHORT | Exit: $66435.00 | PnL: $0.25 (0.18%) | Reason: TRAILING | Fees: $0.3863 | Capital: $1942.26
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $66318.80 | Size: 0.271416 | Leverage: x10 | Margin: $1800.00 | SL: $66487.38 | TP: $65376.29 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_66330
+📉 PAPER CLOSE SHORT | Exit: $66489.80 | PnL: $-53.62 (-2.98%) | Reason: SL | Fees: $7.2093 | Capital: $1888.64
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $66393.70 | Size: 0.271110 | Leverage: x10 | Margin: $1800.00 | SL: $66170.39 | TP: $67353.19 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_66330
+📉 PAPER CLOSE LONG | Exit: $66382.90 | PnL: $-10.13 (-0.56%) | Reason: TRAILING | Fees: $7.1994 | Capital: $1878.51
+📗 PAPER OPEN SHORT [BREAKOUT_PLAY] | Entry: $66198.90 | Size: 0.014592 | Leverage: x7 | Margin: $138.00 | SL: $66323.74 | TP: $0.00 | Fee: $0.1932 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_66324+VOL_2.0x+LIQ_CASCADE
+📉 PAPER CLOSE SHORT | Exit: $66325.00 | PnL: $-2.23 (-1.62%) | Reason: SL | Fees: $0.3868 | Capital: $1876.29
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $66324.70 | Size: 0.271392 | Leverage: x10 | Margin: $1800.00 | SL: $66207.56 | TP: $67019.56 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_66323
+📈 PAPER CLOSE LONG | Exit: $67026.60 | PnL: $183.25 (10.20%) | Reason: TP | Fees: $7.2381 | Capital: $2059.54
+📗 PAPER OPEN LONG [BREAKOUT_RETEST] | Entry: $67146.00 | Size: 0.268073 | Leverage: x10 | Margin: $1800.00 | SL: $66939.48 | TP: $68167.62 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_67110
+📉 PAPER CLOSE LONG | Exit: $66936.50 | PnL: $-63.35 (-3.53%) | Reason: SL | Fees: $7.1888 | Capital: $1996.19
+📗 PAPER OPEN SHORT [BREAKOUT_RETEST] | Entry: $67062.80 | Size: 0.268405 | Leverage: x10 | Margin: $1800.00 | SL: $67264.07 | TP: $66136.86 | Fee: $3.6000 tags:BREAKOUT_RETEST+LEVEL_67110
+📉 PAPER CLOSE SHORT | Exit: $67072.00 | PnL: $-9.67 (-0.54%) | Reason: TRAILING | Fees: $7.2005 | Capital: $1986.52
+📗 PAPER OPEN SHORT [BREAKOUT_PLAY] | Entry: $65802.80 | Size: 0.014680 | Leverage: x7 | Margin: $138.00 | SL: $66716.31 | TP: $0.00 | Fee: $0.1932 tags:BREAKOUT_PLAY+CONTINUATION+LEVEL_66716+VOL_2.2x+LIQ_CASCADE
