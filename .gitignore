@@ -20,8 +20,14 @@ next-env.d.ts
 # debug
 npm-debug.log*
 
+# test artifacts
+playwright-report/
+test-results/
+
 # unrelated bot files
 src/
 bot-context-for-opus.md
 lab.ts
 styles/
+
+.vercel
