@@ -11,18 +11,18 @@ import { usePoolsList, type PoolData } from "@/hooks/use-pools"
 import { AddLiquidityModal } from "./add-liquidity-modal"
 import { getTokenIcon } from "@/lib/token-icons"
 
-const PLANNED_POOLS = [
+const LIVE_POOLS = [
   {
     pair: ["USDC", "USDT"],
     fee: "0.05%",
     type: "Stable" as const,
-    status: "Planned — First Emission Epoch",
+    address: "0x94503AEDaA147fe8936dA7Cf82b4A892e2bDafA5",
   },
   {
     pair: ["ETH", "USDC"],
     fee: "0.3%",
     type: "Volatile" as const,
-    status: "Planned — First Emission Epoch",
+    address: "0xA79C30ac2E7852a53ed000247FDbFCD1010FA29B",
   },
 ]
 
@@ -214,37 +214,38 @@ export function Pools() {
             </div>
           )}
 
-          {/* Planned pools for launch */}
+          {/* Live pools on mainnet */}
           {!isLoading && (
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PLANNED_POOLS.map((pool, i) => (
-                <Card key={`planned-${i}`} className="bg-card border-border/50 opacity-75">
+              {LIVE_POOLS.map((pool, i) => (
+                <Card key={`live-${i}`} className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex -space-x-2">
                         <img src={getTokenIcon(pool.pair[0])} alt={pool.pair[0]} className="w-10 h-10 rounded-full border-2 border-card object-cover bg-muted" />
                         <img src={getTokenIcon(pool.pair[1])} alt={pool.pair[1]} className="w-10 h-10 rounded-full border-2 border-card object-cover bg-muted" />
                       </div>
-                      <Badge variant="outline" className="text-muted-foreground border-muted-foreground/30 text-xs">
+                      <Badge variant="outline" className="text-xs">
                         {pool.type}
                       </Badge>
                     </div>
                     <h3 className="font-semibold text-lg">{pool.pair.join(" / ")}</h3>
                     <p className="text-sm text-muted-foreground mt-1">Fee: {pool.fee}</p>
-                    <div className="mt-4 py-2 px-3 bg-muted/50 rounded-lg text-center">
-                      <span className="text-xs text-muted-foreground">{pool.status}</span>
+                    <div className="mt-4">
+                      <a
+                        href={`https://basescan.org/address/${pool.address}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-muted-foreground hover:text-primary transition-colors font-mono"
+                      >
+                        {pool.address.slice(0, 6)}...{pool.address.slice(-4)} ↗
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
           )}
-
-          <div className="text-center mt-8">
-            <Button variant="outline" size="lg" className="rounded-full px-8">
-              View All Pools
-            </Button>
-          </div>
         </div>
       </section>
 

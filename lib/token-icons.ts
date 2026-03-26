@@ -4,7 +4,7 @@ export const TOKEN_ICONS: Record<string, string> = {
   WETH: "/images/tokens/eth.png",
   ETH: "/images/tokens/eth.png",
   USDC: "/images/tokens/usdc.png",
-  USDT: "/images/tokens/usdc.png", // fallback to USDC icon
+  USDT: "/images/tokens/usdt.png",
   VIRTUAL: "/images/tokens/virtual.png",
   DAI: "/images/tokens/usdc.png", // fallback to USDC icon
   cbETH: "/images/tokens/eth.png", // fallback to ETH icon
