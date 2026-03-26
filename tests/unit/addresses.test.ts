@@ -33,10 +33,11 @@ describe('contract addresses', () => {
       expect(BASE_ADDRESSES.usdc).not.toBe(ZERO_ADDRESS)
     })
 
-    it('protocol contracts are placeholder zeros (not deployed yet)', () => {
-      expect(BASE_ADDRESSES.lclaw).toBe(ZERO_ADDRESS)
-      expect(BASE_ADDRESSES.router).toBe(ZERO_ADDRESS)
-      expect(BASE_ADDRESSES.voter).toBe(ZERO_ADDRESS)
+    it('protocol contracts are deployed (non-zero)', () => {
+      expect(BASE_ADDRESSES.lclaw).not.toBe(ZERO_ADDRESS)
+      expect(BASE_ADDRESSES.router).not.toBe(ZERO_ADDRESS)
+      expect(BASE_ADDRESSES.voter).not.toBe(ZERO_ADDRESS)
+      expect(BASE_ADDRESSES.aiVault).not.toBe(ZERO_ADDRESS)
     })
   })
 
