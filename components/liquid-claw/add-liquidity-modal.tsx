@@ -264,7 +264,7 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
                 className="border-0 bg-transparent text-xl font-semibold p-0 focus-visible:ring-0"
               />
               <span className="flex items-center gap-2 bg-background rounded-full px-4 py-2 shrink-0">
-                <span className="text-lg">{pool.token0Icon}</span>
+                <img src={pool.token0Icon} alt={pool.token0Symbol} className="w-6 h-6 rounded-full object-cover" />
                 <span className="font-semibold text-sm">{pool.token0Symbol}</span>
               </span>
             </div>
@@ -291,7 +291,7 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
                 className="border-0 bg-transparent text-xl font-semibold p-0 focus-visible:ring-0"
               />
               <span className="flex items-center gap-2 bg-background rounded-full px-4 py-2 shrink-0">
-                <span className="text-lg">{pool.token1Icon}</span>
+                <img src={pool.token1Icon} alt={pool.token1Symbol} className="w-6 h-6 rounded-full object-cover" />
                 <span className="font-semibold text-sm">{pool.token1Symbol}</span>
               </span>
             </div>
