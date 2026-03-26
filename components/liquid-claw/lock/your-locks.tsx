@@ -21,7 +21,7 @@ interface LockItem {
 
 interface YourLocksProps {
   locks: LockItem[]
-  setLocks: (locks: LockItem[]) => void
+  setLocks?: (locks: LockItem[]) => void
 }
 
 export function YourLocks({ locks, setLocks }: YourLocksProps) {
@@ -30,7 +30,7 @@ export function YourLocks({ locks, setLocks }: YourLocksProps) {
   const [newDuration, setNewDuration] = useState(365)
 
   const handleExtend = (lockId: number) => {
-    setLocks(locks.map(lock => 
+    setLocks?.(locks.map(lock =>
       lock.id === lockId ? { ...lock, duration: Math.max(lock.duration, newDuration) } : lock
     ))
     setSelectedLock(null)
@@ -39,13 +39,13 @@ export function YourLocks({ locks, setLocks }: YourLocksProps) {
   }
 
   const handleIncrease = (lockId: number) => {
-    setLocks(locks.map(lock => 
-      lock.id === lockId 
-        ? { 
-            ...lock, 
+    setLocks?.(locks.map(lock =>
+      lock.id === lockId
+        ? {
+            ...lock,
             amount: lock.amount + parseInt(newAmount || "0"),
             power: lock.power + Math.floor(parseInt(newAmount || "0") * (lock.duration / 730))
-          } 
+          }
         : lock
     ))
     setSelectedLock(null)
@@ -53,7 +53,7 @@ export function YourLocks({ locks, setLocks }: YourLocksProps) {
   }
 
   const handleUnlock = (lockId: number) => {
-    setLocks(locks.filter(lock => lock.id !== lockId))
+    setLocks?.(locks.filter(lock => lock.id !== lockId))
   }
 
   return (

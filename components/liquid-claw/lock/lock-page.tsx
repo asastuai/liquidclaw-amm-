@@ -1,18 +1,29 @@
 "use client"
 
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { useMemo } from "react"
+import { formatEther } from "viem"
 import { Header } from "@/components/liquid-claw/header"
 import { Footer } from "@/components/liquid-claw/footer"
 import { CreateLockCard } from "./create-lock-card"
 import { YourLocks } from "./your-locks"
 import { VotingPowerOverview } from "./voting-power-overview"
 import { LockInfoCallout } from "./lock-info-callout"
+import { useUserVeNFTs } from "@/hooks/use-voting-escrow"
 
 export function LockPage() {
-  // TODO: Replace with real lock data from VotingEscrow
-  const [locks, setLocks] = useState<{ id: number; amount: number; power: number; duration: number; expired: boolean; location: "wallet" | "vault" }[]>([])
+  const { veNFTs, isLoading } = useUserVeNFTs()
+
+  const locks = useMemo(() => {
+    const now = BigInt(Math.floor(Date.now() / 1000))
+    return veNFTs.map((nft) => ({
+      id: Number(nft.tokenId),
+      amount: parseFloat(formatEther(nft.lockedAmount)),
+      power: parseFloat(formatEther(nft.votingPower)),
+      duration: nft.isPermanent ? 730 : Math.max(0, Number(nft.lockEnd - now) / 86400),
+      expired: !nft.isPermanent && nft.lockEnd < now,
+      location: "wallet" as const,
+    }))
+  }, [veNFTs])
 
   const totalLocked = locks.reduce((sum, lock) => sum + lock.amount, 0)
   const totalPower = locks.reduce((sum, lock) => sum + (lock.expired ? 0 : lock.power), 0)
@@ -40,7 +51,7 @@ export function LockPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Your Locks & Voting Power */}
             <div className="lg:col-span-2 space-y-8">
-              <YourLocks locks={locks} setLocks={setLocks} />
+              <YourLocks locks={locks} />
               <VotingPowerOverview locks={activeLocks} totalLocked={totalLocked} totalPower={totalPower} />
             </div>
 

@@ -81,7 +81,7 @@ function KawaiiClaimIcon() {
   )
 }
 
-// TODO: Replace with real activity from on-chain events
+// Activity populated from on-chain events (requires indexer)
 const activities: {
   id: number; type: string; description: string;
   amount: string; time: string; hash: string;

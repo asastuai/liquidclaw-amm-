@@ -20,7 +20,7 @@ interface HistoryEntry {
 export function RewardsHistory() {
   const [filter, setFilter] = useState<string>("all")
 
-  // TODO: Replace with real reward history from on-chain events
+  // Reward history from on-chain events (requires indexer)
   const history: HistoryEntry[] = []
 
   const typeColors: Record<string, string> = {

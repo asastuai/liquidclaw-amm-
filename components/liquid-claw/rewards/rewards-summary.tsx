@@ -11,7 +11,7 @@ interface RewardBreakdown {
 }
 
 export function RewardsSummary() {
-  // TODO: Replace with real reward data from contracts
+  // Reward data from Voter/Gauge contracts (requires gauge deployment)
   const totalClaimable = 0
   const breakdown: RewardBreakdown[] = [
     { label: "Fees", value: "$0", icon: "fees" },

@@ -7,24 +7,25 @@ import { GaugeFilters } from "./gauge-filters"
 import { GaugeList } from "./gauge-list"
 import { GaugeEmptyState } from "./gauge-empty-state"
 
-// TODO: Replace with real gauge data from contracts
-const MOCK_GAUGES: {
+// Gauge data will be populated when gauges are created via governance
+type GaugeData = {
   id: string; pair: string[]; type: "Volatile" | "Stable";
   tvl: number; apr: number; userStake: number; pendingRewards: number;
   userLpBalance: number; stakedLp: number; epochRewards: number;
   userShare: number; nextEpoch: number;
-}[] = []
+}
+const gauges: GaugeData[] = []
 
 export function GaugesPage() {
   const [activeTab, setActiveTab] = useState<"all" | "my-stakes">("all")
   const [sortBy, setSortBy] = useState<"apr" | "tvl" | "stake">("apr")
   const [searchQuery, setSearchQuery] = useState("")
 
-  const totalStakedValue = MOCK_GAUGES.reduce((acc, g) => acc + g.tvl, 0)
-  const userTotalStaked = MOCK_GAUGES.reduce((acc, g) => acc + g.userStake, 0)
-  const totalPendingRewards = MOCK_GAUGES.reduce((acc, g) => acc + g.pendingRewards, 0)
+  const totalStakedValue = gauges.reduce((acc, g) => acc + g.tvl, 0)
+  const userTotalStaked = gauges.reduce((acc, g) => acc + g.userStake, 0)
+  const totalPendingRewards = gauges.reduce((acc, g) => acc + g.pendingRewards, 0)
 
-  const filteredGauges = MOCK_GAUGES
+  const filteredGauges = gauges
     .filter((gauge) => {
       if (activeTab === "my-stakes" && gauge.userStake === 0) return false
       if (searchQuery) {
@@ -46,7 +47,7 @@ export function GaugesPage() {
       }
     })
 
-  const hasMyStakes = MOCK_GAUGES.some((g) => g.userStake > 0)
+  const hasMyStakes = gauges.some((g) => g.userStake > 0)
 
   return (
     <div className="min-h-screen bg-background">

@@ -1,25 +1,49 @@
 "use client"
 
+import { useMemo } from "react"
+import { formatEther } from "viem"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { Lock, Clock } from "lucide-react"
-
-// TODO: Replace with real lock data from VotingEscrow
-const locks: {
-  id: number; amount: string; votingPower: number; maxPower: number;
-  timeRemaining: string; location: string; expired: boolean;
-}[] = []
+import { Lock, Clock, Loader2 } from "lucide-react"
+import { useUserVeNFTs } from "@/hooks/use-voting-escrow"
 
 export function VeLCLAWLocks() {
+  const { veNFTs, isLoading } = useUserVeNFTs()
+
+  const locks = useMemo(() => {
+    const now = BigInt(Math.floor(Date.now() / 1000))
+    return veNFTs.map((nft) => {
+      const amount = parseFloat(formatEther(nft.lockedAmount))
+      const power = parseFloat(formatEther(nft.votingPower))
+      const expired = !nft.isPermanent && nft.lockEnd < now
+      const secondsLeft = nft.isPermanent ? 730 * 86400 : Math.max(0, Number(nft.lockEnd - now))
+      const daysLeft = Math.floor(secondsLeft / 86400)
+      return {
+        id: Number(nft.tokenId),
+        amount: `${amount.toFixed(2)} LCLAW`,
+        votingPower: power,
+        maxPower: amount, // max power = locked amount (at 2yr lock)
+        timeRemaining: nft.isPermanent ? "Permanent" : `${daysLeft}d`,
+        location: "Wallet",
+        expired,
+      }
+    })
+  }, [veNFTs])
+
   return (
     <div className="mb-12">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-foreground">Your veLCLAW Locks</h2>
       </div>
 
-      {locks.length === 0 ? (
+      {isLoading ? (
+        <Card className="p-12 text-center">
+          <Loader2 className="w-8 h-8 text-muted-foreground mx-auto mb-4 animate-spin" />
+          <p className="text-muted-foreground">Loading locks...</p>
+        </Card>
+      ) : locks.length === 0 ? (
         <Card className="p-12 text-center">
           <Lock className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
           <p className="text-muted-foreground">No veLCLAW locks yet. Lock LCLAW to earn voting power.</p>
@@ -42,10 +66,10 @@ export function VeLCLAWLocks() {
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm text-muted-foreground">Voting Power</span>
                 <span className="font-mono text-sm text-foreground">
-                  {lock.votingPower.toLocaleString()} / {lock.maxPower.toLocaleString()}
+                  {lock.votingPower.toFixed(2)} / {lock.maxPower.toFixed(2)}
                 </span>
               </div>
-              <Progress value={(lock.votingPower / lock.maxPower) * 100} className="h-2" />
+              <Progress value={lock.maxPower > 0 ? (lock.votingPower / lock.maxPower) * 100 : 0} className="h-2" />
             </div>
 
             {/* Time Remaining */}

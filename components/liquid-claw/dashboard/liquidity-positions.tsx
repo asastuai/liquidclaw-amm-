@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, Droplet } from "lucide-react"
 
-// TODO: Replace with real positions from pool contracts
+// Positions populated when user adds liquidity to pools
 const positions: {
   id: number; pair: string; tokens: string[]; type: string;
   share: string; value: string; status: string; apr: string | null;

@@ -25,7 +25,7 @@ export function RewardsSections() {
     )
   }
 
-  // TODO: Replace with real reward data from contracts
+  // Reward data from Gauge/Bribe contracts (requires gauge deployment)
   const tradingFees: RewardItem[] = []
   const bribes: RewardItem[] = []
   const emissions: RewardItem[] = []

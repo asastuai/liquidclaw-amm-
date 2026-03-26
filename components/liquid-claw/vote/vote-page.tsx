@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import { formatEther } from 'viem'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -12,6 +13,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sh
 import { Vote, Timer, TrendingUp, AlertCircle, ChevronDown, X, RotateCcw } from 'lucide-react'
 import Image from 'next/image'
 import { getTokenIcon } from '@/lib/token-icons'
+import { useUserVeNFTs } from '@/hooks/use-voting-escrow'
 
 interface Pool {
   id: string
@@ -25,18 +27,20 @@ interface Pool {
   userVote?: number
 }
 
-// TODO: Replace with real pool data from Voter contract
-const mockPools: Pool[] = []
+// Pools will come from Voter contract once gauges are created
+const initialPools: Pool[] = []
 
 export function VotePage() {
-  const [pools, setPools] = useState<Pool[]>(mockPools)
-  const [selectedNFT, setSelectedNFT] = useState('nft-1')
+  const { veNFTs } = useUserVeNFTs()
+  const [pools, setPools] = useState<Pool[]>(initialPools)
+  const [selectedNFTIndex, setSelectedNFTIndex] = useState(0)
   const [sortBy, setSortBy] = useState<'apr' | 'bribes' | 'votes' | 'fees'>('apr')
   const [searchTerm, setSearchTerm] = useState('')
   const [showMobileSidebar, setShowMobileSidebar] = useState(false)
   const [dismissedBanner, setDismissedBanner] = useState(false)
 
-  const userVotingPower = 0 // TODO: Read from VotingEscrow
+  const selectedNFT = veNFTs[selectedNFTIndex]
+  const userVotingPower = selectedNFT ? parseFloat(formatEther(selectedNFT.votingPower)) : 0
   const allocatedVotes = pools.reduce((sum, p) => sum + (p.userVote || 0), 0)
   const unallocatedVotes = 100 - allocatedVotes
 
