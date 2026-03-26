@@ -15,7 +15,8 @@ import {
   Infinity,
   ChevronRight,
 } from "lucide-react"
-import { useAccount } from "wagmi"
+import { useAccount, useChainId } from "wagmi"
+import { getTxUrl } from "@/lib/explorer"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { formatUnits } from "viem"
 import {
@@ -92,6 +93,7 @@ function VeNFTCard({ nft }: { nft: VeNFT }) {
 }
 
 function CreateLockForm() {
+  const chainId = useChainId()
   const [amount, setAmount] = useState("")
   const [selectedWeeks, setSelectedWeeks] = useState(52)
 
@@ -224,7 +226,7 @@ function CreateLockForm() {
         {lockHash && (
           <div className="text-center">
             <a
-              href={`https://basescan.org/tx/${lockHash}`}
+              href={getTxUrl(chainId, lockHash)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-accent hover:underline"
@@ -240,6 +242,7 @@ function CreateLockForm() {
 
 export function Governance() {
   const { isConnected } = useAccount()
+  const chainId = useChainId()
   const { veNFTs, count, isLoading } = useUserVeNFTs()
 
   return (

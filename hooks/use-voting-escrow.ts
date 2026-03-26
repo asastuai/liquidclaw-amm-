@@ -234,6 +234,7 @@ export function useVote() {
 
   const vote = useCallback(
     (tokenId: bigint, pools: Address[], weights: bigint[]) => {
+      if (pools.length === 0 || pools.length !== weights.length || tokenId === 0n) return
       voteWrite({
         address: addresses.voter,
         abi: VOTER_ABI,

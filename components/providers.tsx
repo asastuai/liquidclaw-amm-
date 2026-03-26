@@ -6,6 +6,8 @@ import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit"
 import { config } from "@/lib/wagmi"
 import { useState } from "react"
 
+import { NetworkGuard } from "@/components/liquid-claw/network-guard"
+
 import "@rainbow-me/rainbowkit/styles.css"
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -22,7 +24,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             fontStack: "system",
           })}
         >
-          {children}
+          <NetworkGuard>{children}</NetworkGuard>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

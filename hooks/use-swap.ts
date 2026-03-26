@@ -77,9 +77,12 @@ export function useSwap({ tokenIn, tokenOut, amountIn, slippage }: UseSwapOption
   const formattedAmountOut =
     amountOut && tokenOut ? formatUnits(amountOut, tokenOut.decimals) : ""
 
+  // Clamp slippage to safe range (0.01% - 50%)
+  const safeSlippage = Math.min(Math.max(slippage, 0.01), 50)
+
   // Min amount out with slippage
   const amountOutMin = amountOut
-    ? (amountOut * BigInt(Math.floor((100 - slippage) * 100))) / 10000n
+    ? (amountOut * BigInt(Math.floor((100 - safeSlippage) * 100))) / 10000n
     : 0n
 
   // === NATIVE ETH BALANCE ===

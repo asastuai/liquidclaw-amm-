@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import { getTxUrl } from "@/lib/explorer"
 import {
   Dialog,
   DialogContent,
@@ -366,7 +367,7 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
           {addLiqHash && (
             <div className="text-center">
               <a
-                href={`https://basescan.org/tx/${addLiqHash}`}
+                href={getTxUrl(chainId, addLiqHash)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-accent hover:underline"

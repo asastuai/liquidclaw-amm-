@@ -17,7 +17,8 @@ import {
   TrendingUp,
   Lock,
 } from "lucide-react"
-import { useAccount } from "wagmi"
+import { useAccount, useChainId } from "wagmi"
+import { getTxUrl } from "@/lib/explorer"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { formatUnits } from "viem"
 import {
@@ -156,6 +157,7 @@ function VaultDepositCard({
 
 export function AIVault() {
   const { isConnected } = useAccount()
+  const chainId = useChainId()
   const { totalDeposited } = useAIVaultStats()
   const { veNFTs } = useUserVeNFTs()
   const { deposits, totalPower, refetchIds } = useVaultDeposits()
@@ -344,7 +346,7 @@ export function AIVault() {
                       ))}
                       {withdrawHash && (
                         <a
-                          href={`https://basescan.org/tx/${withdrawHash}`}
+                          href={getTxUrl(chainId, withdrawHash)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-accent hover:underline block text-center"
@@ -398,7 +400,7 @@ export function AIVault() {
                         </div>
                         {depositHash && (
                           <a
-                            href={`https://basescan.org/tx/${depositHash}`}
+                            href={getTxUrl(chainId, depositHash)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm text-accent hover:underline"

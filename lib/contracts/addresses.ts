@@ -57,6 +57,12 @@ export const BASE_SEPOLIA_ADDRESSES: ContractAddresses = {
   virtual: "0x0000000000000000000000000000000000000000",
 }
 
+export const SUPPORTED_CHAIN_IDS = [8453, 84532] as const
+
+export function isSupportedChain(chainId: number): boolean {
+  return (SUPPORTED_CHAIN_IDS as readonly number[]).includes(chainId)
+}
+
 export function getAddresses(chainId: number): ContractAddresses {
   switch (chainId) {
     case 8453:
@@ -64,6 +70,10 @@ export function getAddresses(chainId: number): ContractAddresses {
     case 84532:
       return BASE_SEPOLIA_ADDRESSES
     default:
+      // Return Base addresses but log warning — NetworkGuard should prevent this
+      if (typeof window !== "undefined") {
+        console.warn(`[LiquidClaw] Unsupported chain ${chainId}. Falling back to Base mainnet addresses.`)
+      }
       return BASE_ADDRESSES
   }
 }

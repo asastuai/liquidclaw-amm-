@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import { useChainId } from "wagmi"
+import { getTxUrl } from "@/lib/explorer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,6 +26,7 @@ const DEFAULT_SLIPPAGE = 0.5
 
 export function SwapCard() {
   const { isConnected } = useAccount()
+  const chainId = useChainId()
 
   const [tokenIn, setTokenIn] = useState<TokenInfo>(BASE_TOKENS[0]) // ETH
   const [tokenOut, setTokenOut] = useState<TokenInfo>(BASE_TOKENS[4]) // LCLAW
@@ -325,7 +328,7 @@ export function SwapCard() {
                 {swapTxHash && (
                   <div className="text-center">
                     <a
-                      href={`https://sepolia.basescan.org/tx/${swapTxHash}`}
+                      href={getTxUrl(chainId, swapTxHash)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-accent hover:underline"
