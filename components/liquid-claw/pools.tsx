@@ -8,21 +8,38 @@ import { TrendingUp, Droplets, ArrowUpRight, Loader2 } from "lucide-react"
 import { useAccount } from "wagmi"
 import { formatUnits } from "viem"
 import { usePoolsList, type PoolData } from "@/hooks/use-pools"
+import type { Address } from "viem"
 import { AddLiquidityModal } from "./add-liquidity-modal"
 import { getTokenIcon } from "@/lib/token-icons"
 
-const LIVE_POOLS = [
+const LIVE_POOLS: { pair: [string, string]; fee: string; type: "Stable" | "Volatile"; poolData: PoolData }[] = [
   {
     pair: ["USDC", "USDT"],
     fee: "0.05%",
-    type: "Stable" as const,
-    address: "0x94503AEDaA147fe8936dA7Cf82b4A892e2bDafA5",
+    type: "Stable",
+    poolData: {
+      address: "0x94503AEDaA147fe8936dA7Cf82b4A892e2bDafA5" as Address,
+      token0: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" as Address,
+      token1: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2" as Address,
+      token0Symbol: "USDC", token1Symbol: "USDT",
+      token0Decimals: 6, token1Decimals: 6,
+      token0Icon: "/images/tokens/usdc.png", token1Icon: "/images/tokens/usdt.png",
+      stable: true, fee: "0.05%", reserve0: 0n, reserve1: 0n, totalSupply: 0n, tvlUsd: null,
+    },
   },
   {
     pair: ["ETH", "USDC"],
     fee: "0.3%",
-    type: "Volatile" as const,
-    address: "0xA79C30ac2E7852a53ed000247FDbFCD1010FA29B",
+    type: "Volatile",
+    poolData: {
+      address: "0xA79C30ac2E7852a53ed000247FDbFCD1010FA29B" as Address,
+      token0: "0x4200000000000000000000000000000000000006" as Address,
+      token1: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" as Address,
+      token0Symbol: "WETH", token1Symbol: "USDC",
+      token0Decimals: 18, token1Decimals: 6,
+      token0Icon: "/images/tokens/eth.png", token1Icon: "/images/tokens/usdc.png",
+      stable: false, fee: "0.3%", reserve0: 0n, reserve1: 0n, totalSupply: 0n, tvlUsd: null,
+    },
   },
 ]
 
@@ -218,7 +235,7 @@ export function Pools() {
           {!isLoading && (
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {LIVE_POOLS.map((pool, i) => (
-                <Card key={`live-${i}`} className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
+                <Card key={`live-${i}`} className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group cursor-pointer" onClick={() => setSelectedPool(pool.poolData)}>
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex -space-x-2">
@@ -231,14 +248,19 @@ export function Pools() {
                     </div>
                     <h3 className="font-semibold text-lg">{pool.pair.join(" / ")}</h3>
                     <p className="text-sm text-muted-foreground mt-1">Fee: {pool.fee}</p>
-                    <div className="mt-4">
+                    <Button size="sm" className="w-full mt-4 rounded-full">
+                      <Droplets className="w-4 h-4 mr-2" />
+                      Add Liquidity
+                    </Button>
+                    <div className="mt-2 text-center">
                       <a
-                        href={`https://basescan.org/address/${pool.address}`}
+                        href={`https://basescan.org/address/${pool.poolData.address}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="text-xs text-muted-foreground hover:text-primary transition-colors font-mono"
                       >
-                        {pool.address.slice(0, 6)}...{pool.address.slice(-4)} ↗
+                        {pool.poolData.address.slice(0, 6)}...{pool.poolData.address.slice(-4)} ↗
                       </a>
                     </div>
                   </CardContent>
