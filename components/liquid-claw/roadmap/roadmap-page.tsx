@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 import { Header } from "../header"
 import { Footer } from "../footer"
@@ -72,9 +72,79 @@ const visionPillars = [
   { icon: Globe, title: "The DeFi Hub", description: "Spot AMM today. Perpetual DEX tomorrow. One platform for all of DeFi on Base." }
 ]
 
+interface ScrollBubble {
+  id: number; x: number; y: number; size: number; speed: number; opacity: number
+}
+
+function BubbleCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const bubblesRef = useRef<ScrollBubble[]>([])
+  const animationRef = useRef<number>(0)
+  const lastScrollRef = useRef(0)
+
+  const createBubble = useCallback((x: number, y: number): ScrollBubble => ({
+    id: Math.random(), x: x + (Math.random() - 0.5) * 100, y,
+    size: 3 + Math.random() * 8, speed: 0.5 + Math.random() * 1.5,
+    opacity: 0.15 + Math.random() * 0.25
+  }), [])
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext("2d")
+    if (!ctx) return
+
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
+    resize()
+    window.addEventListener("resize", resize)
+
+    const handleScroll = () => {
+      const delta = Math.abs(window.scrollY - lastScrollRef.current)
+      if (delta > 8) {
+        const count = Math.min(Math.floor(delta / 15), 3)
+        for (let i = 0; i < count; i++) {
+          bubblesRef.current.push(createBubble(Math.random() * window.innerWidth, window.innerHeight + 10))
+        }
+      }
+      lastScrollRef.current = window.scrollY
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      bubblesRef.current = bubblesRef.current.filter(b => {
+        b.y -= b.speed
+        b.x += Math.sin(b.y * 0.015) * 0.3
+        if (b.y < -20) return false
+        ctx.beginPath()
+        ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(255,255,255,${b.opacity * 0.2})`
+        ctx.fill()
+        ctx.strokeStyle = `rgba(255,255,255,${b.opacity * 0.35})`
+        ctx.lineWidth = 0.5
+        ctx.stroke()
+        return true
+      })
+      animationRef.current = requestAnimationFrame(animate)
+    }
+    animate()
+
+    return () => {
+      window.removeEventListener("resize", resize)
+      window.removeEventListener("scroll", handleScroll)
+      cancelAnimationFrame(animationRef.current)
+    }
+  }, [createBubble])
+
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-10" style={{ mixBlendMode: "screen" }} />
+}
+
 export function RoadmapPage() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
+  const [mounted, setMounted] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -97,6 +167,7 @@ export function RoadmapPage() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden relative">
+      {mounted && <BubbleCanvas />}
       <Header />
 
       {/* Hero */}
