@@ -1,10 +1,13 @@
 import { GaugesPage } from "@/components/liquid-claw/gauges/gauges-page"
-
-export const metadata = {
-  title: "Gauges | LiquidClaw",
-  description: "Stake your LP tokens to earn LCLAW rewards on LiquidClaw AMM",
-}
+import { ComingSoonOverlay } from "@/components/liquid-claw/coming-soon-overlay"
 
 export default function Gauges() {
-  return <GaugesPage />
+  return (
+    <ComingSoonOverlay
+      title="Gauges Coming Soon"
+      description="Stake your LP tokens to earn LCLAW rewards. Gauges will activate with the first emission epoch."
+    >
+      <GaugesPage />
+    </ComingSoonOverlay>
+  )
 }

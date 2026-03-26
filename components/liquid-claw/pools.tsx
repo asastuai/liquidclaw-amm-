@@ -11,21 +11,27 @@ import { usePoolsList, type PoolData } from "@/hooks/use-pools"
 import { AddLiquidityModal } from "./add-liquidity-modal"
 import { getTokenIcon } from "@/lib/token-icons"
 
+const PLANNED_POOLS = [
+  {
+    pair: ["USDC", "USDT"],
+    fee: "0.05%",
+    type: "Stable" as const,
+    status: "Planned — First Emission Epoch",
+  },
+  {
+    pair: ["ETH", "USDC"],
+    fee: "0.3%",
+    type: "Volatile" as const,
+    status: "Planned — First Emission Epoch",
+  },
+]
+
+// Legacy preview pools kept for when token launches
 const PREVIEW_POOLS = [
   {
     pair: ["LCLAW", "WETH"],
     fee: "0.3%",
     hot: true,
-  },
-  {
-    pair: ["VIRTUAL", "WETH"],
-    fee: "0.3%",
-    hot: true,
-  },
-  {
-    pair: ["VIRTUAL", "USDC"],
-    fee: "0.05%",
-    hot: false,
   },
   {
     pair: ["LCLAW", "USDC"],
@@ -208,11 +214,28 @@ export function Pools() {
             </div>
           )}
 
-          {/* Preview pools (before deployment or not connected) */}
-          {showPreview && !isLoading && (
+          {/* Planned pools for launch */}
+          {!isLoading && (
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PREVIEW_POOLS.map((pool, i) => (
-                <PreviewPoolCard key={i} pool={pool} />
+              {PLANNED_POOLS.map((pool, i) => (
+                <Card key={`planned-${i}`} className="bg-card border-border/50 opacity-75">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex -space-x-2">
+                        <img src={getTokenIcon(pool.pair[0])} alt={pool.pair[0]} className="w-10 h-10 rounded-full border-2 border-card object-cover bg-muted" />
+                        <img src={getTokenIcon(pool.pair[1])} alt={pool.pair[1]} className="w-10 h-10 rounded-full border-2 border-card object-cover bg-muted" />
+                      </div>
+                      <Badge variant="outline" className="text-muted-foreground border-muted-foreground/30 text-xs">
+                        {pool.type}
+                      </Badge>
+                    </div>
+                    <h3 className="font-semibold text-lg">{pool.pair.join(" / ")}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Fee: {pool.fee}</p>
+                    <div className="mt-4 py-2 px-3 bg-muted/50 rounded-lg text-center">
+                      <span className="text-xs text-muted-foreground">{pool.status}</span>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           )}
