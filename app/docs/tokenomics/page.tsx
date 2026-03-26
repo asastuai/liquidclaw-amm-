@@ -76,12 +76,36 @@ export default function TokenomicsPage() {
         <tbody>
           <tr><td>Rate</td><td>12% of all weekly emissions</td></tr>
           <tr><td>Liquid (50%)</td><td>Marketing campaigns, KOL partnerships, bounties, grants, community incentives</td></tr>
-          <tr><td>Locked (50%)</td><td>Strategic partnerships (veLCLAW for integrations), long-term ecosystem alignment</td></tr>
+          <tr><td>Partnerships (50%)</td><td>Strategic partners choose their preferred structure (see below)</td></tr>
         </tbody>
       </table>
 
-      <Callout type="info" title="Why 17%?">
-        A protocol without growth budget dies. The 50/50 liquid/locked split on both allocations ensures the team and ecosystem fund are aligned with long-term health — half of every allocation is locked on-chain as veLCLAW for 2 years, verifiable by anyone.
+      <h3 id="partner-options">Partnership Incentive Options</h3>
+      <p>Strategic partners can choose how they receive their allocation:</p>
+      <table>
+        <thead>
+          <tr><th>Option</th><th>Structure</th><th>Benefits</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monthly Vesting</strong></td>
+            <td>Linear unlock over 24 months (~4.17%/month)</td>
+            <td>Liquid LCLAW, flexibility to sell or hold</td>
+          </tr>
+          <tr>
+            <td><strong>Full Commit (veLCLAW)</strong></td>
+            <td>100% locked as veLCLAW for 2 years</td>
+            <td>Boosted APR, 100% of trading fees from voted pools, bribe earnings, anti-dilution rebases, maximum governance power</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <Callout type="tip" title="Why Commit?">
+        Partners who lock as veLCLAW earn real yield on top of their allocation — trading fees, bribes, and rebases. The longer the commitment, the higher the rewards. Monthly vesting gives flexibility; full commit gives maximum APR.
+      </Callout>
+
+      <Callout type="info" title="Why 17% Total?">
+        A protocol without growth budget dies. The team allocation is 50/50 liquid/locked to ensure alignment. The ecosystem fund gives partners a choice — flexibility or yield — making LiquidClaw attractive for integrations while keeping incentives sustainable.
       </Callout>
 
       <h2 id="revenue-model">Revenue Model</h2>
