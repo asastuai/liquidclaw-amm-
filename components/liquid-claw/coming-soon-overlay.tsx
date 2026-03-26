@@ -1,6 +1,7 @@
 "use client"
 
-import { Clock, Lock } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { Clock, ArrowLeft } from "lucide-react"
 
 interface ComingSoonOverlayProps {
   title?: string
@@ -13,6 +14,8 @@ export function ComingSoonOverlay({
   description = "This feature is not yet available. Stay tuned!",
   children,
 }: ComingSoonOverlayProps) {
+  const router = useRouter()
+
   return (
     <div className="relative">
       {/* Blurred content behind */}
@@ -27,7 +30,14 @@ export function ComingSoonOverlay({
             <Clock className="w-7 h-7 text-primary" />
           </div>
           <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
-          <p className="text-muted-foreground text-sm">{description}</p>
+          <p className="text-muted-foreground text-sm mb-6">{description}</p>
+          <button
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Go Back
+          </button>
         </div>
       </div>
     </div>

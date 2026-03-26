@@ -27,9 +27,7 @@ export function DocTOC({ dark }: { dark: boolean }) {
         const heading = Array.from(document.querySelectorAll('h2, h3')).find(
           (h) => h.textContent === item.title
         )
-        if (heading && !heading.id) {
-          heading.id = item.id
-        }
+        if (heading && !heading.id) heading.id = item.id
       }
     })
 
@@ -50,22 +48,11 @@ export function DocTOC({ dark }: { dark: boolean }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const bg = dark ? 'bg-[#0a0a0a]' : 'bg-white'
-  const border = dark ? 'border-[#222]' : 'border-gray-200'
-  const textPrimary = dark ? 'text-white' : 'text-gray-900'
-  const textSecondary = dark ? 'text-gray-400' : 'text-gray-500'
-  const accent = dark ? 'text-[#00ff41]' : 'text-emerald-600'
-  const btnBg = dark ? 'bg-[#1a1a1a] hover:bg-[#2a2a2a]' : 'bg-gray-100 hover:bg-gray-200'
-
   return (
-    <aside className={`hidden xl:flex flex-col w-56 fixed right-0 top-0 h-screen ${bg} border-l ${border} overflow-hidden`}>
+    <aside className="hidden xl:flex flex-col w-56 fixed right-0 top-0 h-screen bg-card border-l border-border overflow-hidden">
       <ScrollArea className="flex-1 p-6">
         <div className="mb-6">
-          <h3 className={`text-sm font-semibold ${textPrimary} mb-4`}>On this page</h3>
+          <h3 className="text-sm font-semibold text-foreground mb-4">On this page</h3>
           <nav className="space-y-2">
             {toc.map((item) => (
               <a
@@ -73,14 +60,13 @@ export function DocTOC({ dark }: { dark: boolean }) {
                 href={`#${item.id}`}
                 className={`block text-sm transition-colors ${
                   activeId === item.id
-                    ? `${accent} font-medium`
-                    : `${textSecondary} hover:${textPrimary}`
+                    ? 'text-primary font-medium'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
                 style={{ paddingLeft: `${(item.level - 2) * 12}px` }}
                 onClick={(e) => {
                   e.preventDefault()
-                  const el = document.getElementById(item.id)
-                  el?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 {item.title}
@@ -90,10 +76,10 @@ export function DocTOC({ dark }: { dark: boolean }) {
         </div>
       </ScrollArea>
 
-      <div className={`p-6 border-t ${border}`}>
+      <div className="p-6 border-t border-border">
         <button
-          onClick={scrollToTop}
-          className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg ${btnBg} ${textSecondary} hover:${textPrimary} transition-colors text-sm font-medium`}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
         >
           <ChevronUp className="w-4 h-4" />
           Back to top
