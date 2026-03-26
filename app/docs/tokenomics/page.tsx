@@ -53,17 +53,36 @@ export default function TokenomicsPage() {
         The growth → decay → tail model solves the &quot;death spiral&quot; problem: aggressive early emissions attract users, controlled decay reduces sell pressure, and sustainable tail emissions keep the protocol alive forever.
       </Callout>
 
-      <h2 id="team-allocation">Team Allocation</h2>
+      <h2 id="protocol-allocations">Protocol Allocations</h2>
+      <p>17% of all emissions are allocated to sustain and grow the protocol, split into two transparent categories:</p>
+
+      <h3 id="team-allocation">Team — 5% of Emissions</h3>
       <table>
         <thead>
           <tr><th>Component</th><th>Detail</th></tr>
         </thead>
         <tbody>
-          <tr><td>Team rate</td><td>5% of all emissions</td></tr>
-          <tr><td>Initial split</td><td>50% liquid + 50% locked as veLCLAW (2 years)</td></tr>
+          <tr><td>Rate</td><td>5% of all weekly emissions</td></tr>
+          <tr><td>Liquid (50%)</td><td>Available for operations, salaries, infrastructure</td></tr>
+          <tr><td>Locked (50%)</td><td>Locked as veLCLAW for 2 years — earns by voting, aligned with protocol</td></tr>
         </tbody>
       </table>
-      <p>The locked portion means the team is aligned with long-term protocol health — they earn by voting, just like everyone else.</p>
+
+      <h3 id="ecosystem-growth">Ecosystem Growth — 12% of Emissions</h3>
+      <table>
+        <thead>
+          <tr><th>Component</th><th>Detail</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rate</td><td>12% of all weekly emissions</td></tr>
+          <tr><td>Liquid (50%)</td><td>Marketing campaigns, KOL partnerships, bounties, grants, community incentives</td></tr>
+          <tr><td>Locked (50%)</td><td>Strategic partnerships (veLCLAW for integrations), long-term ecosystem alignment</td></tr>
+        </tbody>
+      </table>
+
+      <Callout type="info" title="Why 17%?">
+        A protocol without growth budget dies. The 50/50 liquid/locked split on both allocations ensures the team and ecosystem fund are aligned with long-term health — half of every allocation is locked on-chain as veLCLAW for 2 years, verifiable by anyone.
+      </Callout>
 
       <h2 id="revenue-model">Revenue Model</h2>
       <table>
@@ -99,38 +118,37 @@ export default function TokenomicsPage() {
         <li><strong>Rebases</strong> — anti-dilution rewards that protect your voting share</li>
       </ul>
 
-      <h2 id="core-pools">Core Pools at Launch</h2>
+      <h2 id="core-pools">Core Pools</h2>
 
-      <h3>Tier 1 — Maximum Emissions</h3>
+      <h3>Live at Launch — Stablecoins &amp; Blue Chips</h3>
+      <table>
+        <thead><tr><th>Pool</th><th>Type</th><th>Fee</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>USDC / USDT</td><td>Stable</td><td>0.05%</td><td>Deployed</td></tr>
+          <tr><td>ETH / USDC</td><td>Volatile</td><td>0.30%</td><td>Deployed</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Phase 2 — After Token Launch</h3>
       <table>
         <thead><tr><th>Pool</th><th>Type</th><th>Fee</th></tr></thead>
         <tbody>
           <tr><td>LCLAW / WETH</td><td>Volatile</td><td>0.30%</td></tr>
+          <tr><td>LCLAW / USDC</td><td>Stable</td><td>0.05%</td></tr>
           <tr><td>VIRTUAL / WETH</td><td>Volatile</td><td>0.30%</td></tr>
-          <tr><td>VIRTUAL / USDC</td><td>Stable</td><td>0.04%</td></tr>
         </tbody>
       </table>
 
-      <h3>Tier 2 — High Emissions</h3>
+      <h3>Phase 3 — Ecosystem Expansion</h3>
       <table>
         <thead><tr><th>Pool</th><th>Type</th><th>Fee</th></tr></thead>
         <tbody>
-          <tr><td>AIXBT / WETH</td><td>Volatile</td><td>0.30%</td></tr>
-          <tr><td>LUNA / WETH</td><td>Volatile</td><td>0.30%</td></tr>
-          <tr><td>CLANKER / WETH</td><td>Volatile</td><td>0.30%</td></tr>
+          <tr><td>AI agent tokens / WETH</td><td>Volatile</td><td>0.30%</td></tr>
+          <tr><td>Partner tokens / USDC</td><td>Volatile</td><td>0.30%</td></tr>
+          <tr><td>Trending tokens</td><td>Volatile</td><td>0.30%</td></tr>
         </tbody>
       </table>
-
-      <h3>Tier 3 — Medium Emissions (added with partnerships)</h3>
-      <table>
-        <thead><tr><th>Pool</th><th>Type</th><th>Fee</th></tr></thead>
-        <tbody>
-          <tr><td>CLAWD / USDC</td><td>Volatile</td><td>0.30%</td></tr>
-          <tr><td>CLAWNCH / WETH</td><td>Volatile</td><td>0.30%</td></tr>
-          <tr><td>Trending agent tokens</td><td>Volatile</td><td>0.30%</td></tr>
-        </tbody>
-      </table>
-      <p>New pools are added continuously as new AI agent tokens launch. LiquidClaw deploys pools for trending tokens within hours of their launch.</p>
+      <p>New pools are added as the ecosystem grows. LiquidClaw is permissionless — anyone can create a pool for any token pair on Base.</p>
 
       <h2 id="the-flywheel-in-numbers">The Flywheel in Numbers</h2>
       <ol>
