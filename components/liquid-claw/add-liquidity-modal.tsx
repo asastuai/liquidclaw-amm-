@@ -49,6 +49,16 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
   const parsed0 = amount0 && pool ? parseUnits(amount0, pool.token0Decimals) : 0n
   const parsed1 = amount1 && pool ? parseUnits(amount1, pool.token1Decimals) : 0n
 
+  // User's LP token balance
+  const { data: lpBalance, refetch: refetchLp } = useReadContract({
+    address: pool?.address,
+    abi: ERC20_ABI,
+    functionName: "balanceOf",
+    args: userAddress ? [userAddress] : undefined,
+    query: { enabled: !!userAddress && !!pool },
+  })
+  const userLpBalance = lpBalance as bigint | undefined
+
   // Quote
   const { data: quoteResult } = useReadContract({
     address: addresses.router,
@@ -224,8 +234,11 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
   }, [pool, userAddress, parsed0, parsed1, hasWeth, isToken0Weth, addresses.router, addLiqWrite])
 
   useEffect(() => {
-    if (addLiqConfirmed) setStep("done")
-  }, [addLiqConfirmed])
+    if (addLiqConfirmed) {
+      setStep("done")
+      refetchLp()
+    }
+  }, [addLiqConfirmed, refetchLp])
 
   // Reset on close
   const handleClose = () => {
@@ -373,6 +386,33 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
                 className="text-sm text-accent hover:underline"
               >
                 View on BaseScan
+              </a>
+            </div>
+          )}
+
+          {/* Your Position */}
+          {userLpBalance && userLpBalance > 0n && pool && (
+            <div className="bg-muted/50 rounded-xl p-4 border border-border">
+              <h4 className="text-sm font-semibold text-foreground mb-3">Your Position</h4>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-1">
+                    <img src={pool.token0Icon} alt={pool.token0Symbol} className="w-5 h-5 rounded-full" />
+                    <img src={pool.token1Icon} alt={pool.token1Symbol} className="w-5 h-5 rounded-full" />
+                  </div>
+                  <span className="text-sm text-muted-foreground">{pool.token0Symbol}/{pool.token1Symbol} LP</span>
+                </div>
+                <span className="text-sm font-mono font-semibold text-foreground">
+                  {parseFloat(formatUnits(userLpBalance, 18)).toFixed(6)}
+                </span>
+              </div>
+              <a
+                href={`https://basescan.org/address/${pool.address}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                View pool on BaseScan ↗
               </a>
             </div>
           )}
