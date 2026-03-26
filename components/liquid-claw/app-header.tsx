@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, Droplets } from "lucide-react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
+import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
   { label: "Swap", href: "/swap" },
@@ -70,6 +71,7 @@ export function AppHeader() {
               showBalance={false}
               accountStatus="address"
             />
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
