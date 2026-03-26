@@ -72,6 +72,8 @@ const visionPillars = [
   { icon: Globe, title: "The DeFi Hub", description: "Spot AMM today. Perpetual DEX tomorrow. One platform for all of DeFi on Base." }
 ]
 
+// ========== BUBBLES ==========
+
 interface ScrollBubble {
   id: number; x: number; y: number; size: number; speed: number; opacity: number
 }
@@ -84,8 +86,8 @@ function BubbleCanvas() {
 
   const createBubble = useCallback((x: number, y: number): ScrollBubble => ({
     id: Math.random(), x: x + (Math.random() - 0.5) * 100, y,
-    size: 3 + Math.random() * 8, speed: 0.5 + Math.random() * 1.5,
-    opacity: 0.15 + Math.random() * 0.25
+    size: 4 + Math.random() * 10, speed: 0.4 + Math.random() * 1.2,
+    opacity: 0.3 + Math.random() * 0.4
   }), [])
 
   useEffect(() => {
@@ -98,10 +100,18 @@ function BubbleCanvas() {
     resize()
     window.addEventListener("resize", resize)
 
+    // Seed a few bubbles on load
+    for (let i = 0; i < 8; i++) {
+      bubblesRef.current.push(createBubble(
+        Math.random() * window.innerWidth,
+        Math.random() * window.innerHeight
+      ))
+    }
+
     const handleScroll = () => {
       const delta = Math.abs(window.scrollY - lastScrollRef.current)
-      if (delta > 8) {
-        const count = Math.min(Math.floor(delta / 15), 3)
+      if (delta > 5) {
+        const count = Math.min(Math.floor(delta / 10), 4)
         for (let i = 0; i < count; i++) {
           bubblesRef.current.push(createBubble(Math.random() * window.innerWidth, window.innerHeight + 10))
         }
@@ -114,15 +124,22 @@ function BubbleCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       bubblesRef.current = bubblesRef.current.filter(b => {
         b.y -= b.speed
-        b.x += Math.sin(b.y * 0.015) * 0.3
-        if (b.y < -20) return false
+        b.x += Math.sin(b.y * 0.012) * 0.4
+        if (b.y < -30) return false
+        // Bubble fill
         ctx.beginPath()
         ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255,255,255,${b.opacity * 0.2})`
+        ctx.fillStyle = `rgba(200,220,255,${b.opacity * 0.15})`
         ctx.fill()
-        ctx.strokeStyle = `rgba(255,255,255,${b.opacity * 0.35})`
-        ctx.lineWidth = 0.5
+        // Bubble border
+        ctx.strokeStyle = `rgba(200,220,255,${b.opacity * 0.4})`
+        ctx.lineWidth = 0.8
         ctx.stroke()
+        // Shine dot
+        ctx.beginPath()
+        ctx.arc(b.x - b.size * 0.3, b.y - b.size * 0.3, b.size * 0.15, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(255,255,255,${b.opacity * 0.6})`
+        ctx.fill()
         return true
       })
       animationRef.current = requestAnimationFrame(animate)
@@ -136,7 +153,54 @@ function BubbleCanvas() {
     }
   }, [createBubble])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-10" style={{ mixBlendMode: "screen" }} />
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-10" />
+}
+
+// ========== 1 FISH + 1 JELLYFISH (subtle) ==========
+
+function SwimmingFish() {
+  const [pos, setPos] = useState(-60)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPos(p => p > (typeof window !== "undefined" ? window.innerWidth + 60 : 1500) ? -60 : p + 0.4)
+    }, 16)
+    return () => clearInterval(interval)
+  }, [])
+  return (
+    <svg className="fixed pointer-events-none z-[5] opacity-40" style={{ left: pos, top: "22%" }} width="40" height="24" viewBox="0 0 50 30">
+      <ellipse cx="22" cy="15" rx="16" ry="10" fill="#3b82f6" />
+      <path d="M38 15 L50 5 L48 15 L50 25 Z" fill="#3b82f6" />
+      <circle cx="12" cy="12" r="4" fill="white" />
+      <circle cx="11" cy="11" r="2.5" fill="#1a1a2e" />
+      <circle cx="10" cy="10" r="0.8" fill="white" />
+      <path d="M9 17 Q12 20 15 17" stroke="#1a1a2e" strokeWidth="1" fill="none" />
+    </svg>
+  )
+}
+
+function FloatingJellyfish() {
+  const [pos, setPos] = useState({ x: typeof window !== "undefined" ? window.innerWidth + 50 : 1500, y: 55 })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPos(p => ({
+        x: p.x < -50 ? (typeof window !== "undefined" ? window.innerWidth + 50 : 1500) : p.x - 0.3,
+        y: 55 + Math.sin(Date.now() * 0.001) * 3
+      }))
+    }, 16)
+    return () => clearInterval(interval)
+  }, [])
+  return (
+    <svg className="fixed pointer-events-none z-[5] opacity-30" style={{ left: pos.x, top: `${pos.y}%` }} width="35" height="50" viewBox="0 0 40 56">
+      <ellipse cx="20" cy="14" rx="12" ry="10" fill="#a78bfa" />
+      <ellipse cx="14" cy="12" rx="4" ry="3" fill="white" opacity="0.3" />
+      <circle cx="14" cy="16" r="1.5" fill="#1a1a2e" />
+      <circle cx="26" cy="16" r="1.5" fill="#1a1a2e" />
+      <path d="M17 20 Q20 23 23 20" stroke="#1a1a2e" strokeWidth="0.8" fill="none" />
+      <path d="M12 28 Q10 36 14 44" stroke="#a78bfa" strokeWidth="1.5" fill="none" opacity="0.6" />
+      <path d="M20 28 Q18 38 20 48" stroke="#a78bfa" strokeWidth="1.5" fill="none" opacity="0.7" />
+      <path d="M28 28 Q30 36 26 44" stroke="#a78bfa" strokeWidth="1.5" fill="none" opacity="0.6" />
+    </svg>
+  )
 }
 
 export function RoadmapPage() {
@@ -168,6 +232,8 @@ export function RoadmapPage() {
   return (
     <div className="min-h-screen bg-background overflow-hidden relative">
       {mounted && <BubbleCanvas />}
+      {mounted && <SwimmingFish />}
+      {mounted && <FloatingJellyfish />}
       <Header />
 
       {/* Hero */}
