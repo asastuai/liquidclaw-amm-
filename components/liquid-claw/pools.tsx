@@ -4,14 +4,14 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Droplets, ArrowUpRight, Loader2, LogOut, Percent } from "lucide-react"
+import { Droplets, Loader2, LogOut, Percent } from "lucide-react"
 import { useAccount, useChainId, useReadContract } from "wagmi"
 import { formatUnits } from "viem"
-import { usePoolsList, type PoolData } from "@/hooks/use-pools"
+import type { PoolData } from "@/hooks/use-pools"
 import type { Address } from "viem"
 import { AddLiquidityModal } from "./add-liquidity-modal"
 import { getTokenIcon } from "@/lib/token-icons"
-import { getTxUrl, getAddressUrl } from "@/lib/explorer"
+import { getAddressUrl } from "@/lib/explorer"
 import { ERC20_ABI } from "@/lib/contracts/abis"
 
 const LIVE_POOLS: { pair: [string, string]; fee: string; type: "Stable" | "Volatile"; poolData: PoolData }[] = [
@@ -45,17 +45,11 @@ const LIVE_POOLS: { pair: [string, string]; fee: string; type: "Stable" | "Volat
   },
 ]
 
-function LivePoolCard({
-  pool,
-  onAddLiquidity,
-}: {
-  pool: (typeof LIVE_POOLS)[0]
-  onAddLiquidity: (pool: PoolData) => void
-}) {
+function UserPosition({ pool }: { pool: (typeof LIVE_POOLS)[0] }) {
   const { address: userAddress } = useAccount()
   const chainId = useChainId()
 
-  const { data: lpBalance } = useReadContract({
+  const { data: lpBalance, isLoading } = useReadContract({
     address: pool.poolData.address,
     abi: ERC20_ABI,
     functionName: "balanceOf",
@@ -65,9 +59,56 @@ function LivePoolCard({
 
   const userLp = lpBalance as bigint | undefined
   const hasPosition = userLp && userLp > 0n
-  // LP token scaling matches the underlying token decimals in Solidly forks
   const lpDecimals = Math.min(pool.poolData.token0Decimals, pool.poolData.token1Decimals)
   const formattedLp = hasPosition ? parseFloat(formatUnits(userLp, lpDecimals)).toFixed(4) : "0"
+
+  if (!userAddress) return null
+  if (isLoading) {
+    return (
+      <div className="mt-3 py-3 px-3 bg-muted/30 rounded-lg flex items-center justify-center gap-2">
+        <Loader2 className="w-3 h-3 animate-spin text-muted-foreground" />
+        <span className="text-xs text-muted-foreground">Loading position...</span>
+      </div>
+    )
+  }
+  if (!hasPosition) return null
+
+  return (
+    <div className="mt-3 py-3 px-3 bg-primary/5 border border-primary/20 rounded-lg">
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-xs font-medium text-muted-foreground">Your Position</span>
+        <a
+          href={getAddressUrl(chainId, pool.poolData.address)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-muted-foreground hover:text-primary transition-colors"
+        >
+          View ↗
+        </a>
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1.5">
+          <div className="flex -space-x-1">
+            <img src={getTokenIcon(pool.pair[0])} alt="" className="w-4 h-4 rounded-full" />
+            <img src={getTokenIcon(pool.pair[1])} alt="" className="w-4 h-4 rounded-full" />
+          </div>
+          <span className="text-sm font-semibold text-foreground">{formattedLp}</span>
+        </div>
+        <span className="text-xs text-muted-foreground">LP tokens</span>
+      </div>
+    </div>
+  )
+}
+
+function LivePoolCard({
+  pool,
+  onAddLiquidity,
+}: {
+  pool: (typeof LIVE_POOLS)[0]
+  onAddLiquidity: (pool: PoolData) => void
+}) {
+  const { isConnected } = useAccount()
+  const chainId = useChainId()
 
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
@@ -95,33 +136,8 @@ function LivePoolCard({
           <span className="text-sm font-semibold text-muted-foreground">0.00%</span>
         </div>
 
-        {/* Your Position */}
-        {hasPosition && (
-          <div className="mt-3 py-3 px-3 bg-primary/5 border border-primary/20 rounded-lg">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs font-medium text-muted-foreground">Your Position</span>
-              <a
-                href={getAddressUrl(chainId, pool.poolData.address)}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="text-xs text-muted-foreground hover:text-primary transition-colors"
-              >
-                View ↗
-              </a>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
-                <div className="flex -space-x-1">
-                  <img src={getTokenIcon(pool.pair[0])} alt="" className="w-4 h-4 rounded-full" />
-                  <img src={getTokenIcon(pool.pair[1])} alt="" className="w-4 h-4 rounded-full" />
-                </div>
-                <span className="text-sm font-semibold text-foreground">{formattedLp}</span>
-              </div>
-              <span className="text-xs text-muted-foreground">LP tokens</span>
-            </div>
-          </div>
-        )}
+        {/* User position — loads independently */}
+        {isConnected && <UserPosition pool={pool} />}
 
         {/* Buttons */}
         <div className="flex gap-2 mt-4">
@@ -131,22 +147,8 @@ function LivePoolCard({
             onClick={() => onAddLiquidity(pool.poolData)}
           >
             <Droplets className="w-4 h-4 mr-1.5" />
-            {hasPosition ? "Add More" : "Add Liquidity"}
+            Add Liquidity
           </Button>
-          {hasPosition && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="rounded-full"
-              onClick={() => {
-                // TODO: Implement remove liquidity modal
-                window.open(getAddressUrl(chainId, pool.poolData.address), "_blank")
-              }}
-            >
-              <LogOut className="w-4 h-4 mr-1.5" />
-              Remove
-            </Button>
-          )}
         </div>
 
         {/* Pool address */}
@@ -166,8 +168,6 @@ function LivePoolCard({
 }
 
 export function Pools() {
-  const { isConnected } = useAccount()
-  const { pools, isLoading, isEmpty } = usePoolsList()
   const [selectedPool, setSelectedPool] = useState<PoolData | null>(null)
 
   return (
@@ -187,26 +187,16 @@ export function Pools() {
             </p>
           </div>
 
-          {/* Loading state */}
-          {isConnected && isLoading && (
-            <div className="flex items-center justify-center gap-3 py-12">
-              <Loader2 className="w-6 h-6 animate-spin text-primary" />
-              <span className="text-muted-foreground">Loading pools from Base...</span>
-            </div>
-          )}
-
-          {/* Live pools */}
-          {!isLoading && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {LIVE_POOLS.map((pool, i) => (
-                <LivePoolCard
-                  key={`live-${i}`}
-                  pool={pool}
-                  onAddLiquidity={setSelectedPool}
-                />
-              ))}
-            </div>
-          )}
+          {/* Live pools — renders instantly, positions load async */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {LIVE_POOLS.map((pool, i) => (
+              <LivePoolCard
+                key={`live-${i}`}
+                pool={pool}
+                onAddLiquidity={setSelectedPool}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
