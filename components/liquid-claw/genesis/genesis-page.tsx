@@ -62,14 +62,14 @@ const MILESTONES = [
     amount: 100000,
     label: "$100K",
     title: "Acceleration",
-    description: "Perpetual DEX integration, cross-chain deployment, full-time dev team",
+    description: "Perpetual DEX integration begins, dedicated server infrastructure, full-time development",
     unlocked: false,
   },
   {
     amount: 250000,
     label: "$250K",
-    title: "Dominance",
-    description: "Institutional infrastructure, market maker partnerships, mobile app development",
+    title: "Scale",
+    description: "Cross-chain deployment, advanced trading features, ecosystem grants for builders",
     unlocked: false,
   },
 ]
