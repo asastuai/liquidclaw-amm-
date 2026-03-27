@@ -11,18 +11,18 @@ import { ThemeToggle } from "./theme-toggle"
 const mainNav = [
   { label: "Swap", href: "/swap" },
   { label: "Pools", href: "/pools" },
-  { label: "Rewards", href: "/rewards" },
+  { label: "Dashboard", href: "/dashboard" },
   { label: "Roadmap", href: "/roadmap" },
 ]
 
 const moreNav = [
   { label: "Docs", href: "/docs" },
+  { label: "Rewards", href: "/rewards" },
   { label: "AI Vault", href: "/ai-vault" },
   { label: "veLCLAW", href: "/governance" },
   { label: "Vote", href: "/vote" },
   { label: "Gauges", href: "/gauges" },
   { label: "Lock", href: "/lock" },
-  { label: "Dashboard", href: "/dashboard" },
 ]
 
 export function Header() {
