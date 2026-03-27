@@ -1,24 +1,48 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Droplets } from "lucide-react"
+import { Menu, X, Droplets, ChevronDown } from "lucide-react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { ThemeToggle } from "./theme-toggle"
 
-const navItems = [
+const mainNav = [
   { label: "Swap", href: "/swap" },
   { label: "Pools", href: "/pools" },
-  { label: "veLCLAW", href: "/governance" },
-  { label: "AI Vault", href: "/ai-vault" },
+  { label: "Rewards", href: "/rewards" },
   { label: "Roadmap", href: "/roadmap" },
+]
+
+const moreNav = [
+  { label: "Docs", href: "/docs" },
+  { label: "AI Vault", href: "/ai-vault" },
+  { label: "veLCLAW", href: "/governance" },
+  { label: "Vote", href: "/vote" },
+  { label: "Gauges", href: "/gauges" },
+  { label: "Lock", href: "/lock" },
+  { label: "Dashboard", href: "/dashboard" },
 ]
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+
+  // Close "More" dropdown when clicking outside
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClick)
+    return () => document.removeEventListener("mousedown", handleClick)
+  }, [])
+
+  const isMoreActive = moreNav.some((item) => pathname === item.href)
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -40,15 +64,15 @@ export function AppHeader() {
             </span>
           </Link>
 
-          {/* Desktop Nav Tabs */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1 bg-muted/50 rounded-xl p-1">
-            {navItems.map((item) => {
+            {mainNav.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                  className={`px-5 py-2 text-sm font-semibold rounded-lg transition-all ${
                     isActive
                       ? "bg-background text-foreground shadow-sm"
                       : "text-muted-foreground hover:text-foreground"
@@ -58,6 +82,43 @@ export function AppHeader() {
                 </Link>
               )
             })}
+
+            {/* More dropdown */}
+            <div ref={moreRef} className="relative">
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                  isMoreActive
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                More
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {moreOpen && (
+                <div className="absolute top-full right-0 mt-2 w-48 bg-card border border-border rounded-xl shadow-xl py-2 z-50">
+                  {moreNav.map((item) => {
+                    const isActive = pathname === item.href
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setMoreOpen(false)}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
+                          isActive
+                            ? "text-primary font-medium bg-primary/5"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    )
+                  })}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Right side */}
@@ -87,16 +148,14 @@ export function AppHeader() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-1">
-              {navItems.map((item) => {
+              {mainNav.map((item) => {
                 const isActive = pathname === item.href
                 return (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    className={`px-4 py-3 text-sm font-semibold rounded-lg transition-colors ${
+                      isActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -104,12 +163,29 @@ export function AppHeader() {
                   </Link>
                 )
               })}
-              <div className="mt-4 px-4">
+              <div className="mt-2 mb-1 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">More</div>
+              {moreNav.map((item) => {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`px-6 py-2.5 text-sm rounded-lg transition-colors ${
+                      isActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
+              <div className="mt-4 px-4 flex items-center gap-3">
                 <ConnectButton
                   chainStatus="icon"
                   showBalance={false}
                   accountStatus="address"
                 />
+                <ThemeToggle />
               </div>
             </nav>
           </div>
