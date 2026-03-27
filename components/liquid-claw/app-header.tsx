@@ -11,6 +11,7 @@ import { ThemeToggle } from "./theme-toggle"
 const mainNav = [
   { label: "Swap", href: "/swap" },
   { label: "Pools", href: "/pools" },
+  { label: "Genesis", href: "/genesis" },
   { label: "Dashboard", href: "/dashboard" },
   { label: "Roadmap", href: "/roadmap" },
 ]
