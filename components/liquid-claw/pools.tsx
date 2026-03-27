@@ -65,7 +65,9 @@ function LivePoolCard({
 
   const userLp = lpBalance as bigint | undefined
   const hasPosition = userLp && userLp > 0n
-  const formattedLp = hasPosition ? parseFloat(formatUnits(userLp, 18)).toFixed(6) : "0"
+  // LP token scaling matches the underlying token decimals in Solidly forks
+  const lpDecimals = Math.min(pool.poolData.token0Decimals, pool.poolData.token1Decimals)
+  const formattedLp = hasPosition ? parseFloat(formatUnits(userLp, lpDecimals)).toFixed(4) : "0"
 
   return (
     <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">

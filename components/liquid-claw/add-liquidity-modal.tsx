@@ -315,7 +315,7 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
             <div className="bg-accent/5 rounded-xl p-3 text-sm">
               <div className="flex justify-between text-muted-foreground">
                 <span>LP tokens received</span>
-                <span>{parseFloat(formatUnits(quotedLiquidity, 18)).toFixed(6)}</span>
+                <span>{parseFloat(formatUnits(quotedLiquidity, Math.min(pool.token0Decimals, pool.token1Decimals))).toFixed(4)}</span>
               </div>
               <div className="flex justify-between text-muted-foreground mt-1">
                 <span>Pool type</span>
@@ -403,7 +403,7 @@ export function AddLiquidityModal({ open, onClose, pool }: AddLiquidityModalProp
                   <span className="text-sm text-muted-foreground">{pool.token0Symbol}/{pool.token1Symbol} LP</span>
                 </div>
                 <span className="text-sm font-mono font-semibold text-foreground">
-                  {parseFloat(formatUnits(userLpBalance, 18)).toFixed(6)}
+                  {parseFloat(formatUnits(userLpBalance, Math.min(pool.token0Decimals, pool.token1Decimals))).toFixed(4)}
                 </span>
               </div>
               <a
