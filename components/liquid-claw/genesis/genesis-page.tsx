@@ -24,11 +24,10 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 const GENESIS_CONFIG = {
-  targetRaise: 50000, // $50K target
-  minContribution: 10, // $10 min
-  maxContribution: 5000, // $5K max per wallet
-  durationDays: 7,
-  velclawPerUsdc: 1000, // 1 USDC = 1000 veLCLAW
+  minContribution: 10,
+  maxContribution: 5000,
+  durationDays: 14,
+  velclawPerUsdc: 1000,
   lockDuration: "2 years",
   distribution: {
     liquidity: 70,
@@ -36,6 +35,44 @@ const GENESIS_CONFIG = {
     operations: 10,
   },
 }
+
+const MILESTONES = [
+  {
+    amount: 10000,
+    label: "$10K",
+    title: "Ignition",
+    description: "Deep LCLAW/USDC liquidity pool + first gauge emissions activated",
+    unlocked: false,
+  },
+  {
+    amount: 25000,
+    label: "$25K",
+    title: "Expansion",
+    description: "3 additional pool pairs launched + bribe marketplace goes live",
+    unlocked: false,
+  },
+  {
+    amount: 50000,
+    label: "$50K",
+    title: "Infrastructure",
+    description: "Dedicated RPC nodes, analytics dashboard, professional security audit",
+    unlocked: false,
+  },
+  {
+    amount: 100000,
+    label: "$100K",
+    title: "Acceleration",
+    description: "Perpetual DEX integration, cross-chain deployment, full-time dev team",
+    unlocked: false,
+  },
+  {
+    amount: 250000,
+    label: "$250K",
+    title: "Dominance",
+    description: "Institutional infrastructure, market maker partnerships, mobile app development",
+    unlocked: false,
+  },
+]
 
 const benefits = [
   {
@@ -96,7 +133,6 @@ export function GenesisPage() {
   const totalRaised = 0
   const participants = 0
   const timeLeft = `${GENESIS_CONFIG.durationDays} days`
-  const progress = (totalRaised / GENESIS_CONFIG.targetRaise) * 100
 
   const velclawAmount = parseFloat(amount || "0") * GENESIS_CONFIG.velclawPerUsdc
 
@@ -126,53 +162,71 @@ export function GenesisPage() {
             {/* Left — Stats & Contribute */}
             <div className="lg:col-span-2 space-y-6">
 
-              {/* Progress Card */}
+              {/* Stats + Status */}
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg font-bold text-foreground">Genesis Progress</h2>
-                    {!isActive && (
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-lg font-bold text-foreground">Genesis Event</h2>
+                    {!isActive ? (
                       <Badge variant="outline" className="text-muted-foreground">
                         <Clock className="w-3 h-3 mr-1" />
-                        Coming Soon
+                        Starting Soon
                       </Badge>
-                    )}
-                    {isActive && (
-                      <Badge className="bg-green-500/10 text-green-500 border-0">
-                        Live
-                      </Badge>
+                    ) : (
+                      <Badge className="bg-green-500/10 text-green-500 border-0">Live</Badge>
                     )}
                   </div>
 
-                  {/* Progress bar */}
-                  <div className="w-full h-3 bg-muted rounded-full mb-3 overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500"
-                      style={{ width: `${Math.min(progress, 100)}%` }}
-                    />
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">
-                      ${totalRaised.toLocaleString()} raised
-                    </span>
-                    <span className="text-foreground font-medium">
-                      ${GENESIS_CONFIG.targetRaise.toLocaleString()} target
-                    </span>
-                  </div>
-
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border">
-                    <div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-2xl font-bold text-foreground">${totalRaised.toLocaleString()}</p>
+                      <p className="text-xs text-muted-foreground mt-1">Total Raised</p>
+                    </div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
                       <p className="text-2xl font-bold text-foreground">{participants}</p>
-                      <p className="text-xs text-muted-foreground">Participants</p>
+                      <p className="text-xs text-muted-foreground mt-1">Participants</p>
                     </div>
-                    <div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
                       <p className="text-2xl font-bold text-foreground">{timeLeft}</p>
-                      <p className="text-xs text-muted-foreground">Remaining</p>
+                      <p className="text-xs text-muted-foreground mt-1">Remaining</p>
                     </div>
-                    <div>
-                      <p className="text-2xl font-bold text-foreground">{GENESIS_CONFIG.lockDuration}</p>
-                      <p className="text-xs text-muted-foreground">Lock Period</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Milestones */}
+              <Card>
+                <CardContent className="p-6">
+                  <h2 className="text-lg font-bold text-foreground mb-6">Milestones</h2>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    No cap. The more we raise, the more we build. Every milestone unlocks new protocol capabilities.
+                  </p>
+                  <div className="relative">
+                    {/* Vertical line */}
+                    <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" />
+
+                    <div className="space-y-6">
+                      {MILESTONES.map((m, i) => {
+                        const reached = totalRaised >= m.amount
+                        return (
+                          <div key={i} className="flex gap-4 relative">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 z-10 ${
+                              reached
+                                ? "bg-green-500 text-white"
+                                : "bg-muted border-2 border-border text-muted-foreground"
+                            }`}>
+                              {reached ? <Check className="w-4 h-4" /> : <span className="text-xs font-bold">{i + 1}</span>}
+                            </div>
+                            <div className={`flex-1 pb-1 ${reached ? "" : "opacity-70"}`}>
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="text-sm font-bold text-foreground">{m.label}</span>
+                                <span className="text-xs text-primary font-medium">— {m.title}</span>
+                              </div>
+                              <p className="text-xs text-muted-foreground">{m.description}</p>
+                            </div>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
                 </CardContent>
