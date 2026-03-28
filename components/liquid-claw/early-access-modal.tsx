@@ -6,7 +6,8 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { X, Sparkles, Check, Wallet, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const STORAGE_KEY = "lclaw_whitelist_signed"
+const SIGNED_KEY = "lclaw_whitelist_signed"
+const DISMISSED_KEY = "lclaw_whitelist_dismissed"
 
 export function EarlyAccessModal() {
   const [show, setShow] = useState(false)
@@ -16,10 +17,16 @@ export function EarlyAccessModal() {
 
   useEffect(() => {
     // Don't show if already signed
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) {
+    if (localStorage.getItem(SIGNED_KEY)) {
       setSigned(true)
       return
+    }
+    // If dismissed, show again after 24 hours
+    const dismissed = localStorage.getItem(DISMISSED_KEY)
+    if (dismissed) {
+      const dismissedAt = new Date(dismissed).getTime()
+      const hoursAgo = (Date.now() - dismissedAt) / (1000 * 60 * 60)
+      if (hoursAgo < 24) return
     }
     // Show after 1.5s delay
     const timer = setTimeout(() => setShow(true), 1500)
@@ -28,13 +35,18 @@ export function EarlyAccessModal() {
 
   useEffect(() => {
     if (isSuccess && address) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      localStorage.setItem(SIGNED_KEY, JSON.stringify({
         address,
         timestamp: new Date().toISOString(),
       }))
       setSigned(true)
     }
   }, [isSuccess, address])
+
+  const handleDismiss = () => {
+    localStorage.setItem(DISMISSED_KEY, new Date().toISOString())
+    setShow(false)
+  }
 
   const handleSign = () => {
     signMessage({
@@ -49,14 +61,14 @@ export function EarlyAccessModal() {
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={() => setShow(false)}
+        onClick={handleDismiss}
       />
 
       {/* Modal */}
       <div className="relative bg-card border border-border rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in fade-in zoom-in-95 duration-300">
         {/* Close button */}
         <button
-          onClick={() => setShow(false)}
+          onClick={handleDismiss}
           className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-muted transition-colors text-muted-foreground"
         >
           <X className="w-4 h-4" />
