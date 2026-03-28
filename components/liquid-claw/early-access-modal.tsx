@@ -116,8 +116,18 @@ export function EarlyAccessModal() {
         {/* Action */}
         {!isConnected ? (
           <div className="flex flex-col items-center gap-3">
-            <p className="text-xs text-muted-foreground">Connect your wallet to reserve your spot</p>
             <ConnectButton />
+            {typeof window !== "undefined" && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && !(window as any).ethereum && (
+              <div className="text-center mt-2 space-y-2">
+                <p className="text-xs text-muted-foreground">No wallet detected? Open this page in your wallet app:</p>
+                <a
+                  href={`https://metamask.app.link/dapp/${typeof window !== "undefined" ? window.location.host : "liquidclawfinance.com"}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-500/10 text-orange-600 rounded-full text-xs font-medium hover:bg-orange-500/20 transition-colors"
+                >
+                  Open in MetaMask
+                </a>
+              </div>
+            )}
           </div>
         ) : isSuccess ? (
           <div className="flex flex-col items-center gap-3">
