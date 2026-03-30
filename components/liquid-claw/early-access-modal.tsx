@@ -113,6 +113,22 @@ export function EarlyAccessModal() {
           </div>
         </div>
 
+        {/* Telegram Community */}
+        <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-xl text-center">
+          <p className="text-sm text-muted-foreground mb-3">
+            Join the community and help build it from the ground up
+          </p>
+          <a
+            href="https://t.me/+M6vEgO1uifA3YjVh"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#229ED9] text-white font-medium text-sm rounded-full hover:bg-[#1a8ac4] transition-colors"
+          >
+            ✈️ Join Telegram
+          </a>
+        </div>
+
         {/* Action */}
         {!isConnected ? (
           <div className="flex flex-col items-center gap-3">
