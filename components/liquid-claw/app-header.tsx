@@ -7,23 +7,24 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Droplets, ChevronDown } from "lucide-react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { ThemeToggle } from "./theme-toggle"
+import { LanguageToggle, useI18n } from "@/lib/i18n"
 
-const mainNav = [
-  { label: "Swap", href: "/swap" },
-  { label: "Pools", href: "/pools" },
-  { label: "Genesis", href: "/genesis" },
-  { label: "Dashboard", href: "/dashboard" },
-  { label: "Roadmap", href: "/roadmap" },
+const mainNavKeys = [
+  { key: "nav.swap", href: "/swap" },
+  { key: "nav.pools", href: "/pools" },
+  { key: "nav.genesis", href: "/genesis" },
+  { key: "nav.dashboard", href: "/dashboard" },
+  { key: "nav.roadmap", href: "/roadmap" },
 ]
 
-const moreNav = [
-  { label: "Docs", href: "/docs" },
-  { label: "Rewards", href: "/rewards" },
-  { label: "AI Vault", href: "/ai-vault" },
-  { label: "veLCLAW", href: "/governance" },
-  { label: "Vote", href: "/vote" },
-  { label: "Gauges", href: "/gauges" },
-  { label: "Lock", href: "/lock" },
+const moreNavKeys = [
+  { key: "nav.docs", href: "/docs" },
+  { key: "nav.rewards", href: "/rewards" },
+  { key: "nav.aiVault", href: "/ai-vault" },
+  { key: "nav.veLCLAW", href: "/governance" },
+  { key: "nav.vote", href: "/vote" },
+  { key: "nav.gauges", href: "/gauges" },
+  { key: "nav.lock", href: "/lock" },
 ]
 
 export function AppHeader() {
@@ -31,6 +32,10 @@ export function AppHeader() {
   const [moreOpen, setMoreOpen] = useState(false)
   const moreRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+  const { t } = useI18n()
+
+  const mainNav = mainNavKeys.map(n => ({ label: t(n.key), href: n.href }))
+  const moreNav = moreNavKeys.map(n => ({ label: t(n.key), href: n.href }))
 
   // Close "More" dropdown when clicking outside
   useEffect(() => {
@@ -94,7 +99,7 @@ export function AppHeader() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                More
+                {t("nav.more")}
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
               </button>
 
@@ -124,15 +129,12 @@ export function AppHeader() {
 
           {/* Right side */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 rounded-full text-sm">
-              <Droplets className="w-4 h-4 text-accent" />
-              <span className="text-accent font-medium">Base</span>
-            </div>
             <ConnectButton
               chainStatus="icon"
               showBalance={false}
               accountStatus="address"
             />
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
@@ -164,7 +166,7 @@ export function AppHeader() {
                   </Link>
                 )
               })}
-              <div className="mt-2 mb-1 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">More</div>
+              <div className="mt-2 mb-1 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">{t("nav.more")}</div>
               {moreNav.map((item) => {
                 const isActive = pathname === item.href
                 return (
