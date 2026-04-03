@@ -57,7 +57,26 @@ export const BASE_SEPOLIA_ADDRESSES: ContractAddresses = {
   virtual: "0x0000000000000000000000000000000000000000",
 }
 
-export const SUPPORTED_CHAIN_IDS = [8453, 84532] as const
+// BSC Mainnet (Chain ID: 56)
+// Deployed 2026-04-03 | Deployer: 0x1C8cdBc89267a24673bBc55313833290A22D187B
+export const BSC_ADDRESSES: ContractAddresses = {
+  lclaw: "0x56A49C3B68CBf927567767Aa2B64F582890cad1f",
+  router: "0x17990A0e65e7ED1304deb24295f3bcFB964555f6",
+  poolFactory: "0xd2D6a89c6249cDA4B1A540BF103dB0c31fD62fBF",
+  votingEscrow: "0x98cBe242098C2729DaAd050814b8077Ed8F386c7",
+  voter: "0xe8Eac1Bf158Fba37dD338c2088ccB34e94a2CD52",
+  minter: "0x875d2823545F29e1F6E676F7A36848f505672F96",
+  rewardsDistributor: "0x3B8A0827e5D94397342b0d78B2A61b866C392855",
+  factoryRegistry: "0x5D8f11440d32B1fB2E64799B85b4d1483570624d",
+  aiVault: "0x0000000000000000000000000000000000000000",
+  aiStrategyRegistry: "0x0000000000000000000000000000000000000000",
+  // BSC mainnet tokens
+  weth: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", // WBNB
+  usdc: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+  virtual: "0x0000000000000000000000000000000000000000",
+}
+
+export const SUPPORTED_CHAIN_IDS = [56, 8453, 84532] as const
 
 export function isSupportedChain(chainId: number): boolean {
   return (SUPPORTED_CHAIN_IDS as readonly number[]).includes(chainId)
@@ -65,16 +84,17 @@ export function isSupportedChain(chainId: number): boolean {
 
 export function getAddresses(chainId: number): ContractAddresses {
   switch (chainId) {
+    case 56:
+      return BSC_ADDRESSES
     case 8453:
       return BASE_ADDRESSES
     case 84532:
       return BASE_SEPOLIA_ADDRESSES
     default:
-      // Return Base addresses but log warning — NetworkGuard should prevent this
       if (typeof window !== "undefined") {
-        console.warn(`[LiquidClaw] Unsupported chain ${chainId}. Falling back to Base mainnet addresses.`)
+        console.warn(`[LiquidClaw] Unsupported chain ${chainId}. Falling back to BSC addresses.`)
       }
-      return BASE_ADDRESSES
+      return BSC_ADDRESSES
   }
 }
 
@@ -87,6 +107,45 @@ export interface TokenInfo {
   logo: string
   isNative?: boolean
 }
+
+export const BSC_TOKENS: TokenInfo[] = [
+  {
+    address: "0x0000000000000000000000000000000000000000",
+    symbol: "BNB",
+    name: "BNB",
+    decimals: 18,
+    logo: "/images/tokens/bnb.png",
+    isNative: true,
+  },
+  {
+    address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    symbol: "WBNB",
+    name: "Wrapped BNB",
+    decimals: 18,
+    logo: "/images/tokens/bnb.png",
+  },
+  {
+    address: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    symbol: "USDC",
+    name: "USD Coin",
+    decimals: 18,
+    logo: "/images/tokens/usdc.png",
+  },
+  {
+    address: "0x55d398326f99059fF775485246999027B3197955",
+    symbol: "USDT",
+    name: "Tether USD",
+    decimals: 18,
+    logo: "/images/tokens/usdt.png",
+  },
+  {
+    address: "0x56A49C3B68CBf927567767Aa2B64F582890cad1f",
+    symbol: "LCLAW",
+    name: "LiquidClaw",
+    decimals: 18,
+    logo: "/images/lobster-mascot.jpg",
+  },
+]
 
 export const BASE_TOKENS: TokenInfo[] = [
   {
@@ -126,3 +185,12 @@ export const BASE_TOKENS: TokenInfo[] = [
     logo: "/images/lobster-mascot.jpg",
   },
 ]
+
+export function getTokens(chainId: number): TokenInfo[] {
+  switch (chainId) {
+    case 56: return BSC_TOKENS
+    case 8453:
+    case 84532:
+    default: return BASE_TOKENS
+  }
+}

@@ -10,9 +10,9 @@ import {
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import { useAccount } from "wagmi"
-import { useReadContract, useBalance } from "wagmi"
+import { useReadContract, useBalance, useChainId } from "wagmi"
 import { formatUnits, type Address } from "viem"
-import { BASE_TOKENS, type TokenInfo } from "@/lib/contracts/addresses"
+import { getTokens, type TokenInfo } from "@/lib/contracts/addresses"
 import { ERC20_ABI } from "@/lib/contracts/abis"
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000" as Address
@@ -92,11 +92,13 @@ export function TokenSelectModal({
   selectedToken,
 }: TokenSelectModalProps) {
   const [search, setSearch] = useState("")
+  const chainId = useChainId()
+  const tokens = useMemo(() => getTokens(chainId), [chainId])
 
   const filteredTokens = useMemo(() => {
-    if (!search) return BASE_TOKENS
+    if (!search) return tokens
     const q = search.toLowerCase()
-    return BASE_TOKENS.filter(
+    return tokens.filter(
       (t) =>
         t.symbol.toLowerCase().includes(q) ||
         t.name.toLowerCase().includes(q) ||

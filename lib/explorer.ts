@@ -1,12 +1,13 @@
-import { base, baseSepolia } from "wagmi/chains"
+import { bsc, base, baseSepolia } from "wagmi/chains"
 
 const EXPLORERS: Record<number, string> = {
+  [bsc.id]: "https://bscscan.com",
   [base.id]: "https://basescan.org",
   [baseSepolia.id]: "https://sepolia.basescan.org",
 }
 
 export function getExplorerUrl(chainId: number): string {
-  return EXPLORERS[chainId] ?? EXPLORERS[base.id]
+  return EXPLORERS[chainId] ?? EXPLORERS[bsc.id]
 }
 
 export function getTxUrl(chainId: number, txHash: string): string {

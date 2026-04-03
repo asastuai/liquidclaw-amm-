@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useMemo } from "react"
 import { useChainId } from "wagmi"
 import { getTxUrl } from "@/lib/explorer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,16 +20,17 @@ import { useAccount } from "wagmi"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useSwap } from "@/hooks/use-swap"
 import { TokenSelectModal } from "./token-select-modal"
-import { BASE_TOKENS, type TokenInfo } from "@/lib/contracts/addresses"
+import { getTokens, type TokenInfo } from "@/lib/contracts/addresses"
 
 const DEFAULT_SLIPPAGE = 0.5
 
 export function SwapCard() {
   const { isConnected } = useAccount()
   const chainId = useChainId()
+  const tokens = useMemo(() => getTokens(chainId), [chainId])
 
-  const [tokenIn, setTokenIn] = useState<TokenInfo>(BASE_TOKENS[0]) // ETH
-  const [tokenOut, setTokenOut] = useState<TokenInfo>(BASE_TOKENS[4]) // LCLAW
+  const [tokenIn, setTokenIn] = useState<TokenInfo>(tokens[0]) // Native (BNB or ETH)
+  const [tokenOut, setTokenOut] = useState<TokenInfo>(tokens[tokens.length - 1]) // LCLAW
   const [amountIn, setAmountIn] = useState("")
   const [slippage, setSlippage] = useState(DEFAULT_SLIPPAGE)
   const [showSettings, setShowSettings] = useState(false)
