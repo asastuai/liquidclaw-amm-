@@ -4,13 +4,16 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Bot, Shield } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
 export function Hero() {
+  const { t } = useI18n()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-background" />
-      
+
       {/* Floating bubbles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[
@@ -41,19 +44,17 @@ export function Hero() {
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
               <Zap className="w-4 h-4" />
-              Built for Autonomous Agents on Base
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance mb-6">
-              The Friendliest{" "}
-              <span className="text-primary">AMM</span>{" "}
-              in the Ocean
+              {t("hero.title1")}{" "}
+              <span className="text-primary">{t("hero.title2")}</span>{" "}
+              {t("hero.title3")}
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 text-pretty">
-              LiquidClaw brings effortless swaps and deep liquidity pools to Base chain. 
-              Designed from the ground up for AI agents, bots, and DeFi integrators who need 
-              reliable, permissionless liquidity.
+              {t("hero.subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
@@ -63,7 +64,7 @@ export function Hero() {
                 asChild
               >
                 <Link href="/swap">
-                  Start Swapping
+                  {t("hero.startSwapping")}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -74,7 +75,7 @@ export function Hero() {
                 asChild
               >
                 <Link href="/pools">
-                  Explore Pools
+                  {t("hero.explorePools")}
                 </Link>
               </Button>
             </div>
@@ -82,13 +83,13 @@ export function Hero() {
             {/* Feature pills */}
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
               <div className="px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary">
-                ve(3,3) Model
+                {t("hero.pill1")}
               </div>
               <div className="px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent">
-                AI-Powered Voting
+                {t("hero.pill2")}
               </div>
               <div className="px-4 py-2 bg-secondary rounded-full text-sm font-medium text-secondary-foreground">
-                Built on Base
+                {t("hero.pill3")}
               </div>
             </div>
           </div>
@@ -112,14 +113,14 @@ export function Hero() {
             {/* Floating Feature Cards */}
             <div className="absolute -top-4 -right-4 sm:top-0 sm:right-0 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float" style={{ animationDelay: "1s" }}>
               <Bot className="w-8 h-8 text-accent mb-2" />
-              <div className="text-sm font-semibold text-foreground">Agent Ready</div>
-              <div className="text-xs text-muted-foreground">API-first design</div>
+              <div className="text-sm font-semibold text-foreground">{t("hero.agentReady")}</div>
+              <div className="text-xs text-muted-foreground">{t("hero.apiFirst")}</div>
             </div>
 
             <div className="absolute -bottom-4 -left-4 sm:bottom-4 sm:left-0 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float" style={{ animationDelay: "2s" }}>
               <Shield className="w-8 h-8 text-primary mb-2" />
-              <div className="text-sm font-semibold text-foreground">Secure</div>
-              <div className="text-xs text-muted-foreground">Audited contracts</div>
+              <div className="text-sm font-semibold text-foreground">{t("hero.secure")}</div>
+              <div className="text-xs text-muted-foreground">{t("hero.audited")}</div>
             </div>
           </div>
         </div>

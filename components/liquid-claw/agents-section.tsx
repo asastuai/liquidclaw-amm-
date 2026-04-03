@@ -4,41 +4,20 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Bot, Code2, Zap, Shield, Cpu, Webhook } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
-const features = [
-  {
-    icon: Bot,
-    title: "Agent-First Design",
-    description: "Built from the ground up for autonomous agents. Simple API, predictable execution, no surprises.",
-  },
-  {
-    icon: Code2,
-    title: "SDK & Libraries",
-    description: "TypeScript, Python, and Rust SDKs. Integrate LiquidClaw into your agent in minutes.",
-  },
-  {
-    icon: Zap,
-    title: "Low Latency",
-    description: "Optimized for speed. Sub-100ms quote responses and efficient on-chain execution.",
-  },
-  {
-    icon: Shield,
-    title: "MEV Protection",
-    description: "Built-in MEV protection keeps your agents safe from front-running and sandwich attacks.",
-  },
-  {
-    icon: Cpu,
-    title: "Simulation Mode",
-    description: "Test your strategies without spending gas. Full simulation environment included.",
-  },
-  {
-    icon: Webhook,
-    title: "Webhooks & Events",
-    description: "Real-time notifications for swaps, pool events, and price movements.",
-  },
+const featureKeys = [
+  { icon: Bot, titleKey: "agents.feat1.title", descKey: "agents.feat1.desc" },
+  { icon: Code2, titleKey: "agents.feat2.title", descKey: "agents.feat2.desc" },
+  { icon: Zap, titleKey: "agents.feat3.title", descKey: "agents.feat3.desc" },
+  { icon: Shield, titleKey: "agents.feat4.title", descKey: "agents.feat4.desc" },
+  { icon: Cpu, titleKey: "agents.feat5.title", descKey: "agents.feat5.desc" },
+  { icon: Webhook, titleKey: "agents.feat6.title", descKey: "agents.feat6.desc" },
 ]
 
 export function AgentsSection() {
+  const { t } = useI18n()
+
   return (
     <section id="agents" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -47,18 +26,16 @@ export function AgentsSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
               <Bot className="w-4 h-4" />
-              For Autonomous Agents
+              {t("agents.badge")}
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
-              Your Agents Deserve{" "}
-              <span className="text-primary">Better Liquidity</span>
+              {t("agents.title")}{" "}
+              <span className="text-primary">{t("agents.titleHighlight")}</span>
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8">
-              LiquidClaw is the AMM that understands agents. We built everything 
-              your autonomous systems need: reliable quotes, predictable execution, 
-              and developer-friendly APIs.
+              {t("agents.subtitle")}
             </p>
 
             <div className="bg-card border border-border rounded-2xl p-6 mb-8">
@@ -76,7 +53,7 @@ export function AgentsSection() {
                 <div className="pl-4">
                   <span className="text-foreground">tokenIn</span>
                   <span className="text-muted-foreground">:</span>{" "}
-                  <span className="text-green-500">{'"ETH"'}</span>
+                  <span className="text-green-500">{'"BNB"'}</span>
                   <span className="text-muted-foreground">,</span>
                 </div>
                 <div className="pl-4">
@@ -96,25 +73,25 @@ export function AgentsSection() {
 
             <div className="flex flex-wrap gap-4">
               <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                <Link href="/docs/for-builders#contract-addresses">Get Contract Addresses</Link>
+                <Link href="/docs/for-builders#contract-addresses">{t("agents.getAddresses")}</Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full px-6">
-                <Link href="/docs/for-builders">Read the Docs</Link>
+                <Link href="/docs/for-builders">{t("agents.readDocs")}</Link>
               </Button>
             </div>
           </div>
 
           {/* Right Content - Feature Grid */}
           <div className="grid sm:grid-cols-2 gap-4">
-            {features.map((feature, index) => (
-              <Card 
-                key={index} 
+            {featureKeys.map((feature, index) => (
+              <Card
+                key={index}
                 className="bg-card border-border hover:border-accent/50 transition-colors group"
               >
                 <CardContent className="p-5">
                   <feature.icon className="w-8 h-8 text-accent mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2">{t(feature.titleKey)}</h3>
+                  <p className="text-sm text-muted-foreground">{t(feature.descKey)}</p>
                 </CardContent>
               </Card>
             ))}
