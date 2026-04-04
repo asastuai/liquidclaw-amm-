@@ -34,21 +34,21 @@ import { useI18n } from "@/lib/i18n"
 // Preview strategies shown before deployment
 const PREVIEW_STRATEGIES = [
   {
-    name: "Yield Maximizer",
+    name: "vault.yieldMax",
     description:
       "Optimizes votes across all pools to maximize fee revenue + bribes. Rebalances weekly based on volume and bribe data.",
     icon: TrendingUp,
     tag: "Popular",
   },
   {
-    name: "Liquidity Deepener",
+    name: "vault.liqDeep",
     description:
       "Concentrates votes on core LCLAW pairs to deepen protocol-owned liquidity and reduce slippage for all traders.",
     icon: Sparkles,
     tag: "Protocol",
   },
   {
-    name: "Bribe Hunter",
+    name: "vault.bribeHunter",
     description:
       "Aggressively targets pools with highest bribe/vote ratios. Higher variance but potentially higher APR.",
     icon: Brain,
@@ -65,6 +65,7 @@ function DepositableNFTCard({
   onDeposit: (tokenId: bigint) => void
   isLoading: boolean
 }) {
+  const { t } = useI18n()
   const lockedFormatted = parseFloat(formatUnits(nft.lockedAmount, 18)).toLocaleString(
     undefined,
     { maximumFractionDigits: 2 }
@@ -93,7 +94,7 @@ function DepositableNFTCard({
           <Loader2 className="w-4 h-4 animate-spin" />
         ) : (
           <>
-            Deposit <ArrowRight className="w-3 h-3 ml-1" />
+            {t("vault.deposit")} <ArrowRight className="w-3 h-3 ml-1" />
           </>
         )}
       </Button>
@@ -114,6 +115,7 @@ function VaultDepositCard({
   onWithdraw: (tokenId: bigint) => void
   isWithdrawing: boolean
 }) {
+  const { t } = useI18n()
   const lockedFormatted = parseFloat(formatUnits(lockedAmount, 18)).toLocaleString(undefined, {
     maximumFractionDigits: 2,
   })
@@ -148,7 +150,7 @@ function VaultDepositCard({
         ) : (
           <>
             <LogOut className="w-3 h-3 mr-1" />
-            Withdraw
+            {t("vault.withdraw")}
           </>
         )}
       </Button>
@@ -157,6 +159,7 @@ function VaultDepositCard({
 }
 
 export function AIVault() {
+  const { t } = useI18n()
   const { isConnected } = useAccount()
   const chainId = useChainId()
   const { totalDeposited } = useAIVaultStats()
@@ -201,10 +204,10 @@ export function AIVault() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-4">
             <Brain className="w-4 h-4" />
-            AI-Powered Voting
+            {t("vault.title")}
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Let AI Maximize Your <span className="text-primary">veLCLAW</span> Yield
+            {t("vault.subtitle")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Deposit your veLCLAW into the AI Vault. Our optimization engine analyzes bribes,
@@ -258,7 +261,7 @@ export function AIVault() {
                           <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
                             <s.icon className="w-4 h-4 text-accent" />
                           </div>
-                          <h4 className="font-semibold text-foreground">{s.name}</h4>
+                          <h4 className="font-semibold text-foreground">{t(s.name)}</h4>
                         </div>
                         <Badge className="bg-accent/10 text-accent border-0 text-xs">
                           {s.tag}
@@ -297,7 +300,7 @@ export function AIVault() {
             <div className="mt-4 flex items-start gap-3 p-4 bg-card border border-border rounded-xl">
               <Shield className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
               <div>
-                <h4 className="text-sm font-semibold text-foreground">Non-Custodial</h4>
+                <h4 className="text-sm font-semibold text-foreground">{t("vault.nonCustodial")}</h4>
                 <p className="text-xs text-muted-foreground">
                   You can withdraw your veLCLAW at any time — even if the vault is paused.
                   The AI can only vote, never transfer your NFT.

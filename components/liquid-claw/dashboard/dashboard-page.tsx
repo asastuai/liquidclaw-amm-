@@ -9,6 +9,7 @@ import { RecentActivity } from "./recent-activity"
 import { useI18n } from "@/lib/i18n"
 
 export function DashboardPage() {
+  const { t } = useI18n()
   const { address, isConnected } = useAccount()
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "Not connected"
 
@@ -19,7 +20,7 @@ export function DashboardPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Dashboard Header */}
           <div className="mb-10">
-            <h1 className="text-4xl font-bold text-foreground mb-2">Dashboard</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-2">{t("dashboard.title")}</h1>
             <div className="flex items-center gap-3 text-sm">
               <span className="text-muted-foreground">Connected Wallet</span>
               <code className="bg-muted px-3 py-1 rounded-lg font-mono text-foreground">{shortAddress}</code>

@@ -18,6 +18,7 @@ type GaugeData = {
 const gauges: GaugeData[] = []
 
 export function GaugesPage() {
+  const { t } = useI18n()
   const [activeTab, setActiveTab] = useState<"all" | "my-stakes">("all")
   const [sortBy, setSortBy] = useState<"apr" | "tvl" | "stake">("apr")
   const [searchQuery, setSearchQuery] = useState("")
@@ -66,11 +67,11 @@ export function GaugesPage() {
         {/* Page Header with kawaii touch */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">Gauges</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">{t("gauges.title")}</h1>
             <img src="/images/lobster-mascot.jpg" alt="LCLAW" className="w-8 h-8 rounded-full object-cover" />
           </div>
           <p className="text-muted-foreground text-lg">
-            Stake your LP tokens to earn LCLAW rewards
+            {t("gauges.subtitle")}
           </p>
         </div>
 

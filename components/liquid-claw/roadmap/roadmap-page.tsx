@@ -204,6 +204,7 @@ function FloatingJellyfish() {
 }
 
 export function RoadmapPage() {
+  const { t } = useI18n()
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
   const [mounted, setMounted] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -250,19 +251,19 @@ export function RoadmapPage() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-foreground">From AMM</span>
+            <span className="text-foreground">{t("roadmap.fromAmm")}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              To DeFi Hub
+              {t("roadmap.toDefiHub")}
             </span>
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            Spot trading live on Base. Perpetual DEX coming. AI-powered strategies ahead. This is just the beginning.
+            {t("roadmap.desc")}
           </p>
 
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="text-sm">Scroll to explore</span>
+            <span className="text-sm">{t("roadmap.scroll")}</span>
             <div className="w-5 h-8 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-1.5">
               <div className="w-1 h-2 bg-muted-foreground/40 rounded-full animate-bounce" />
             </div>

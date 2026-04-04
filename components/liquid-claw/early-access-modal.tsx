@@ -11,6 +11,7 @@ const SIGNED_KEY = "lclaw_whitelist_signed"
 const DISMISSED_KEY = "lclaw_whitelist_dismissed"
 
 export function EarlyAccessModal() {
+  const { t } = useI18n()
   const [show, setShow] = useState(false)
   const [signed, setSigned] = useState(false)
   const { address, isConnected } = useAccount()
@@ -85,7 +86,7 @@ export function EarlyAccessModal() {
 
         {/* Content */}
         <h2 className="text-2xl font-bold text-foreground text-center mb-3">
-          You&apos;re Early
+          {t("early.youreEarly")}
         </h2>
         <p className="text-center text-muted-foreground text-sm mb-6 leading-relaxed">
           The Liquidity Genesis Event hasn&apos;t started yet. Reserve your spot on the whitelist
@@ -126,7 +127,7 @@ export function EarlyAccessModal() {
             onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#229ED9] text-white font-medium text-sm rounded-full hover:bg-[#1a8ac4] transition-colors"
           >
-            ✈️ Join Telegram
+            {t("early.joinTelegram")}
           </a>
         </div>
 
@@ -154,7 +155,7 @@ export function EarlyAccessModal() {
             <p className="text-sm font-semibold text-foreground">You&apos;re on the list!</p>
             <p className="text-xs text-muted-foreground">{address?.slice(0, 6)}...{address?.slice(-4)} reserved</p>
             <Button onClick={() => setShow(false)} variant="outline" className="rounded-full mt-2">
-              Continue to App
+              {t("early.continueToApp")}
             </Button>
           </div>
         ) : (
@@ -169,7 +170,7 @@ export function EarlyAccessModal() {
               ) : (
                 <>
                   <Wallet className="w-4 h-4 mr-2" />
-                  Sign to Reserve Your Spot
+                  {t("early.signToReserve")}
                 </>
               )}
             </Button>

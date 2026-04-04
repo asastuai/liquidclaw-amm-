@@ -122,6 +122,7 @@ const faqs = [
 ]
 
 export function GenesisPage() {
+  const { t } = useI18n()
   const { isConnected, address } = useAccount()
   const chainId = useChainId()
   const { data: ethBalance } = useBalance({ address })
@@ -147,10 +148,10 @@ export function GenesisPage() {
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-primary/10 text-primary border-0 px-4 py-1.5">
               <Droplets className="w-4 h-4 mr-2" />
-              Liquidity Genesis Event
+              {t("genesis.liquidityGenesis")}
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Bootstrap the <span className="text-primary">Deep End</span>
+              {t("genesis.bootstrap")}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Contribute liquidity to launch LiquidClaw. Receive locked veLCLAW with
@@ -171,7 +172,7 @@ export function GenesisPage() {
                     {!isActive ? (
                       <Badge variant="outline" className="text-muted-foreground">
                         <Clock className="w-3 h-3 mr-1" />
-                        Starting Soon
+                        {t("genesis.startingSoon")}
                       </Badge>
                     ) : (
                       <Badge className="bg-green-500/10 text-green-500 border-0">Live</Badge>

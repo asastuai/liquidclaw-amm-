@@ -12,6 +12,7 @@ import { useUserVeNFTs } from "@/hooks/use-voting-escrow"
 import { useI18n } from "@/lib/i18n"
 
 export function LockPage() {
+  const { t } = useI18n()
   const { veNFTs, isLoading } = useUserVeNFTs()
 
   const locks = useMemo(() => {
@@ -37,9 +38,9 @@ export function LockPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
           <div className="mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-3">veLCLAW</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-3">{t("lock.title")}</h1>
             <p className="text-lg text-muted-foreground">
-              Lock LCLAW to earn voting power, fees, and bribes
+              {t("lock.subtitle")}
             </p>
           </div>
 

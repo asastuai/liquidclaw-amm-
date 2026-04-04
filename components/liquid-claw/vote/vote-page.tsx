@@ -32,6 +32,7 @@ interface Pool {
 const initialPools: Pool[] = []
 
 export function VotePage() {
+  const { t } = useI18n()
   const { veNFTs } = useUserVeNFTs()
   const [pools, setPools] = useState<Pool[]>(initialPools)
   const [selectedNFTIndex, setSelectedNFTIndex] = useState(0)
@@ -89,10 +90,10 @@ export function VotePage() {
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground flex items-center gap-2">
                 <Vote className="w-8 h-8 text-primary" />
-                Vote
+                {t("vote.title")}
               </h1>
               <p className="text-muted-foreground mt-1">
-                Direct LCLAW emissions to pools and earn fees + bribes
+                {t("vote.subtitle")}
               </p>
             </div>
           </div>

@@ -242,6 +242,7 @@ function CreateLockForm() {
 }
 
 export function Governance() {
+  const { t } = useI18n()
   const { isConnected } = useAccount()
   const chainId = useChainId()
   const { veNFTs, count, isLoading } = useUserVeNFTs()
@@ -252,14 +253,13 @@ export function Governance() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4">
             <Vote className="w-4 h-4" />
-            ve(3,3) Governance
+            {t("gov.veGovernance")}
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Lock, Vote, <span className="text-primary">Earn</span>
+            {t("gov.lockVoteEarn")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Lock your LCLAW tokens to receive veLCLAW — a vote-escrowed NFT that gives you
-            governance power, trading fee revenue, and bribe rewards.
+            {t("gov.desc")}
           </p>
         </div>
 
@@ -270,9 +270,9 @@ export function Governance() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Lock className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">1. Lock LCLAW</h3>
+              <h3 className="font-semibold text-foreground mb-2">{t("gov.step1")}</h3>
               <p className="text-sm text-muted-foreground">
-                Lock your LCLAW for up to 2 years. Longer locks = more voting power.
+                {t("gov.step1Desc")}
               </p>
             </CardContent>
           </Card>
@@ -282,10 +282,9 @@ export function Governance() {
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
                 <Vote className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">2. Vote on Pools</h3>
+              <h3 className="font-semibold text-foreground mb-2">{t("gov.step2")}</h3>
               <p className="text-sm text-muted-foreground">
-                Direct LCLAW emissions to your favorite pools each epoch. Earn bribes from
-                protocols.
+                {t("gov.step2Desc")}
               </p>
             </CardContent>
           </Card>
@@ -295,9 +294,9 @@ export function Governance() {
               <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
                 <Gift className="w-6 h-6 text-green-500" />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">3. Earn Rewards</h3>
+              <h3 className="font-semibold text-foreground mb-2">{t("gov.step3")}</h3>
               <p className="text-sm text-muted-foreground">
-                Collect 100% of trading fees + bribes + rebase anti-dilution every epoch.
+                {t("gov.step3Desc")}
               </p>
             </CardContent>
           </Card>
