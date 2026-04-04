@@ -44,8 +44,7 @@ const roadmapPhases = [
     items: [
       "AI Vault strategies go live: Yield Maximizer, Liquidity Deepener, Bribe Hunter",
       "AI Agent SDK for autonomous on-chain trading",
-      "Perpetual DEX integration — SUR Protocol merge (25,000+ lines of battle-tested code)",
-      "Leverage trading up to 20x on BTC, ETH, and more",
+      "Perpetual DEX integration — leveraged trading up to 20x on BTC, ETH, and more",
       "Advanced analytics dashboard with real-time P&L tracking",
       "Developer grants program for ecosystem builders"
     ]
