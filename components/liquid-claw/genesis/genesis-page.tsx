@@ -22,6 +22,7 @@ import {
   Wallet,
 } from "lucide-react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
+import { useI18n } from "@/lib/i18n"
 
 const GENESIS_CONFIG = {
   minContribution: 10,

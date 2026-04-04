@@ -14,6 +14,7 @@ import { Vote, Timer, TrendingUp, AlertCircle, ChevronDown, X, RotateCcw } from 
 import Image from 'next/image'
 import { getTokenIcon } from '@/lib/token-icons'
 import { useUserVeNFTs } from '@/hooks/use-voting-escrow'
+import { useI18n } from "@/lib/i18n"
 
 interface Pool {
   id: string

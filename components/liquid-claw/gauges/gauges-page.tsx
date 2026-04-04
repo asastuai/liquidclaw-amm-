@@ -6,6 +6,7 @@ import { GaugeStats } from "./gauge-stats"
 import { GaugeFilters } from "./gauge-filters"
 import { GaugeList } from "./gauge-list"
 import { GaugeEmptyState } from "./gauge-empty-state"
+import { useI18n } from "@/lib/i18n"
 
 // Gauge data will be populated when gauges are created via governance
 type GaugeData = {

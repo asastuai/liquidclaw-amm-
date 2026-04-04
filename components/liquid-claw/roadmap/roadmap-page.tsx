@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Header } from "../header"
 import { Footer } from "../footer"
 import { Sparkles, Target, Users, Zap, Shield, Globe, Heart, Rocket, Anchor } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
 const roadmapPhases = [
   {

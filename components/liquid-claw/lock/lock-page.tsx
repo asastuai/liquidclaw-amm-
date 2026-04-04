@@ -9,6 +9,7 @@ import { YourLocks } from "./your-locks"
 import { VotingPowerOverview } from "./voting-power-overview"
 import { LockInfoCallout } from "./lock-info-callout"
 import { useUserVeNFTs } from "@/hooks/use-voting-escrow"
+import { useI18n } from "@/lib/i18n"
 
 export function LockPage() {
   const { veNFTs, isLoading } = useUserVeNFTs()

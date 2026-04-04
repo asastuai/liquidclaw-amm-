@@ -5,6 +5,7 @@ import { useAccount, useSignMessage } from "wagmi"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { X, Sparkles, Check, Wallet, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useI18n } from "@/lib/i18n"
 
 const SIGNED_KEY = "lclaw_whitelist_signed"
 const DISMISSED_KEY = "lclaw_whitelist_dismissed"

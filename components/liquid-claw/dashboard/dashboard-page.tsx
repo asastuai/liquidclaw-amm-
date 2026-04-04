@@ -6,6 +6,7 @@ import { PortfolioStats } from "./portfolio-stats"
 import { LiquidityPositions } from "./liquidity-positions"
 import { VeLCLAWLocks } from "./velclaw-locks"
 import { RecentActivity } from "./recent-activity"
+import { useI18n } from "@/lib/i18n"
 
 export function DashboardPage() {
   const { address, isConnected } = useAccount()

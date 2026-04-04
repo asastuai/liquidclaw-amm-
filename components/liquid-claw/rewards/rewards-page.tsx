@@ -6,6 +6,7 @@ import { RewardsSummary } from "./rewards-summary"
 import { RewardsSections } from "./rewards-sections"
 import { RewardsHistory } from "./rewards-history"
 import { Separator } from "@/components/ui/separator"
+import { useI18n } from "@/lib/i18n"
 
 export function RewardsPage() {
   const [showBanner, setShowBanner] = useState(true)

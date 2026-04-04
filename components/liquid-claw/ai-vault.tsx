@@ -29,6 +29,7 @@ import {
   useAIStrategies,
 } from "@/hooks/use-ai-vault"
 import { useUserVeNFTs, type VeNFT } from "@/hooks/use-voting-escrow"
+import { useI18n } from "@/lib/i18n"
 
 // Preview strategies shown before deployment
 const PREVIEW_STRATEGIES = [

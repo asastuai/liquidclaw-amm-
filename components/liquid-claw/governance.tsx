@@ -19,6 +19,7 @@ import { useAccount, useChainId } from "wagmi"
 import { getTxUrl } from "@/lib/explorer"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { formatUnits } from "viem"
+import { useI18n } from "@/lib/i18n"
 import {
   useUserVeNFTs,
   useCreateLock,
