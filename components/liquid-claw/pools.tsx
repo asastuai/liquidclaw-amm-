@@ -12,6 +12,7 @@ import type { Address } from "viem"
 import { AddLiquidityModal } from "./add-liquidity-modal"
 import { getTokenIcon } from "@/lib/token-icons"
 import { getAddressUrl } from "@/lib/explorer"
+import { useI18n } from "@/lib/i18n"
 import { ERC20_ABI } from "@/lib/contracts/abis"
 
 const LIVE_POOLS: { pair: [string, string]; fee: string; type: "Stable" | "Volatile"; poolData: PoolData }[] = [
@@ -169,6 +170,7 @@ function LivePoolCard({
 
 export function Pools() {
   const [selectedPool, setSelectedPool] = useState<PoolData | null>(null)
+  const { t } = useI18n()
 
   return (
     <>
@@ -177,13 +179,13 @@ export function Pools() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-secondary-foreground text-sm font-medium mb-4">
               <Droplets className="w-4 h-4" />
-              Liquidity Pools
+              {t("pools.title2")}
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Earn Yield with <span className="text-primary">Deep Liquidity</span>
+              {t("pools.subtitle2")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Provide liquidity to earn trading fees. Stake LP tokens in gauges to earn LCLAW rewards when emissions go live.
+              {t("pools.desc")}
             </p>
           </div>
 

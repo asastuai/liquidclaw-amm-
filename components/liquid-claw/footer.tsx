@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Github, MessageCircle } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
 function XIcon({ className }: { className?: string }) {
   return (
@@ -10,27 +13,6 @@ function XIcon({ className }: { className?: string }) {
   )
 }
 
-const footerLinks = {
-  Protocol: [
-    { label: "Swap", href: "/swap" },
-    { label: "Pools", href: "/pools" },
-    { label: "Gauges", href: "/gauges" },
-    { label: "Vote", href: "/vote" },
-  ],
-  Governance: [
-    { label: "Lock (veLCLAW)", href: "/lock" },
-    { label: "Dashboard", href: "/dashboard" },
-    { label: "Rewards", href: "/rewards" },
-    { label: "AI Vault", href: "/ai-vault" },
-  ],
-  Developers: [
-    { label: "Documentation", href: "/docs" },
-    { label: "For Builders", href: "/docs/for-builders" },
-    { label: "Tokenomics", href: "/docs/tokenomics" },
-    { label: "GitHub", href: "https://github.com/asastuai/liquidclaw-amm-" },
-  ],
-}
-
 const socialLinks = [
   { icon: XIcon, href: "https://x.com/ClawFinance", label: "X" },
   { icon: Github, href: "https://github.com/asastuai/liquidclaw-amm-", label: "GitHub" },
@@ -38,6 +20,29 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const { t } = useI18n()
+
+  const footerLinks = {
+    [t("footer.protocol")]: [
+      { label: t("nav.swap"), href: "/swap" },
+      { label: t("nav.pools"), href: "/pools" },
+      { label: t("nav.gauges"), href: "/gauges" },
+      { label: t("nav.vote"), href: "/vote" },
+    ],
+    [t("footer.governance")]: [
+      { label: t("nav.lock"), href: "/lock" },
+      { label: t("nav.dashboard"), href: "/dashboard" },
+      { label: t("nav.rewards"), href: "/rewards" },
+      { label: t("nav.aiVault"), href: "/ai-vault" },
+    ],
+    [t("footer.developers")]: [
+      { label: t("footer.documentation"), href: "/docs" },
+      { label: t("footer.forBuilders"), href: "/docs/for-builders" },
+      { label: t("footer.tokenomics"), href: "/docs/tokenomics" },
+      { label: "GitHub", href: "https://github.com/asastuai/liquidclaw-amm-" },
+    ],
+  }
+
   return (
     <footer className="bg-muted/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -59,8 +64,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              The friendliest AMM on Base chain. Built for autonomous agents 
-              and the next generation of on-chain liquidity.
+              {t("footer.tagline")}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -99,11 +103,11 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 LiquidClaw. Built on Base with love.
+            {t("footer.copyright")}
           </p>
           <div className="flex items-center gap-2 text-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full" />
-            <span className="text-muted-foreground">All systems operational</span>
+            <span className="text-muted-foreground">{t("footer.operational")}</span>
           </div>
         </div>
       </div>

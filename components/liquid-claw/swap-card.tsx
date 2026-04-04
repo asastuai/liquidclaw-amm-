@@ -21,12 +21,14 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useSwap } from "@/hooks/use-swap"
 import { TokenSelectModal } from "./token-select-modal"
 import { getTokens, type TokenInfo } from "@/lib/contracts/addresses"
+import { useI18n } from "@/lib/i18n"
 
 const DEFAULT_SLIPPAGE = 0.5
 
 export function SwapCard() {
   const { isConnected } = useAccount()
   const chainId = useChainId()
+  const { t } = useI18n()
   const tokens = useMemo(() => getTokens(chainId), [chainId])
 
   const [tokenIn, setTokenIn] = useState<TokenInfo>(tokens[0]) // Native (BNB or ETH)
@@ -116,7 +118,7 @@ export function SwapCard() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Instant <span className="text-primary">Swaps</span>
+              {t("swap.instant")} <span className="text-primary">{t("swap.swapButton")}</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Trade any token on Base with deep liquidity and minimal slippage.
@@ -187,7 +189,7 @@ export function SwapCard() {
                 {/* From Token */}
                 <div className="bg-muted/50 rounded-2xl p-4">
                   <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                    <span>You pay</span>
+                    <span>{t("swap.youPay")}</span>
                     <button
                       onClick={handleMaxClick}
                       className="hover:text-foreground transition-colors"
@@ -236,7 +238,7 @@ export function SwapCard() {
                 {/* To Token */}
                 <div className="bg-muted/50 rounded-2xl p-4">
                   <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                    <span>You receive</span>
+                    <span>{t("swap.youReceive")}</span>
                     <span>
                       Balance:{" "}
                       {isConnected
@@ -342,7 +344,7 @@ export function SwapCard() {
                 {/* Agent Mode */}
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  Agent Mode Available
+                  {t("swap.agentMode")}
                 </div>
               </CardContent>
             </Card>
